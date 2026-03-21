@@ -1,0 +1,88 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  type?: 'web-development' | 'design' | 'marketing';
+}
+
+const { icon, title, description, type = 'web-development' } = Astro.props;
+---
+
+<div class={`services-card ${type}`} data-aos="fade-up" data-aos-delay="200">
+  <div class="services-card-icon">
+    <img src={icon} alt={title} class="w-16 h-16" />
+  </div>
+  <h3 class="text-2xl font-bold text-white text-center mb-4">{title}</h3>
+  <p class="text-center text-gray-400 leading-relaxed">{description}</p>
+</div>
+
+<style>
+  .services-card {
+    background: #1b1b1b;
+    box-shadow: 0 1.6rem 2.4rem rgb(0 0 0 / 25%);
+    border-radius: 0.8rem;
+    width: 35.7rem;
+    min-height: 30rem;
+    max-width: 100%;
+    padding: 1.6rem 4.3rem 2.2rem 3.5rem;
+    position: relative;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .services-card-icon {
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+  }
+
+  .services-card.web-development .services-card-icon {
+    background: rgba(227, 31, 113, 0.2);
+  }
+
+  .services-card.design .services-card-icon {
+    background: rgba(255, 97, 25, 0.2);
+  }
+
+  .services-card.marketing .services-card-icon {
+    background: rgba(102, 126, 234, 0.2);
+  }
+
+  .services-card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.8rem;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 0.8rem 0.8rem;
+  }
+
+  .services-card.web-development::after {
+    background: #e31f71;
+  }
+
+  .services-card.design::after {
+    background: #ff6119;
+  }
+
+  .services-card.marketing::after {
+    background: #667eea;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .services-card {
+      width: 100%;
+      padding: 1.6rem 1.5rem;
+    }
+  }
+</style>

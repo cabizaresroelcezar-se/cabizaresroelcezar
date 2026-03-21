@@ -1,0 +1,138 @@
+---
+interface Props {
+  mobileHidden?: boolean;
+}
+
+const { mobileHidden = false } = Astro.props;
+---
+
+<header class={`${mobileHidden ? 'hidden' : ''}`}>
+  <h1 class="text-center">
+    <a href="/" class="hover:opacity-80 transition-opacity">
+      <img src="/logo.png" alt="Roel Cezar Cabizares" width="64" height="62" class="w-16 h-auto" />
+    </a>
+  </h1>
+  
+  <nav class="flex-1 flex justify-end items-center gap-[5%]">
+    <a href="/#about-me" class="text-gray-400 hover:text-white transition-colors uppercase font-medium letter-spacing-[1px]">About Me</a>
+    <a href="/#services" class="text-gray-400 hover:text-white transition-colors uppercase font-medium letter-spacing-[1px]">Services</a>
+    <a href="/#works" class="text-gray-400 hover:text-white transition-colors uppercase font-medium letter-spacing-[1px]">Works</a>
+    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors uppercase font-medium letter-spacing-[1px]">CV</a>
+    <a href="/#contact" class="text-black bg-white border-2 border-white px-6 py-3.5 font-medium letter-spacing-[1px] uppercase transition-all duration-400 hover:bg-transparent hover:text-white">Contact</a>
+  </nav>
+
+  <button id="mobile-menu-btn" class="hidden md:hidden p-2 hover:bg-gray-900 rounded-lg transition">
+    <span class="sr-only">Open menu</span>
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</header>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden fixed top-20 left-0 right-0 bg-black bg-opacity-95 backdrop-blur z-9">
+  <div class="px-4 py-4 space-y-2 max-w-6xl mx-auto">
+    <a href="/#about-me" class="block py-3 text-gray-400 hover:text-white transition-colors uppercase font-medium">About Me</a>
+    <a href="/#services" class="block py-3 text-gray-400 hover:text-white transition-colors uppercase font-medium">Services</a>
+    <a href="/#works" class="block py-3 text-gray-400 hover:text-white transition-colors uppercase font-medium">Works</a>
+    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" class="block py-3 text-gray-400 hover:text-white transition-colors uppercase font-medium">CV</a>
+    <a href="/#contact" class="block py-3 text-black bg-white px-4 font-medium uppercase hover:bg-transparent hover:text-white transition-all">Contact</a>
+  </div>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.classList.remove('active');
+      });
+    });
+  }
+</script>
+
+<style>
+  header {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1.1rem 7.2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: opacity 0.4s, visibility 0.4s;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  header h1 {
+    text-align: center;
+  }
+
+  header nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  header nav a {
+    color: #999;
+    display: inline-block;
+    padding: 12px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.4s, text-shadow 0.4s;
+  }
+
+  header nav a:hover,
+  header nav a.active {
+    color: #fff;
+    text-shadow: -0.25px -0.25px 0 #fff, 0.25px 0.25px #fff;
+  }
+
+  header nav a:last-of-type {
+    color: #000;
+    border: solid 2px #fff;
+    background-color: #fff;
+    padding: 14px 24px;
+    transition: color 0.4s, border-color 0.4s, background-color 0.4s, text-shadow 0.4s;
+  }
+
+  header nav a:last-of-type:hover,
+  header nav a:last-of-type.active {
+    color: #fff;
+    border-color: #252525;
+    background-color: transparent;
+    text-shadow: unset;
+  }
+
+  @media only screen and (max-width: 768px) {
+    #mobile-menu-btn {
+      display: block !important;
+    }
+
+    header nav {
+      display: none;
+    }
+  }
+</style>

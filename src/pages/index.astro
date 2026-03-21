@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import WorkCard from '../components/WorkCard.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout title="Roel Cezar Cabizares - Software Engineer & Designer">
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero min-h-screen flex items-center justify-center relative px-[7.2%] pt-32">
+      <div class="max-w-5xl w-full">
+        <h2 class="hero-heading text-white mb-4">
+          Hi there,
+          <span class="text-white">I'm Roel Cezar Cabizares</span>
+        </h2>
+        <div class="intro-description">
+          I'm a software engineer specializing in front-end development, UI/UX, and digital experience.
+        </div>
+        <div class="pt-16 flex justify-center">
+          <img src="/scroll-down.svg" alt="Scroll down arrow" width="24" height="120" class="animate-bounce" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about-me" class="section-wrapper bg-black">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="section-title text-white text-4xl md:text-5xl font-bold pb-8" data-aos="fade-right">About Me</h2>
+          <div class="space-y-6">
+            <p class="content-paragraph text-gray-400" data-aos="fade-up">
+              Hello, I'm a software engineer & developer based in the Philippines, and I conserve an expressive passion
+              for user interface, visual design, and creating intuitive, dynamic user experiences.
+            </p>
+            <p class="content-paragraph text-gray-400" data-aos="fade-up">
+              Given enough coffee and inexhaustible enthusiasm, I am easily inspired and more willing to follow my ideas
+              wherever they take me. I'm a dynamic person, an expressive, talented spirit with an innate ability to
+              entertain and inspire. I'm never satisfied with just coming up with ideas. Instead, I have an almost
+              impulsive need to act on them.
+            </p>
+            <p class="content-paragraph text-gray-400" data-aos="fade-up">
+              I'm also experienced in and completed various responsive website designs, front-end assets, and custom
+              WordPress builds.
+            </p>
+            <p data-aos="fade-up">
+              <a href="#services" class="content-link text-white">Learn more</a>
+            </p>
+          </div>
+        </div>
+        <div class="hidden md:block" data-aos="fade-left">
+          <img src="/cabz-img.jpg" alt="Roel Cezar Cabizares" class="rounded-lg" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-wrapper bg-black">
+      <h2 class="section-title text-white text-4xl md:text-5xl font-bold" data-aos="fade-right">Services</h2>
+
+      <div class="flex flex-wrap justify-around gap-4 mb-12">
+        <ServiceCard
+          icon="/icons/web-development.svg"
+          title="Web Development"
+          description="Design and develop a user-centric website and modern interfaces for digital products or services that will help transfer the business strengths and visual assets to the interweb."
+          type="web-development"
+        />
+        <ServiceCard
+          icon="/icons/design.svg"
+          title="Branding & Design"
+          description="Full strategy design and execution for new and refresh brand projects, including positioning, brand architecture and identity."
+          type="design"
+        />
+        <ServiceCard
+          icon="/icons/digital-marketing.svg"
+          title="Digital Marketing"
+          description="Design for new and existing solutions, including UI/UX, visual design, and marketing support accessible to benefit business growth."
+          type="marketing"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div data-aos="fade-right">
+          <h3 class="text-2xl font-bold text-white mb-6">Services Offered</h3>
+          <div class="services-list-container">
+            <h3 class="services-list-item" data-aos="fade-up">Website Design</h3>
+            <h3 class="services-list-item" data-aos="fade-up">Website Development</h3>
+            <h3 class="services-list-item" data-aos="fade-up">User Experience Interaction</h3>
+            <h3 class="services-list-item" data-aos="fade-up">User Interface Design</h3>
+            <h3 class="services-list-item" data-aos="fade-up">Figma Wireframes</h3>
+            <h3 class="services-list-item" data-aos="fade-up">Figma Low-fidelity Prototypes</h3>
+            <h3 class="services-list-item" data-aos="fade-up">Visual & Identity Design</h3>
+            <h3 class="services-list-item" data-aos="fade-up">Visual Layout Design</h3>
+            <h3 class="services-list-item" data-aos="fade-up">WordPress Website Design</h3>
+            <h3 class="services-list-item" data-aos="fade-up">WordPress Custom Code</h3>
+          </div>
+        </div>
+
+        <div class="flex items-center" data-aos="fade-left">
+          <p class="text-section leading-relaxed text-gray-400">
+            Let's talk and save time; included with strategy. <br />
+            Click on a service to find out how I can help your project succeed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="section-wrapper bg-black">
+      <h2 class="section-title text-white text-4xl md:text-5xl font-bold" data-aos="fade-right">
+        I'm currently working as a Software Engineer
+      </h2>
+
+      <div class="grid grid-cols-1 gap-8 mb-16">
+        <article class="work-article" data-aos="fade-up">
+          <img src="/yondu_logo.png" alt="Yondu Logo" width="100" height="340" class="work-image max-w-32" loading="lazy" />
+          <div class="work-text">
+            <h3 class="text-section font-normal text-white mb-4">Yondu, Inc.</h3>
+            <p class="text-section font-light text-gray-400 leading-relaxed mb-4">
+              My bread and butter, Presently functioning and deployed as a .NET developer for Yondu's business client,
+              operates with IT professionals that are interdependent in a team, practices agile methodologies,
+              and directly supports and enhances the current system design approach for the advancement of the
+              company's business objectives.
+            </p>
+            <ul class="hidden list-disc ml-6 text-gray-400 space-y-2 mb-4">
+              <li>software development life cycle</li>
+              <li>c# (programming language)</li>
+              <li>.net</li>
+            </ul>
+            <a href="#" class="text-white font-medium uppercase letter-spacing-[1px] hover:text-gray-300 transition">Explore →</a>
+          </div>
+        </article>
+      </div>
+
+      <h2 class="section-title text-white text-4xl font-bold mb-8" data-aos="fade-right">Personal Branding</h2>
+
+      <h2 class="section-title text-white text-4xl font-bold mb-8" data-aos="fade-right">Projects</h2>
+      <p class="text-section text-gray-400 mb-12" data-aos="fade-up">
+        Mostly a trip down memory lane. To be expanded.
+      </p>
+
+      <div class="space-y-0">
+        <WorkCard
+          image="/rescue-8.jpg"
+          title="Rescue 8 Trading Philippines, Inc."
+          description="WooCommerce-powered WordPress build a website with a custom template and content, designed to showcase product and services offered by the company with an online purchase feature for the convenience of the page visitors and potential consumers."
+        />
+        <WorkCard
+          image="/ride-slow.jpg"
+          title="Ride Slow Lifestyle"
+          description="Custom image-centered page layout with WooCommerce store, plugin-based photo gallery, and integration of real-time Facebook messaging functionality to help with the promotion and engagement of the site."
+        />
+        <WorkCard
+          image="/adyo.jpg"
+          title="Adyó Philippines"
+          description="Brand identity project for an outdoor brand startup Adyó. It's a full-scale trademark identity that delivers optimism and displays visual element that focuses on a vividly inviting and stylishly outdoor look and feel."
+        />
+      </div>
+    </section>
+
+    <!-- Kudos Section -->
+    <section class="kudos section-wrapper bg-black">
+      <h2 class="section-title text-white text-4xl md:text-5xl font-bold" data-aos="fade-right">Kudos</h2>
+      <div class="max-w-4xl">
+        <p class="text-section font-light text-gray-400 leading-relaxed" data-aos="fade-up">
+          It's very rare these days to make anything great all on your own. I have only included work that
+          I had a large contribution to, but whether it's design, ideas, UX, process, software engineering,
+          mentorship, advice, or creative direction, the following people have influenced my growth and career
+          path in a massive way:
+          <a href="https://www.linkedin.com/in/leoabasjr/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 underline">Leopoldo Abas Jr.</a>,
+          <a href="https://www.linkedin.com/in/jamesolano/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 underline">James Nelson Olaño</a>,
+          <a href="https://www.linkedin.com/in/kevin-juanillo-1835b9b9/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 underline">Kevin Juanillo</a>,
+          <a href="https://www.linkedin.com/in/marian-rae-alvarado-3057b8190/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 underline">Marian Rae Alvarado</a>,
+          <a href="https://www.linkedin.com/in/jeremiah-diaz-097556a4/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 underline">Jeremiah Diaz</a>,
+          <a href="https://www.linkedin.com/in/eric-francis-casaljay-461418150/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 underline">Eric Francis Casaljay</a>
+          and last but not least
+          <a href="https://www.linkedin.com/in/ma-clarizza-folloso-ab418b1aa/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 underline">Ma. Clarizza Folloso</a>.
+          THANK YOU.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-wrapper bg-black">
+      <h2 class="section-title text-white text-4xl md:text-5xl font-bold text-center mb-4" data-aos="fade-right">Contact</h2>
+      <div class="max-w-3xl mx-auto">
+        <ContactForm />
+
+        <div class="mt-12 text-center text-gray-400">
+          <p>Or reach out directly at <a href="mailto:hello@cabizares.com" class="text-white hover:text-gray-300 underline">hello@cabizares.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main section {
+    padding: 8.5% 0;
+  }
+</style>
+
