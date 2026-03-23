@@ -14,11 +14,11 @@ const { mobileHidden = false } = Astro.props;
   </h1>
   
   <nav class="flex-1 flex justify-end items-center gap-[5%]">
-    <a href="/#about-me" class="text-gray-400 hover:text-white transition-colors uppercase font-medium letter-spacing-[1px]">About Me</a>
-    <a href="/#services" class="text-gray-400 hover:text-white transition-colors uppercase font-medium letter-spacing-[1px]">Services</a>
-    <a href="/#works" class="text-gray-400 hover:text-white transition-colors uppercase font-medium letter-spacing-[1px]">Works</a>
-    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors uppercase font-medium letter-spacing-[1px]">CV</a>
-    <a href="/#contact" class="text-black bg-white border-2 border-white px-6 py-3.5 font-medium letter-spacing-[1px] uppercase transition-all duration-400 hover:bg-transparent hover:text-white">Contact</a>
+    <a href="/#about-me" class="text-gray-400 hover:text-white transition-colors uppercase font-medium tracking-[1px]">About Me</a>
+    <a href="/#services" class="text-gray-400 hover:text-white transition-colors uppercase font-medium tracking-[1px]">Services</a>
+    <a href="/#works" class="text-gray-400 hover:text-white transition-colors uppercase font-medium tracking-[1px]">Works</a>
+    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors uppercase font-medium tracking-[1px]">CV</a>
+    <a href="/#contact" class="text-black bg-white border-2 border-white px-6 py-3.5 font-medium tracking-[1px] uppercase transition-all duration-400 hover:bg-transparent hover:text-white">Contact</a>
   </nav>
 
   <button id="mobile-menu-btn" class="hidden md:hidden p-2 hover:bg-gray-900 rounded-lg transition">
@@ -30,7 +30,7 @@ const { mobileHidden = false } = Astro.props;
 </header>
 
 <!-- Mobile menu -->
-<div id="mobile-menu" class="hidden fixed top-20 left-0 right-0 bg-black bg-opacity-95 backdrop-blur z-9">
+<div id="mobile-menu" class="hidden fixed top-20 left-0 right-0 bg-black bg-opacity-95 backdrop-blur z-10">
   <div class="px-4 py-4 space-y-2 max-w-6xl mx-auto">
     <a href="/#about-me" class="block py-3 text-gray-400 hover:text-white transition-colors uppercase font-medium">About Me</a>
     <a href="/#services" class="block py-3 text-gray-400 hover:text-white transition-colors uppercase font-medium">Services</a>

@@ -3,3 +3,155 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  a {
+    color: #f8f8f8;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  /* Hero */
+  .hero-heading {
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    cursor: default;
+    white-space: nowrap;
+  }
+
+  .intro-description {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.8;
+    color: #a3a3a3;
+    line-height: 1.5;
+    padding-top: 2.5rem;
+    max-width: 80%;
+  }
+
+  /* Sections */
+  .section-wrapper {
+    padding: 8.5% 0;
+  }
+
+  .section-title {
+    padding-top: 2.5%;
+    padding-bottom: 4%;
+  }
+
+  /* Content */
+  .content-paragraph {
+    font-size: 2.3rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  .content-paragraph:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .content-link {
+    padding: 10px 0;
+    position: relative;
+    font-weight: 500;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .content-link::before {
+    content: "";
+    height: 5px;
+    width: 100%;
+    background-color: #666;
+    position: absolute;
+    left: 0;
+    top: 100%;
+  }
+
+  .content-link::after {
+    content: "";
+    height: 5px;
+    width: 0;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    transition: width 0.4s;
+  }
+
+  .content-link:hover::after {
+    width: 100%;
+  }
+
+  .text-section {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+
+  /* Services list */
+  .services-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5%;
+  }
+
+  .services-list-item {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding: 14px;
+    border: solid 2px #252525;
+    margin-bottom: 3%;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+
+  .services-list-item:hover {
+    color: #000;
+    border-color: #fff;
+    background-color: #fff;
+    text-shadow: -0.25px -0.25px 0 #000, 0.25px 0.25px #000;
+  }
+}
+
+@layer utilities {
+  .letter-spacing-1 {
+    letter-spacing: 1px;
+  }
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .hero-heading {
+    font-size: 2.5rem;
+    white-space: normal;
+  }
+
+  .intro-description {
+    max-width: 100%;
+  }
+
+  .content-paragraph {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .text-section {
+    font-size: 1rem;
+  }
+
+  .section-wrapper {
+    padding: 12% 0;
+  }
+}

@@ -5,7 +5,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   // Your GitHub Pages site URL
   site: 'https://cabizaresroelcezar.github.io',
-  
+
   // Integrations
   integrations: [tailwind()],
 

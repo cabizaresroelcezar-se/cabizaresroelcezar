@@ -50,5 +50,5 @@ export default {
     },
   },
   plugins: [],
-  darkMode: false, // We're using a dark design as default
+  darkMode: 'media', // Dark design as default, no light mode toggle needed
 };
