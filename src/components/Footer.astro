@@ -1,39 +1,92 @@
+﻿---
 ---
----
 
-<footer class="bg-black border-t border-zinc-800 mt-20">
-  <div class="max-w-6xl mx-auto px-[7.2%] py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-      <div>
-        <h3 class="font-bold text-white mb-4">Roel Cezar Cabizares</h3>
-        <p class="text-gray-400 text-sm">Software Engineer specializing in front-end development & digital experience based in the Philippines</p>
-      </div>
-      
-      <div>
-        <h4 class="font-semibold text-white mb-4">Quick Links</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/#about-me" class="text-gray-400 hover:text-white transition-colors">About</a></li>
-          <li><a href="/#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-          <li><a href="/#works" class="text-gray-400 hover:text-white transition-colors">Works</a></li>
-          <li><a href="/#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-semibold text-white mb-4">Connect</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="https://github.com/cabizaresroelcezar" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">GitHub</a></li>
-          <li><a href="https://linkedin.com/in/roelcezar" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a></li>
-          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">Twitter</a></li>
-          <li><a href="mailto:hello@cabizares.com" class="text-gray-400 hover:text-white transition-colors">Email</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="border-t border-zinc-800 pt-8">
-      <p class="text-center text-gray-600 text-sm">
-        © {new Date().getFullYear()} Roel Cezar Cabizares. All rights reserved.
-      </p>
-    </div>
+<footer>
+  <div data-aos="fade-up" class="col">
+    <a href="#about-me">
+      <img src="/logo.png" alt="cabizaresroelcezar logo" width="180" height="172" loading="lazy" />
+    </a>
+  </div>
+  <div data-aos="fade-up" class="col">
+    <address>
+      +63<br />
+      Quezon City, 1115 / Manila, 1016 <br />
+      National Capital Region, Philippines
+    </address>
+  </div>
+  <div data-aos="fade-up" class="col social-col">
+    <a href="https://www.facebook.com/cabzcbzrs" target="_blank" rel="noopener noreferrer">
+      <img src="/facebook.svg" alt="facebook" loading="lazy" />
+    </a>
+    <a href="https://www.instagram.com/cabzcbzrs" target="_blank" rel="noopener noreferrer">
+      <img src="/instagram.svg" alt="instagram" loading="lazy" />
+    </a>
+    <a href="https://www.linkedin.com/in/cabizaresroelcezar/" target="_blank" rel="noopener noreferrer">
+      <img src="/linkedin.svg" alt="linkedin" loading="lazy" />
+    </a>
   </div>
 </footer>
+
+<style>
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 0 3%;
+    border-top: 1px solid var(--border);
+    margin-top: 4%;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  address {
+    font-style: normal;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 2;
+  }
+
+  .social-col {
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .social-col img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+    transition: opacity 0.3s, filter 0.3s;
+  }
+
+  :global([data-theme="dark"]) .social-col img {
+    filter: invert(1);
+  }
+
+  :global([data-theme="light"]) .social-col img {
+    filter: invert(0);
+  }
+
+  .social-col a:hover img {
+    opacity: 1;
+  }
+
+  @media only screen and (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .social-col {
+      justify-content: flex-start;
+    }
+  }
+</style>

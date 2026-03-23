@@ -11,7 +11,7 @@ export default defineConfig({
 
   // Development server settings
   server: {
-    port: 3000,
+    port: 4322,
     host: true,
   },
 

@@ -1,77 +1,93 @@
----
-interface Props {
-  mobileHidden?: boolean;
-}
-
-const { mobileHidden = false } = Astro.props;
+﻿---
 ---
 
-<header class={`${mobileHidden ? 'hidden' : ''}`}>
-  <h1 class="text-center">
-    <a href="/" class="hover:opacity-80 transition-opacity">
-      <img src="/logo.png" alt="Roel Cezar Cabizares" width="64" height="62" class="w-16 h-auto" />
+<header class="is-hidden">
+  <h1>
+    <a href="/">
+      <img src="/logo.png" alt="Roel Cezar Cabizares" width="64" height="62" />
     </a>
   </h1>
-  
-  <nav class="flex-1 flex justify-end items-center gap-[5%]">
-    <a href="/#about-me" class="text-gray-400 hover:text-white transition-colors uppercase font-medium tracking-[1px]">About Me</a>
-    <a href="/#services" class="text-gray-400 hover:text-white transition-colors uppercase font-medium tracking-[1px]">Services</a>
-    <a href="/#works" class="text-gray-400 hover:text-white transition-colors uppercase font-medium tracking-[1px]">Works</a>
-    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors uppercase font-medium tracking-[1px]">CV</a>
-    <a href="/#contact" class="text-black bg-white border-2 border-white px-6 py-3.5 font-medium tracking-[1px] uppercase transition-all duration-400 hover:bg-transparent hover:text-white">Contact</a>
+
+  <nav>
+    <a href="#about-me">About Me</a>
+    <a href="#services">Services</a>
+    <a href="#works">Works</a>
+    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <button id="mobile-menu-btn" class="hidden md:hidden p-2 hover:bg-gray-900 rounded-lg transition">
-    <span class="sr-only">Open menu</span>
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-  </button>
+  <a href="javascript: void(0);" id="mobile-menu-btn" class="menu-toggle">Menu</a>
 </header>
 
-<!-- Mobile menu -->
-<div id="mobile-menu" class="hidden fixed top-20 left-0 right-0 bg-black bg-opacity-95 backdrop-blur z-10">
-  <div class="px-4 py-4 space-y-2 max-w-6xl mx-auto">
-    <a href="/#about-me" class="block py-3 text-gray-400 hover:text-white transition-colors uppercase font-medium">About Me</a>
-    <a href="/#services" class="block py-3 text-gray-400 hover:text-white transition-colors uppercase font-medium">Services</a>
-    <a href="/#works" class="block py-3 text-gray-400 hover:text-white transition-colors uppercase font-medium">Works</a>
-    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" class="block py-3 text-gray-400 hover:text-white transition-colors uppercase font-medium">CV</a>
-    <a href="/#contact" class="block py-3 text-black bg-white px-4 font-medium uppercase hover:bg-transparent hover:text-white transition-all">Contact</a>
-  </div>
-</div>
-
 <script>
+  // Show/hide header on scroll
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (!header) return;
+    window.scrollY > 200
+      ? header.classList.remove('is-hidden')
+      : header.classList.add('is-hidden');
+  });
+
+  // Mobile menu toggle
   const menuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn?.addEventListener('click', () => {
+    const header = document.querySelector('header');
+    if (menuBtn.classList.contains('active')) {
+      header?.classList.remove('responsive');
+      menuBtn.classList.remove('active');
+    } else {
+      header?.classList.add('responsive');
+      menuBtn.classList.add('active');
+    }
+  });
 
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuBtn.classList.toggle('active');
-    });
-
-    // Close menu when a link is clicked
-    const menuLinks = mobileMenu.querySelectorAll('a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuBtn.classList.remove('active');
+  // IntersectionObserver for active nav links
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const sectionClass = entry.target.classList[0];
+        const navLink = document.querySelector(`header nav a[href*='#${sectionClass}']`);
+        if (navLink) {
+          entry.isIntersecting
+            ? navLink.classList.add('active')
+            : navLink.classList.remove('active');
+        }
       });
-    });
+    },
+    { threshold: 0.25 }
+  );
+
+  ['about-me', 'services', 'works', 'contact'].forEach((cls) => {
+    const el = document.querySelector(`.${cls}`);
+    if (el) observer.observe(el);
+  });
+
+  // Hash-based scroll on load
+  if (location.hash !== '') {
+    document.querySelector(location.hash)?.scrollIntoView();
   }
+
+  window.addEventListener('popstate', () => {
+    document.querySelector('header')?.classList.remove('responsive');
+    menuBtn?.classList.remove('active');
+    if (location.hash !== '') {
+      document.querySelector(location.hash)?.scrollIntoView();
+    }
+  });
 </script>
 
 <style>
   header {
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+    background-color: var(--dock-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     position: fixed;
     z-index: 9;
     top: 0;
     left: 0;
     right: 0;
-    width: 100vw;
+    width: 100%;
     max-width: 1600px;
     margin: 0 auto;
     padding: 1.1rem 7.2%;
@@ -83,6 +99,11 @@ const { mobileHidden = false } = Astro.props;
     visibility: visible;
   }
 
+  header.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
   header h1 {
     text-align: center;
   }
@@ -92,10 +113,11 @@ const { mobileHidden = false } = Astro.props;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    gap: 5%;
   }
 
   header nav a {
-    color: #999;
+    color: var(--text-secondary);
     display: inline-block;
     padding: 12px 0;
     text-transform: uppercase;
@@ -106,33 +128,66 @@ const { mobileHidden = false } = Astro.props;
 
   header nav a:hover,
   header nav a.active {
-    color: #fff;
-    text-shadow: -0.25px -0.25px 0 #fff, 0.25px 0.25px #fff;
+    color: var(--color-orange);
+    text-shadow: none;
   }
 
   header nav a:last-of-type {
     color: #000;
-    border: solid 2px #fff;
-    background-color: #fff;
+    border: solid 2px var(--color-orange);
+    background-color: var(--color-orange);
     padding: 14px 24px;
     transition: color 0.4s, border-color 0.4s, background-color 0.4s, text-shadow 0.4s;
   }
 
   header nav a:last-of-type:hover,
   header nav a:last-of-type.active {
-    color: #fff;
-    border-color: #252525;
+    color: var(--text-primary);
+    border-color: var(--color-orange);
     background-color: transparent;
     text-shadow: unset;
   }
 
+  .menu-toggle {
+    display: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 8px 0;
+    text-decoration: none;
+  }
+
+  .menu-toggle.active {
+    color: #fff;
+  }
+
   @media only screen and (max-width: 768px) {
-    #mobile-menu-btn {
-      display: block !important;
+    .menu-toggle {
+      display: block;
     }
 
     header nav {
       display: none;
+    }
+
+    header.responsive {
+      flex-wrap: wrap;
+      padding-bottom: 1rem;
+    }
+
+    header.responsive nav {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+      padding-top: 1rem;
+    }
+
+    header.responsive nav a {
+      padding: 12px 0;
+      width: 100%;
     }
   }
 </style>

@@ -1,0 +1,164 @@
+---
+/**
+ * SpatialHero — Immersive hero section featuring:
+ *   - A morphing glass/liquid 3D shape with inner orbs
+ *   - Scroll-reactive parallax (shape translates & rotates with scroll depth)
+ *   - Ambient dot-grid background
+ *   - Chromatic edge treatments
+ */
+interface Props {
+  heading?: string;
+  subheading?: string;
+  description?: string;
+}
+
+const {
+  heading = 'Hi there,',
+  subheading = "I'm Roel Cezar Cabizares",
+  description = "I'm a software engineer specializing in front-end development, UI/UX, and digital experience.",
+} = Astro.props;
+---
+
+<section class="hero-spatial" id="hero">
+  <!-- Ambient grid -->
+  <div class="ambient-grid"></div>
+
+  <!-- 3D Glass Shape -->
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-shape" id="hero-shape">
+      <div class="orb"></div>
+      <div class="orb"></div>
+      <div class="orb"></div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="hero-content" style="position:relative; z-index:2;">
+    <h2 class="hero-line-1" data-aos="fade-right" data-aos-delay="100">
+      {heading}
+    </h2>
+    <h2 class="hero-line-2" data-aos="fade-right" data-aos-delay="250">
+      <span class="hero-accent">{subheading}</span>
+    </h2>
+    <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+      {description}
+    </p>
+    <div class="hero-scroll-hint" data-aos="fade-up" data-aos-delay="600">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Scroll</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  /* ── Scroll-reactive parallax for 3D shape ── */
+  const shape = document.getElementById('hero-shape');
+  if (shape) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const depth = Math.min(scrollY / 800, 1); // 0→1 over 800px
+          const translateY = -50 + depth * -15;
+          const rotateZ = depth * 12;
+          const scale = 1 - depth * 0.15;
+          const blur = 60 + depth * 30;
+          shape.style.transform =
+            `translateY(${translateY}%) translateX(${depth * 20}px) rotate(${rotateZ}deg) scale(${scale})`;
+          shape.style.filter = `blur(0px)`;
+          shape.style.opacity = String(1 - depth * 0.4);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+</script>
+
+<style>
+  /* Hero text */
+  .hero-line-1 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--text-muted);
+    margin: 0;
+    padding: 0;
+    letter-spacing: unset;
+    text-transform: unset;
+    line-height: 1.3;
+  }
+
+  .hero-line-2 {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    letter-spacing: unset;
+    text-transform: unset;
+    line-height: 1.1;
+    cursor: default;
+  }
+
+  .hero-accent {
+    display: inline;
+    background: linear-gradient(
+      135deg,
+      var(--text-primary) 0%,
+      var(--color-orange) 60%,
+      #ff9a44 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-description {
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 55ch;
+    margin-top: 2rem;
+  }
+
+  /* Scroll hint */
+  .hero-scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 4rem;
+    width: fit-content;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255, 117, 24, 0.6), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  .scroll-text {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    50% { opacity: 0.4; transform: scaleY(0.6); }
+  }
+
+  @media (max-width: 768px) {
+    .hero-line-2 {
+      white-space: normal;
+    }
+
+    .hero-scroll-hint {
+      margin-top: 2rem;
+    }
+  }
+</style>

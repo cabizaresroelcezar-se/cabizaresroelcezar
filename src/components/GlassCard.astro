@@ -1,0 +1,188 @@
+---
+/**
+ * GlassCard — Experimental refractive glass card with:
+ *   - 3D tilt on mouse move (perspective/Z-axis transforms)
+ *   - Chromatic aberration edge on hover
+ *   - Floating glow orb that tracks the cursor behind the glass
+ *   - Glass "thickness" illusion on hover
+ */
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  type?: 'web-development' | 'design' | 'digital-marketing';
+  accentColor?: string;
+}
+
+const {
+  icon,
+  title,
+  description,
+  type = 'web-development',
+  accentColor,
+} = Astro.props;
+
+const accents: Record<string, string> = {
+  'web-development':   '#FF7518',
+  'design':            '#ff9a44',
+  'digital-marketing': '#e05e00',
+};
+const accent = accentColor || accents[type] || '#FF7518';
+---
+
+<div class="perspective-container" data-aos="fade-up" data-aos-delay="100">
+  <div
+    class={`glass-card glass glass-thickness chromatic-edge inner-glow floating-glow tilt-card ${type}`}
+    data-accent={accent}
+    style={`--card-accent: ${accent};`}
+  >
+    <!-- Floating glow orb (positioned by JS) -->
+    <div class="glow-orb"></div>
+
+    <!-- Content (above glow, z-index 2) -->
+    <div class="card-content">
+      <div class="card-icon" style={`background: ${accent}30;`}>
+        <img src={icon} alt={title} width="40" height="40" loading="lazy" />
+      </div>
+      <h3 class="card-title">{title}</h3>
+      <p class="card-desc">{description}</p>
+    </div>
+
+    <!-- Bottom accent bar -->
+    <div class="card-accent-bar" style={`background: ${accent};`}></div>
+  </div>
+</div>
+
+<script>
+  /* ── 3D Tilt + Cursor Glow Tracker ── */
+  document.querySelectorAll<HTMLElement>('.glass-card').forEach((card) => {
+    const orb = card.querySelector<HTMLElement>('.glow-orb');
+    const maxTilt = 8;
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+
+      /* Tilt */
+      const tiltX = ((y - cy) / cy) * -maxTilt;
+      const tiltY = ((x - cx) / cx) * maxTilt;
+      card.style.transform =
+        `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.02)`;
+
+      /* Inner glow position */
+      const px = ((x / rect.width) * 100).toFixed(1);
+      const py = ((y / rect.height) * 100).toFixed(1);
+      card.style.setProperty('--glow-x', px + '%');
+      card.style.setProperty('--glow-y', py + '%');
+
+      /* Move orb */
+      if (orb) {
+        orb.style.left = x + 'px';
+        orb.style.top = y + 'px';
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.setProperty('--glow-x', '50%');
+      card.style.setProperty('--glow-y', '50%');
+    });
+  });
+</script>
+
+<style>
+  .perspective-container {
+    perspective: 1200px;
+  }
+
+  .glass-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    min-height: 320px;
+    padding: 2rem 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-card, 1.6rem);
+    transform-style: preserve-3d;
+    will-change: transform;
+    cursor: default;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .card-icon {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .glass-card:hover .card-icon {
+    transform: translateZ(20px) scale(1.08);
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+  }
+
+  .card-desc {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  /* Bottom accent bar */
+  .card-accent-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 0 0 var(--radius-card, 1.6rem) var(--radius-card, 1.6rem);
+    opacity: 0.6;
+    transition: opacity 0.4s, height 0.4s;
+  }
+
+  .glass-card:hover .card-accent-bar {
+    opacity: 1;
+    height: 6px;
+  }
+
+  /* Override glow orb color per card accent */
+  .glass-card .glow-orb {
+    background: radial-gradient(circle, var(--card-accent, rgba(255,117,24,0.25)), transparent 70%);
+  }
+
+  @media (max-width: 768px) {
+    .glass-card {
+      max-width: 100%;
+      min-height: 260px;
+      padding: 1.5rem;
+    }
+  }
+</style>

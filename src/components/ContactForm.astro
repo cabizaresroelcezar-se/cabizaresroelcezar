@@ -141,7 +141,7 @@
 
   .form-label {
     display: block;
-    color: #fff;
+    color: var(--text-primary);
     font-weight: 300;
     margin-bottom: 0;
     font-size: 1rem;
@@ -152,8 +152,8 @@
     width: 100%;
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid #333;
-    color: #fff;
+    border-bottom: 2px solid var(--border);
+    color: var(--text-primary);
     padding: 0.5rem 0;
     font-family: inherit;
     font-size: 1rem;
@@ -162,13 +162,13 @@
 
   .form-input::placeholder,
   .form-textarea::placeholder {
-    color: #666;
+    color: var(--text-muted);
   }
 
   .form-input:focus,
   .form-textarea:focus {
     outline: none;
-    border-bottom-color: #fff;
+    border-bottom-color: var(--color-orange);
   }
 
   .form-textarea {
@@ -177,22 +177,22 @@
 
   .form-button {
     padding: 1rem 3rem;
-    background-color: #fff;
+    background-color: var(--color-orange);
     color: #000;
     font-weight: 500;
     font-size: 1rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    border: solid 2px #fff;
+    border: solid 2px var(--color-orange);
     cursor: pointer;
     transition: all 0.4s ease;
   }
 
   .form-button:hover {
     background-color: transparent;
-    border-color: #252525;
-    color: #fff;
-    text-shadow: -0.25px -0.25px 0 #fff, 0.25px 0.25px #fff;
+    border-color: var(--color-orange);
+    color: var(--text-primary);
+    text-shadow: none;
   }
 
   #form-status {

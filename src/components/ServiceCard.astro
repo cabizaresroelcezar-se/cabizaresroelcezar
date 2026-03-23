@@ -3,7 +3,7 @@ interface Props {
   icon: string;
   title: string;
   description: string;
-  type?: 'web-development' | 'design' | 'marketing';
+  type?: 'web-development' | 'design' | 'digital-marketing';
 }
 
 const { icon, title, description, type = 'web-development' } = Astro.props;
@@ -14,7 +14,7 @@ const { icon, title, description, type = 'web-development' } = Astro.props;
     <img src={icon} alt={title} class="w-16 h-16" />
   </div>
   <h3 class="text-2xl font-bold text-white text-center mb-4">{title}</h3>
-  <p class="text-center text-gray-400 leading-relaxed">{description}</p>
+  <p class="text-center leading-relaxed">{description}</p>
 </div>
 
 <style>
@@ -46,15 +46,15 @@ const { icon, title, description, type = 'web-development' } = Astro.props;
   }
 
   .services-card.web-development .services-card-icon {
-    background: rgba(227, 31, 113, 0.2);
+    background: rgba(115, 114, 110, 1);
   }
 
   .services-card.design .services-card-icon {
-    background: rgba(255, 97, 25, 0.2);
+    background: rgba(92, 91, 88, 1);
   }
 
-  .services-card.marketing .services-card-icon {
-    background: rgba(102, 126, 234, 0.2);
+  .services-card.digital-marketing .services-card-icon {
+    background: rgba(69, 68, 66, 1);
   }
 
   .services-card::after {
@@ -68,15 +68,15 @@ const { icon, title, description, type = 'web-development' } = Astro.props;
   }
 
   .services-card.web-development::after {
-    background: #e31f71;
+    background: #73726e;
   }
 
   .services-card.design::after {
-    background: #ff6119;
+    background: #5c5b58;
   }
 
-  .services-card.marketing::after {
-    background: #667eea;
+  .services-card.digital-marketing::after {
+    background: #454442;
   }
 
   @media only screen and (max-width: 768px) {
