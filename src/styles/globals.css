@@ -2,167 +2,131 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ══════════════════════════════════════════════════
+   Globals — Typography, Layout & Utility Layer
+   ══════════════════════════════════════════════════ */
+
 @layer base {
   body {
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
+    font-family: "Manrope", system-ui, sans-serif;
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 1;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   a {
     color: var(--text-primary);
     text-decoration: none;
   }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Focus-visible for keyboard accessibility */
+  :focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Selection */
+  ::selection {
+    background: var(--color-orange);
+    color: #000;
+  }
+
+  /* Scroll-margin for anchor jump links */
+  [id] {
+    scroll-margin-top: 2rem;
+  }
 }
 
 @layer components {
-  /* Hero */
-  .hero-heading {
-    font-size: 5.5rem;
-    font-weight: 700;
-    line-height: 1.1;
-    cursor: default;
-    white-space: nowrap;
+  /* ── Wrapper ── */
+  .wrapper {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
   }
 
-  .intro-description {
-    font-size: 1.5rem;
-    font-weight: 300;
-    opacity: 0.8;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    padding-top: 2.5rem;
-    max-width: 80%;
-  }
-
-  /* Sections */
+  /* ── Sections ── */
   .section-wrapper {
-    padding: 8.5% 0;
+    padding: clamp(6rem, 12vw, 12rem) 0;
   }
 
   .section-title {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 700;
     color: var(--text-primary);
-    padding-top: 2.5%;
-    padding-bottom: 4%;
-    line-height: 1.2;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
   }
 
-  /* Content */
+  .subsection-title {
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    padding: clamp(2rem, 4vw, 3.5rem) 0 clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  /* ── Content Text ── */
   .content-paragraph {
-    font-size: 2.3rem;
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
     font-weight: 300;
-    line-height: 1.8;
-    margin-bottom: 3rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
   }
 
   .content-paragraph:last-of-type {
     margin-bottom: 0;
   }
 
-  .content-link {
-    padding: 10px 0;
-    position: relative;
-    font-weight: 500;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  .text-section {
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+    line-height: 1.75;
+    color: var(--text-secondary);
   }
 
-  .content-link::before {
-    content: "";
-    height: 5px;
-    width: 100%;
-    background-color: var(--link-underline, #666);
-    position: absolute;
-    left: 0;
-    top: 100%;
+  /* ── Content Link (animated underline) ── */
+  .content-link {
+    position: relative;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    padding-bottom: 4px;
   }
 
   .content-link::after {
     content: "";
-    height: 5px;
-    width: 0;
-    background-color: var(--color-orange);
     position: absolute;
     left: 0;
-    top: 100%;
-    transition: width 0.4s;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-orange);
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .content-link:hover::after {
     width: 100%;
   }
 
-  .text-section {
-    font-size: 1.3rem;
-    line-height: 1.8;
-  }
-
-  /* Services list */
-  .services-list-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5%;
-  }
-
-  .services-list-item {
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    padding: 14px;
-    border: solid 2px var(--services-tag-border, #252525);
-    margin-bottom: 3%;
-    cursor: pointer;
-    transition: all 0.4s;
-  }
-
-  .services-list-item:hover {
-    color: var(--services-tag-hover-text, #000);
-    border-color: var(--color-orange);
-    background-color: var(--color-orange);
-    text-shadow: none;
-  }
-}
-
-@layer utilities {
-  .letter-spacing-1 {
-    letter-spacing: 1px;
-  }
-}
-
-/* Wrapper */
-.wrapper {
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 7.2%;
-  box-sizing: border-box;
-}
-
-/* Responsive */
-@media only screen and (max-width: 768px) {
-  .hero-heading {
-    font-size: 2.5rem;
-    white-space: normal;
-  }
-
-  .intro-description {
-    max-width: 100%;
-  }
-
-  .content-paragraph {
-    font-size: 1.5rem;
-    line-height: 1.6;
-  }
-
-  .text-section {
-    font-size: 1rem;
-  }
-
-  .section-wrapper {
-    padding: 12% 0;
+  /* ── Smart Bold ── */
+  .content-paragraph strong,
+  .text-section strong {
+    font-weight: 700;
+    color: var(--text-primary);
   }
 }

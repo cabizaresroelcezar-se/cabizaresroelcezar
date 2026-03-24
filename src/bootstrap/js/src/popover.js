@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import Tooltip from './tooltip'
+import Tooltip from './tooltip.js'
 
 /**
  * --------------------------------------------------------------------------

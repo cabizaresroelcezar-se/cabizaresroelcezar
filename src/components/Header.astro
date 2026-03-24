@@ -4,7 +4,8 @@
 <header class="is-hidden">
   <h1>
     <a href="/">
-      <img src="/logo.png" alt="Roel Cezar Cabizares" width="64" height="62" />
+      <img src="/logo.png" alt="Roel Cezar Cabizares" width="64" height="62" class="logo-dark" />
+      <img src="/logo_light.png" alt="Roel Cezar Cabizares" width="64" height="62" class="logo-light" />
     </a>
   </h1>
 
@@ -107,6 +108,10 @@
   header h1 {
     text-align: center;
   }
+
+  .logo-light { display: none; }
+  :global([data-theme="light"]) .logo-dark { display: none; }
+  :global([data-theme="light"]) .logo-light { display: block; }
 
   header nav {
     flex: 1;

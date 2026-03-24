@@ -1,8 +1,6 @@
 ---
-import '../../src/bootstrap/dist/css/bootstrap.min.css';
 import '../styles/style.css';
 import '../styles/globals.css';
-import '../styles/cabzcbzrs.css';
 import '../styles/spatial.css';
 import 'aos/dist/aos.css';
 
@@ -24,9 +22,14 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content={description} />
     <meta name="robots" content="max-image-preview:large" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="/fonts/manrope-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/manrope-300.woff2" as="font" type="font/woff2" crossorigin />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -62,7 +65,6 @@ const {
       })(window, document, 'script', 'dataLayer', 'GTM-M3KQ45N');
     </script>
 
-
     <title>{title}</title>
 
     <!-- Theme: restore preference before paint -->
@@ -84,15 +86,33 @@ const {
       <slot />
     </div>
 
+    <!-- Cursor ambient glow -->
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
     <!-- AOS Script -->
     <script>
       import AOS from 'aos';
       AOS.init({
         duration: 600,
-        easing: 'ease-in-out',
-        once: false,
-        mirror: true,
+        easing: 'ease-out-cubic',
+        once: true,
       });
+    </script>
+
+    <!-- Cursor glow tracker -->
+    <script>
+      const cursorGlow = document.getElementById('cursor-glow');
+      if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+        let gRaf: number | null = null;
+        document.addEventListener('mousemove', (e: MouseEvent) => {
+          if (gRaf) return;
+          gRaf = requestAnimationFrame(() => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top = e.clientY + 'px';
+            gRaf = null;
+          });
+        });
+      }
     </script>
   </body>
 </html>

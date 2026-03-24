@@ -1,92 +1,119 @@
-﻿---
+---
+const year = new Date().getFullYear();
 ---
 
 <footer>
-  <div data-aos="fade-up" class="col">
-    <a href="#about-me">
-      <img src="/logo.png" alt="cabizaresroelcezar logo" width="180" height="172" loading="lazy" />
-    </a>
-  </div>
-  <div data-aos="fade-up" class="col">
-    <address>
-      +63<br />
-      Quezon City, 1115 / Manila, 1016 <br />
+  <div class="footer-grid">
+    <div class="footer-brand" data-aos="fade-up">
+      <a href="#hero" aria-label="Back to top">
+        <img src="/logo.png" alt="cabizaresroelcezar logo" width="48" height="46" loading="lazy" class="logo-dark" />
+        <img src="/logo_light.png" alt="cabizaresroelcezar logo" width="48" height="46" loading="lazy" class="logo-light" />
+      </a>
+    </div>
+
+    <address class="footer-address" data-aos="fade-up">
+      Quezon City, 1115 / Manila, 1016<br />
       National Capital Region, Philippines
     </address>
+
+    <div class="footer-social" data-aos="fade-up">
+      <a href="https://www.facebook.com/cabzcbzrs" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <img src="/facebook.svg" alt="" width="20" height="20" loading="lazy" />
+      </a>
+      <a href="https://www.instagram.com/cabzcbzrs" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="/instagram.svg" alt="" width="20" height="20" loading="lazy" />
+      </a>
+      <a href="https://www.linkedin.com/in/cabizaresroelcezar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="/linkedin.svg" alt="" width="20" height="20" loading="lazy" />
+      </a>
+    </div>
   </div>
-  <div data-aos="fade-up" class="col social-col">
-    <a href="https://www.facebook.com/cabzcbzrs" target="_blank" rel="noopener noreferrer">
-      <img src="/facebook.svg" alt="facebook" loading="lazy" />
-    </a>
-    <a href="https://www.instagram.com/cabzcbzrs" target="_blank" rel="noopener noreferrer">
-      <img src="/instagram.svg" alt="instagram" loading="lazy" />
-    </a>
-    <a href="https://www.linkedin.com/in/cabizaresroelcezar/" target="_blank" rel="noopener noreferrer">
-      <img src="/linkedin.svg" alt="linkedin" loading="lazy" />
-    </a>
-  </div>
+
+  <p class="footer-copy">
+    &copy; {year} Roel Cezar Cabizares
+  </p>
 </footer>
 
 <style>
   footer {
+    border-top: 1px solid var(--border);
+    margin-top: clamp(3rem, 6vw, 5rem);
+    padding: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 5vw, 7.2%) clamp(1.5rem, 3vw, 2rem);
+    max-width: 1600px;
+    margin-inline: auto;
+  }
+
+  .footer-grid {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5% 0 3%;
-    border-top: 1px solid var(--border);
-    margin-top: 4%;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
-  .col {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  .footer-brand img {
+    opacity: 0.6;
+    transition: opacity 0.3s;
   }
+
+  .footer-brand img:hover {
+    opacity: 1;
+  }
+
+  .footer-brand .logo-light { display: none; }
+  :global([data-theme="dark"]) .footer-brand .logo-dark { filter: invert(1); }
+  :global([data-theme="light"]) .footer-brand .logo-dark { display: none; }
+  :global([data-theme="light"]) .footer-brand .logo-light { display: block; }
 
   address {
     font-style: normal;
     color: var(--text-muted);
     font-size: 0.9rem;
-    line-height: 2;
+    line-height: 1.8;
+    text-align: center;
   }
 
-  .social-col {
-    flex-direction: row;
-    gap: 1.5rem;
+  .footer-social {
+    display: flex;
+    gap: 1rem;
     align-items: center;
-    justify-content: flex-end;
   }
 
-  .social-col img {
-    width: 24px;
-    height: 24px;
-    opacity: 0.5;
-    transition: opacity 0.3s, filter 0.3s;
+  .footer-social img {
+    opacity: 0.4;
+    transition: opacity 0.3s;
   }
 
-  :global([data-theme="dark"]) .social-col img {
+  :global([data-theme="dark"]) .footer-social img {
     filter: invert(1);
   }
 
-  :global([data-theme="light"]) .social-col img {
-    filter: invert(0);
-  }
-
-  .social-col a:hover img {
+  .footer-social a:hover img {
     opacity: 1;
   }
 
-  @media only screen and (max-width: 768px) {
-    footer {
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    letter-spacing: 0.5px;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
       flex-direction: column;
       align-items: flex-start;
+      gap: 1.25rem;
     }
 
-    .social-col {
-      justify-content: flex-start;
+    address {
+      text-align: left;
+    }
+
+    .footer-copy {
+      text-align: left;
     }
   }
 </style>

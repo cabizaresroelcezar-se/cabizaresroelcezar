@@ -45,6 +45,10 @@
   --services-tag-hover-bg: var(--color-orange);
   --services-tag-hover-text: #000;
 
+  --section-bg:       #0a0a0a;
+  --section-bg-alt:   #111111;
+  --outline-stroke:   rgba(255,255,255,0.06);
+
   --link-underline:   #666;
   --link-underline-hover: var(--color-orange);
 
@@ -90,6 +94,10 @@
   --services-tag-border: #ccc;
   --services-tag-hover-bg: var(--color-orange);
   --services-tag-hover-text: #fff;
+
+  --section-bg:       #F5F5F7;
+  --section-bg-alt:   #EBEBED;
+  --outline-stroke:   rgba(0,0,0,0.06);
 
   --link-underline:   #ccc;
   --link-underline-hover: var(--color-orange);
@@ -353,6 +361,7 @@ body {
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  padding-inline: clamp(1.25rem, 5vw, 7.2%);
 }
 
 .hero-spatial .hero-bg {
@@ -365,9 +374,9 @@ body {
 .hero-spatial .hero-shape {
   position: absolute;
   top: 50%;
-  right: 10%;
-  width: 420px;
-  height: 420px;
+  right: 8%;
+  width: 500px;
+  height: 500px;
   transform: translateY(-50%);
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   background: var(--hero-shape-bg);
@@ -436,6 +445,213 @@ body {
   z-index: 0;
 }
 
+/* ── Vertical Section Layout ── */
+
+.section-panel {
+  position: relative;
+  padding: clamp(6rem, 12vw, 12rem) clamp(1.25rem, 5vw, 7.2%);
+  background: var(--section-bg);
+  overflow: hidden;
+}
+
+.section-panel--alt {
+  background: var(--section-bg-alt);
+}
+
+.section-inner {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Statement panel */
+.statement-panel {
+  text-align: center;
+}
+
+.statement-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Scroll Progress Bar ── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-orange);
+  z-index: 100;
+  pointer-events: none;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+/* ── Outline / Stroke Decorative Text ── */
+
+.outline-text {
+  position: absolute;
+  top: clamp(2rem, 6vw, 5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: clamp(4rem, 12vw, 12rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--outline-stroke);
+  text-stroke: 1.5px var(--outline-stroke);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: 0;
+}
+
+/* Outline text slide direction variants (initial offset — GSAP animates) */
+.outline-text--left {
+  transform: translateX(-50%) translateX(-40px);
+}
+
+.outline-text--right {
+  transform: translateX(-50%) translateX(40px);
+}
+
+/* Mobile: smaller outline text */
+@media (max-width: 768px) {
+  .outline-text {
+    font-size: clamp(2.5rem, 14vw, 5rem);
+    -webkit-text-stroke-width: 1px;
+  }
+}
+
+/* ── Statement ── */
+.statement-outline {
+  font-size: clamp(3rem, 10vw, 10rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--outline-stroke);
+  text-stroke: 1.5px var(--outline-stroke);
+  user-select: none;
+  margin-bottom: 2rem;
+}
+
+.statement-solid {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 56ch;
+}
+
+.statement-solid strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ── Section reveal: clip from bottom ── */
+.section-panel .section-inner > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Custom AOS: Morph-Up ── */
+[data-aos="morph-up"] {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(30px) scale(0.97);
+  transition-property: opacity, filter, transform !important;
+}
+
+[data-aos="morph-up"].aos-animate {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
+/* ── Custom AOS: Reveal-Left ── */
+[data-aos="reveal-left"] {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition-property: opacity, transform !important;
+}
+
+[data-aos="reveal-left"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Custom AOS: Reveal-Right ── */
+[data-aos="reveal-right"] {
+  opacity: 0;
+  transform: translateX(60px);
+  transition-property: opacity, transform !important;
+}
+
+[data-aos="reveal-right"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Custom AOS: Scale-In ── */
+[data-aos="scale-in"] {
+  opacity: 0;
+  transform: scale(0.9);
+  transition-property: opacity, transform !important;
+}
+
+[data-aos="scale-in"].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Page Entrance ── */
+@keyframes pageEntrance {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.wrapper {
+  animation: pageEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Cursor Ambient Glow ── */
+.cursor-glow {
+  position: fixed;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-orange-glow), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  will-change: left, top;
+  filter: blur(60px);
+}
+
+@media (pointer: fine) {
+  body:hover .cursor-glow {
+    opacity: 0.5;
+  }
+}
+
 /* ── Responsive Dock ── */
 @media (max-width: 768px) {
   .spatial-dock {
@@ -451,9 +667,38 @@ body {
   }
 
   .hero-spatial .hero-shape {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
     right: -5%;
     opacity: 0.6;
+  }
+
+  /* Vertical sections — mobile padding */
+  .section-panel {
+    padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 5vw, 7.2%);
+  }
+
+  .scroll-progress {
+    display: none;
+  }
+
+  .outline-text {
+    font-size: clamp(2.5rem, 14vw, 5rem);
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .statement-outline {
+    font-size: clamp(2rem, 12vw, 4rem);
+    -webkit-text-stroke-width: 1px;
+  }
+}
+
+/* ── Tablet refinements ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-spatial .hero-shape {
+    width: 350px;
+    height: 350px;
+    right: 2%;
+    opacity: 0.5;
   }
 }

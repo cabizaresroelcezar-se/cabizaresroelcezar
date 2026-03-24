@@ -1,66 +1,68 @@
-﻿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import SpatialDock from '../components/SpatialDock.astro';
 import SpatialHero from '../components/SpatialHero.astro';
 import GlassCard from '../components/GlassCard.astro';
 import Footer from '../components/Footer.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import WorkCard from '../components/WorkCard.astro';
 import ContactForm from '../components/ContactForm.astro';
 ---
 
 <BaseLayout title="Roel Cezar Cabizares - Front-end Developer & Designer">
-  <!-- Legacy header (hidden on desktop, fallback for noscript) -->
   <Header />
-  <!-- Spatial Dock replaces traditional nav -->
   <SpatialDock />
 
   <main>
-    <!-- Spatial Hero -->
+    <!-- Hero (greetings unchanged) -->
     <SpatialHero
       heading="Hi there,"
       subheading="I'm Roel Cezar Cabizares"
       description="I'm a software engineer specializing in front-end development, UI/UX, and digital experience."
     />
 
-    <!-- About Me Section -->
-    <section id="about-me" class="about-me section-wrapper">
-      <div class="content about-grid">
-        <div class="about-text">
-          <h2 class="section-title" data-aos="fade-right">About Me</h2>
-          <div class="about-me_img-mobile" data-aos="fade-up">
-            <img src="/cabz-img.jpg" alt="Roel Cezar Cabizares" class="mobile-portrait" loading="lazy" />
+    <!-- About Me -->
+    <section id="about-me" class="section-panel">
+      <span class="outline-text outline-text--left" aria-hidden="true">About Me</span>
+      <div class="section-inner">
+        <div class="about-grid">
+          <div class="about-text">
+            <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">About Me</h2>
+            <div class="about-me_img-mobile" data-aos="fade-up">
+              <img src="/cabz-img.jpg" alt="Roel Cezar Cabizares" class="mobile-portrait" loading="lazy" />
+            </div>
+            <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700">
+              Hello, I'm a <strong>software engineer &amp; developer</strong> based in the Philippines, and I conserve an
+              expressive passion for <strong>user interface, visual design</strong>, and creating <strong>intuitive, dynamic user experiences</strong>.
+            </p>
+            <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700" data-aos-delay="100">
+              Given enough coffee and inexhaustible enthusiasm, I am <strong>easily inspired</strong> and more willing to
+              follow my ideas wherever they take me. I'm a <strong>dynamic person</strong>, an expressive, talented spirit
+              with an innate ability to entertain and inspire. I'm never satisfied with just coming up
+              with ideas. Instead, I have an <strong>almost impulsive need to act on them</strong>.
+            </p>
+            <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700" data-aos-delay="200">
+              I'm also experienced in and completed various <strong>responsive website designs</strong>,
+              <strong>front-end assets</strong>, and <strong>custom WordPress builds</strong>.
+            </p>
+            <p class="about-cta" data-aos="fade-up" data-aos-delay="300">
+              <a href="#services" class="content-link">Learn more</a>
+            </p>
           </div>
-          <p class="content-paragraph" data-aos="fade-up">
-            Hello, I'm a software engineer &amp; developer based in the Philippines, and I conserve an
-            expressive passion for user interface, visual design, and creating intuitive, dynamic user experiences.
-          </p>
-          <p class="content-paragraph" data-aos="fade-up">
-            Given enough coffee and inexhaustible enthusiasm, I am easily inspired and more willing to
-            follow my ideas wherever they take me. I'm a dynamic person, an expressive, talented spirit
-            with an innate ability to entertain and inspire. I'm never satisfied with just coming up
-            with ideas. Instead, I have an almost impulsive need to act on them.
-          </p>
-          <p class="content-paragraph" data-aos="fade-up">
-            I'm also experienced in and completed various responsive website designs,
-            front-end assets, and custom WordPress builds.
-          </p>
-          <p data-aos="fade-up">
-            <a href="#services" class="content-link">Learn more</a>
-          </p>
-        </div>
-        <div class="about-image" data-aos="fade-left">
-          <img src="/cabz-img.jpg" alt="Roel Cezar Cabizares" loading="lazy" />
+          <div class="about-image" data-aos="reveal-right" data-aos-duration="900">
+            <img src="/cabz-img.jpg" alt="Roel Cezar Cabizares" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services section-wrapper">
-      <h2 class="section-title" data-aos="fade-right">Services</h2>
-      <div class="content">
-        <div class="services-card-wrapper glass-cards-row" data-aos="fade-right">
+    <!-- Services -->
+    <section id="services" class="section-panel section-panel--alt">
+      <span class="outline-text outline-text--right" aria-hidden="true">Services</span>
+      <div class="section-inner">
+        <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">Services</h2>
+
+        <div class="services-grid" data-aos="scale-in" data-aos-duration="800">
           <GlassCard
             icon="/icons/web-development.svg"
             title="Web Development"
@@ -80,413 +82,675 @@ import ContactForm from '../components/ContactForm.astro';
             type="digital-marketing"
           />
         </div>
-      </div>
-      <div class="content services-bottom">
-        <div class="services-list">
-          <h3 data-aos="fade-up">Website Design</h3>
-          <h3 data-aos="fade-up">Website Development</h3>
-          <h3 data-aos="fade-up">User Experience Interaction</h3>
-          <h3 data-aos="fade-up">User Interface Design</h3>
-          <h3 data-aos="fade-up">Figma Wireframes</h3>
-          <h3 data-aos="fade-up">Figma Low-fidelity Prototypes</h3>
-          <h3 data-aos="fade-up">Visual &amp; Identity Design</h3>
-          <h3 data-aos="fade-up">Visual Layout Design</h3>
-          <h3 data-aos="fade-up">WordPress Website Design</h3>
-          <h3 data-aos="fade-up">WordPress Custom Code</h3>
+
+        <div class="services-bottom" data-aos="fade-up" data-aos-delay="200">
+          <div class="services-tags">
+            <button type="button" class="service-tag">Website Design</button>
+            <button type="button" class="service-tag">Website Development</button>
+            <button type="button" class="service-tag">User Experience Interaction</button>
+            <button type="button" class="service-tag">User Interface Design</button>
+            <button type="button" class="service-tag">Figma Wireframes</button>
+            <button type="button" class="service-tag">Figma Low-fidelity Prototypes</button>
+            <button type="button" class="service-tag">Visual &amp; Identity Design</button>
+            <button type="button" class="service-tag">Visual Layout Design</button>
+            <button type="button" class="service-tag">WordPress Website Design</button>
+            <button type="button" class="service-tag">WordPress Custom Code</button>
+          </div>
+          <p class="services-cta">
+            Let's talk and save time;<br />
+            Click on a service to find out how.
+          </p>
         </div>
-        <p data-aos="fade-up" class="services-cta">
-          Let's talk and save time;<br />
-          Click on a service to find out how.
-        </p>
       </div>
     </section>
 
-    <!-- Works Section -->
-    <section id="works" class="works section-wrapper">
-      <h2 class="section-title" data-aos="fade-right">I'm currently working as a Software Engineer</h2>
-      <div class="content">
-        <div class="work_section-employer">
-          <article class="work-article" data-aos="fade-up">
-            <img src="/yondu_logo.png" alt="Yondu Logo" width="100" height="340" class="work-image" loading="lazy" />
-            <div class="work-text">
-              <h3>Yondu Inc.</h3>
-              <p class="text-section font-light leading-relaxed">
-                My bread and butter. Presently functioning and deployed as a .NET developer for Yondu's business
-                client, operates with IT professionals that are interdependent in a team, practices agile
-                methodologies, and directly supports and enhances the current system design approach for the
-                advancement of the company's business objectives.
-              </p>
-              <div class="work-details">
-                <ul>
-                  <li>.net</li>
-                  <li>c# programming language</li>
-                  <li>html</li>
-                  <li>css</li>
-                  <li>javascript</li>
-                  <li>optimizely</li>
-                </ul>
-              </div>
-              <a href="#" class="explore-btn">Explore</a>
+    <!-- Experience -->
+    <section id="works" class="section-panel">
+      <span class="outline-text outline-text--left" aria-hidden="true">Experience</span>
+      <div class="section-inner">
+        <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">I'm currently working as a Software Engineer</h2>
+
+        <!-- Current employer -->
+        <article class="employer-card" data-aos="reveal-left" data-aos-duration="700">
+          <img src="/yondu_logo.png" alt="Yondu Logo" width="80" height="80" class="employer-logo" loading="lazy" />
+          <div class="employer-text">
+            <h3>Yondu Inc.</h3>
+            <p class="text-section">
+              My bread and butter. Presently functioning and deployed as a <strong>.NET developer</strong> for Yondu's business
+              client, operates with IT professionals that are interdependent in a team, practices <strong>agile
+              methodologies</strong>, and directly supports and enhances the current <strong>system design approach</strong> for the
+              advancement of the company's business objectives.
+            </p>
+            <div class="work-details">
+              <ul>
+                <li>.net</li>
+                <li>c# programming language</li>
+                <li>html</li>
+                <li>css</li>
+                <li>javascript</li>
+                <li>optimizely</li>
+              </ul>
             </div>
-          </article>
-        </div>
-
-        <h2 class="subsection-title" data-aos="fade-right">Personal Branding</h2>
-
-        <h2 class="subsection-title" data-aos="fade-right">Projects</h2>
-        <p class="text-section project_section-subtitle" data-aos="fade-up">
-          Mostly a trip down memory lane. To be expanded.
-        </p>
-
-        <WorkCard
-          image="/rescue-8.jpg"
-          title="Rescue 8 Trading Philippines, Inc."
-          description="WooCommerce-powered WordPress build a website with a custom template and content, designed to showcase product and services offered by the company with an online purchase feature for the convenience of the page visitors and potential consumers."
-          tags={['wordpress', 'custom theme', 'wordpress plugin']}
-        />
-        <WorkCard
-          image="/ride-slow.jpg"
-          title="Ride Slow Lifestyle"
-          description="Custom image-centered page layout with WooCommerce store, plugin-based photo gallery, and integration of real-time Facebook messaging functionality to help with the promotion and engagement of the site."
-          tags={['wordpress', 'woocommerce', 'custom css', 'facebook api']}
-        />
-        <WorkCard
-          image="/adyo.jpg"
-          title="Adyó Philippines"
-          description="Brand identity project for an outdoor brand startup Adyó. It's a full-scale trademark identity that delivers optimism and displays visual element that focuses on a vividly inviting and stylishly outdoor look and feel."
-          tags={['brand identity', 'visual design', 'typography', 'logo design']}
-        />
-
-        <section class="project_section-hobby">
-          <h2 class="subsection-title" data-aos="fade-right">Side Projects &amp; Hobby</h2>
-          <p class="text-section project_section-subtitle" data-aos="fade-up">
-            Things I build for fun and personal exploration.
-          </p>
-          <article class="work-article" data-aos="fade-up">
-            <img src="/keycabz_logo.png" alt="thy keycabz Logo" width="100" height="340" class="work-image" loading="lazy" />
-            <div class="work-text">
-              <h3>thy keycabz</h3>
-              <p class="text-section font-light leading-relaxed">
-                A personal hobby project centered around mechanical keyboards  exploration of switches, keycaps,
-                sound profiles, and custom builds. A passion project that merges craftsmanship with tech aesthetics.
-              </p>
-              <div class="work-details">
-                <ul>
-                  <li>mechanical keyboards</li>
-                  <li>custom builds</li>
-                  <li>sound design</li>
-                  <li>keycap art</li>
-                </ul>
-              </div>
-              <a href="#" class="explore-btn">Explore</a>
-            </div>
-          </article>
-        </section>
+            <button type="button" class="explore-btn">Explore</button>
+          </div>
+        </article>
 
         <p data-aos="fade-up" class="works-cta">
-          If you are thinking about hiring me or<br />
-          would like to discuss a project, get in touch with me<br />
+          If you are thinking about <strong>hiring me</strong> or
+          would like to <strong>discuss a project</strong>, get in touch with me
           <a href="#contact" class="content-link">here.</a>
         </p>
       </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="workflow-process section-wrapper">
-      <h2 class="section-title" data-aos="fade-right">Process</h2>
-      <div class="content">
-        <p class="content-paragraph" data-aos="fade-up"></p>
+    <!-- Projects -->
+    <section class="section-panel section-panel--alt">
+      <span class="outline-text outline-text--right" aria-hidden="true">Projects</span>
+      <div class="section-inner">
+        <h2 class="section-title" data-aos="morph-up" data-aos-duration="700">Projects</h2>
+        <p class="text-section project_section-subtitle" data-aos="fade-up">
+          Mostly a trip down memory lane. To be expanded.
+        </p>
+
+        <div class="project-track">
+          <article class="project-card" data-aos="fade-up">
+            <div class="project-card__image">
+              <img src="/rescue-8.jpg" alt="Rescue 8 Trading Philippines, Inc." loading="lazy" width="800" height="500" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Rescue 8 Trading Philippines, Inc.</h3>
+              <p class="text-section">WooCommerce-powered WordPress build a website with a custom template and content, designed to showcase product and services offered by the company with an online purchase feature for the convenience of the page visitors and potential consumers.</p>
+              <ul class="project-card__tags">
+                <li>wordpress</li><li>custom theme</li><li>wordpress plugin</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card__image">
+              <img src="/ride-slow.jpg" alt="Ride Slow Lifestyle" loading="lazy" width="800" height="500" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Ride Slow Lifestyle</h3>
+              <p class="text-section">Custom image-centered page layout with WooCommerce store, plugin-based photo gallery, and integration of real-time Facebook messaging functionality to help with the promotion and engagement of the site.</p>
+              <ul class="project-card__tags">
+                <li>wordpress</li><li>woocommerce</li><li>custom css</li><li>facebook api</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card__image">
+              <img src="/adyo.jpg" alt="Adyó Philippines" loading="lazy" width="800" height="500" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Adyó Philippines</h3>
+              <p class="text-section">Brand identity project for an outdoor brand startup Adyó. It's a full-scale trademark identity that delivers optimism and displays visual element that focuses on a vividly inviting and stylishly outdoor look and feel.</p>
+              <ul class="project-card__tags">
+                <li>brand identity</li><li>visual design</li><li>typography</li><li>logo design</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- Kudos Section -->
-    <section class="kudos section-wrapper">
-      <h2 class="section-title" data-aos="fade-right">Kudos</h2>
-      <div class="content">
-        <p class="kudos_section-content" data-aos="fade-up">
-          It's very rare these days to make anything great all on your own. I have only included work that
-          I had a large contribution to, but whether it's design, ideas, UX, process, software
-          engineering, mentorship, advice, or creative direction, the following people have influenced my
-          growth and career path in a massive way:
-          <a href="https://www.linkedin.com/in/leoabasjr/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Leopoldo Abas Jr.</a>,
-          <a href="https://www.linkedin.com/in/jamesolano/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">James Nelson Olaño</a>,
-          <a href="https://www.linkedin.com/in/kevin-juanillo-1835b9b9/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Kevin Juanillo</a>,
-          <a href="https://www.linkedin.com/in/marian-rae-alvarado-3057b8190/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Marian Rae Alvarado</a>,
-          <a href="https://www.linkedin.com/in/jeremiah-diaz-097556a4/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Jeremiah Diaz</a>,
-          <a href="https://www.linkedin.com/in/eric-francis-casaljay-461418150/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Eric Francis Casaljay</a>
-          and last but not least
-          <a href="https://www.linkedin.com/in/ma-clarizza-folloso-ab418b1aa/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Ma. Clarizza Folloso</a>.
-          THANK YOU.
+    <!-- thy keycabz — Featured ──────────────────────── -->
+    <section class="section-panel keycabz-section">
+      <span class="outline-text outline-text--left" aria-hidden="true">keycabz</span>
+      <div class="section-inner">
+        <div class="keycabz-hero">
+          <div class="keycabz-text">
+            <p class="keycabz-label" data-aos="fade-up">Hobby-turned-Business</p>
+            <h2 class="section-title keycabz-title" data-aos="morph-up" data-aos-duration="800">
+              thy keycabz
+            </h2>
+            <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700">
+              What started as a weekend obsession with <strong>mechanical keyboards</strong> quickly evolved into something
+              bigger — a full passion project exploring <strong>switch modding, sound tuning, keycap artistry</strong>,
+              and the craft of the perfect custom build.
+            </p>
+            <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700" data-aos-delay="100">
+              Every board is a statement piece. From <strong>thocky linears</strong> to <strong>crisp tactiles</strong>,
+              each build merges <strong>engineering precision with creative expression</strong> — the intersection
+              where tech meets artisanal craftsmanship.
+            </p>
+            <div class="keycabz-tags" data-aos="fade-up" data-aos-delay="200">
+              <span class="keycabz-tag">Custom Builds</span>
+              <span class="keycabz-tag">Sound Design</span>
+              <span class="keycabz-tag">Switch Modding</span>
+              <span class="keycabz-tag">Keycap Art</span>
+              <span class="keycabz-tag">Lubing &amp; Tuning</span>
+              <span class="keycabz-tag">Thock Culture</span>
+            </div>
+          </div>
+          <div class="keycabz-visual" data-aos="scale-in" data-aos-duration="900">
+            <div class="keycabz-logo-frame">
+              <img src="/keycabz_logo.png" alt="thy keycabz" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statement -->
+    <section class="section-panel section-panel--alt statement-panel" aria-label="Statement">
+      <div class="section-inner statement-inner">
+        <div data-aos="morph-up" data-aos-duration="1000">
+          <p class="statement-outline">THE DEVELOPER<br />BEHIND THE WORK.</p>
+        </div>
+        <p class="statement-solid" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+          Systems that <strong>scale</strong>. Interfaces that <strong>respect the user</strong>. Code that feels <strong>inevitable</strong>.
         </p>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section-wrapper">
-      <h2 class="section-title" data-aos="fade-right">Contact</h2>
-      <div class="content">
+    <!-- Kudos -->
+    <section class="section-panel">
+      <span class="outline-text outline-text--right" aria-hidden="true">Kudos</span>
+      <div class="section-inner">
+        <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">Kudos</h2>
+        <div class="kudos-content">
+          <p class="kudos_section-content" data-aos="reveal-left" data-aos-duration="800">
+            It's very rare these days to make anything great all on your own. I have only included work that
+            I had a large contribution to, but whether it's design, ideas, UX, process, software
+            engineering, mentorship, advice, or creative direction, the following people have influenced my
+            growth and career path in a massive way:
+            <a href="https://www.linkedin.com/in/leoabasjr/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Leopoldo Abas Jr.</a>,
+            <a href="https://www.linkedin.com/in/jamesolano/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">James Nelson Olaño</a>,
+            <a href="https://www.linkedin.com/in/kevin-juanillo-1835b9b9/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Kevin Juanillo</a>,
+            <a href="https://www.linkedin.com/in/marian-rae-alvarado-3057b8190/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Marian Rae Alvarado</a>,
+            <a href="https://www.linkedin.com/in/jeremiah-diaz-097556a4/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Jeremiah Diaz</a>,
+            <a href="https://www.linkedin.com/in/eric-francis-casaljay-461418150/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Eric Francis Casaljay</a>
+            and last but not least
+            <a href="https://www.linkedin.com/in/ma-clarizza-folloso-ab418b1aa/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Ma. Clarizza Folloso</a>.
+            THANK YOU.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section-panel section-panel--alt">
+      <span class="outline-text outline-text--left" aria-hidden="true">Contact</span>
+      <div class="section-inner">
+        <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">Contact</h2>
         <ContactForm />
       </div>
     </section>
+
   </main>
 
   <Footer />
 </BaseLayout>
 
 <script>
-  /* services-list: click to scroll contact and prefill message */
-  const msg = document.querySelector('#message') as HTMLTextAreaElement | null;
-  document.querySelectorAll('.services-list h3').forEach((s) => {
-    (s as HTMLElement).onclick = function () {
-      document.querySelector('.contact')?.scrollIntoView({ behavior: 'smooth' });
-      if (msg) {
-        msg.value = (this as HTMLElement).textContent + ' ';
-        msg.style.color = '#fefefe';
-      }
-    };
-  });
-  if (msg) {
-    msg.onkeydown = function () {
-      (this as HTMLTextAreaElement).style.color = '#f8f8f8';
-    };
-  }
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
 
-  /* explore toggle for inline articles (Yondu, keycabz) */
-  document.querySelectorAll('.work-article .explore-btn').forEach((btn) => {
+  /* ── Scroll progress bar ── */
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.appendChild(progressBar);
+
+  gsap.to(progressBar, {
+    scaleX: 1,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: document.documentElement,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 0.3,
+    },
+  });
+
+  /* ── Section reveal animations with GSAP ScrollTrigger ── */
+  const sections = gsap.utils.toArray<HTMLElement>('.section-panel');
+
+  sections.forEach((section) => {
+    /* Outline text reveal */
+    const outline = section.querySelector('.outline-text') as HTMLElement | null;
+    if (outline) {
+      const isRight = outline.classList.contains('outline-text--right');
+      gsap.fromTo(outline,
+        { opacity: 0, x: isRight ? 40 : -40 },
+        {
+          opacity: 1, x: 0, duration: 1, ease: 'power3.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    }
+
+    /* Subtle section parallax — shift inner content slightly */
+    const inner = section.querySelector('.section-inner') as HTMLElement | null;
+    if (inner) {
+      gsap.fromTo(inner,
+        { y: 40, opacity: 0.8 },
+        {
+          y: 0, opacity: 1, duration: 1, ease: 'power2.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 90%',
+            end: 'top 40%',
+            scrub: 0.5,
+          },
+        }
+      );
+    }
+  });
+
+  /* ── Service tags → scroll to contact ── */
+  const msg = document.querySelector('#message') as HTMLTextAreaElement | null;
+  document.querySelectorAll('.service-tag').forEach((tag) => {
+    (tag as HTMLElement).addEventListener('click', function () {
+      document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+      if (msg) {
+        msg.value = (this as HTMLElement).textContent?.trim() + ' ';
+        msg.style.color = 'var(--text-primary)';
+      }
+    });
+  });
+
+  /* ── Explore toggle ── */
+  document.querySelectorAll('.explore-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const details = (btn as HTMLElement).previousElementSibling as HTMLElement | null;
-      if (details && details.classList.contains('work-details')) {
+      if (details?.classList.contains('work-details')) {
         details.classList.toggle('visible');
+        (btn as HTMLElement).textContent = details.classList.contains('visible') ? 'Close' : 'Explore';
       }
     });
   });
 </script>
 
 <style>
-  .section-title {
-    color: var(--text-primary);
-  }
-
-  /* Hero */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 8rem;
-  }
-
-  .hero h2 {
-    font-size: 5.5rem;
-    font-weight: 700;
-    line-height: 1.1;
-    cursor: default;
-    white-space: nowrap;
-    color: var(--text-primary);
-  }
-
-  .hero h2 span {
-    display: block;
-  }
-
-  .scroll-arrow {
-    margin-top: 4rem;
-    animation: bounce 2s infinite;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-  }
-
-  /* About */
+  /* ── About ── */
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8%;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(2rem, 6vw, 5rem);
     align-items: start;
+  }
+
+  .about-image {
+    perspective: 1000px;
   }
 
   .about-image img {
     width: 100%;
+    border-radius: 1rem;
     filter: var(--img-filter);
-    transition: filter 0.4s;
+    transition: filter 0.5s ease, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-style: preserve-3d;
   }
 
   .about-image img:hover {
     filter: var(--img-filter-hover);
+    transform: rotateY(-4deg) rotateX(2deg) scale(1.02);
   }
 
   .about-me_img-mobile {
     display: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .mobile-portrait {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
+    border-radius: 0.75rem;
   }
 
-  /* Services */
-  .services-card-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 4rem;
+  .about-cta {
+    margin-top: 2rem;
+  }
+
+  /* ── Services ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: clamp(2rem, 4vw, 3.5rem);
   }
 
   .services-bottom {
     display: flex;
     align-items: flex-start;
-    gap: 8%;
+    gap: clamp(2rem, 5vw, 4rem);
   }
 
-  .services-list {
+  .services-tags {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5%;
+    gap: 0.625rem;
   }
 
-  .services-list h3 {
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    padding: 14px;
-    border: solid 2px var(--services-tag-border);
-    margin-bottom: 3%;
+  .service-tag {
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 0.7rem 1.25rem;
+    border: 1px solid var(--services-tag-border);
+    border-radius: 2rem;
+    background: transparent;
+    color: var(--text-secondary);
     cursor: pointer;
-    transition: all 0.4s;
-    color: var(--text-primary);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    white-space: nowrap;
   }
 
-  .services-list h3:hover {
-    color: var(--services-tag-hover-text);
+  .service-tag:hover {
+    color: #000;
     border-color: var(--color-orange);
-    background-color: var(--color-orange);
-    text-shadow: none;
+    background: var(--color-orange);
   }
 
   .services-cta {
-    font-size: 1.3rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    max-width: 280px;
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 24ch;
+    flex-shrink: 0;
   }
 
-  /* Works */
-  .work_section-employer {
-    margin-bottom: 4%;
+  /* ── Works — Employer Card ── */
+  .employer-card {
+    display: flex;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    align-items: flex-start;
+    padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+    border-bottom: 1px solid var(--border);
   }
 
-  .subsection-title {
-    font-size: 2.5rem;
-    font-weight: 400;
+  .employer-logo {
+    width: 88px;
+    height: auto;
+    flex-shrink: 0;
+    filter: var(--img-filter);
+    transition: filter 0.4s ease;
+  }
+
+  .employer-card:hover .employer-logo {
+    filter: var(--img-filter-hover);
+  }
+
+  .employer-text h3 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
     color: var(--text-primary);
-    padding: 3% 0 2%;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
   }
 
-  .project-subtitle {
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
+  .employer-text .text-section {
+    margin-bottom: 0.75rem;
   }
 
-  .project_section-hobby {
-    margin-top: 6%;
+  /* Work details toggle */
+  .work-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+    margin-bottom: 0;
+  }
+
+  .work-details.visible {
+    max-height: 200px;
+    opacity: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .work-details ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .work-details ul li {
+    font-size: 0.85rem;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+    color: var(--text-muted);
+  }
+
+  .explore-btn {
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .explore-btn:hover {
+    color: var(--text-primary);
+  }
+
+  /* Projects — horizontal scroll track */
+  .project-track {
+    display: flex;
+    gap: clamp(1.5rem, 3vw, 2rem);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1.5rem;
+    margin-inline: calc(-1 * clamp(1.25rem, 5vw, 7.2%));
+    padding-inline: clamp(1.25rem, 5vw, 7.2%);
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .project-track::-webkit-scrollbar {
+    height: 4px;
+  }
+  .project-track::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .project-track::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 2px;
+  }
+  .project-track::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange);
+  }
+  .project-track {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .project-card {
+    flex: 0 0 clamp(320px, 75vw, 520px);
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    background: var(--glass-bg);
+    transition: border-color 0.4s ease, transform 0.4s ease;
+  }
+
+  .project-card:hover {
+    border-color: var(--color-orange-dim, rgba(255,117,24,0.3));
+    transform: translateY(-4px);
+  }
+
+  .project-card__image img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    filter: var(--img-filter);
+    transition: filter 0.5s ease;
+  }
+
+  .project-card:hover .project-card__image img {
+    filter: var(--img-filter-hover);
+  }
+
+  .project-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .project-card__title {
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .project-card__tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0;
+    margin-top: 0.25rem;
+  }
+
+  .project-card__tags li {
+    font-size: 0.78rem;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    padding: 0.25rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    color: var(--text-muted);
+    transition: border-color 0.3s;
+  }
+
+  .project-card:hover .project-card__tags li {
+    border-color: var(--color-orange-dim, rgba(255,117,24,0.3));
+  }
+
+  /* ── thy keycabz — Featured ── */
+  .keycabz-section {
+    background: var(--section-bg);
+  }
+
+  .keycabz-hero {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: center;
+  }
+
+  .keycabz-label {
+    font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    margin-bottom: 1rem;
+  }
+
+  .keycabz-title {
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem) !important;
+  }
+
+  .keycabz-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
+  }
+
+  .keycabz-tag {
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 0.6rem 1.15rem;
+    border: 1px solid var(--color-orange-dim, rgba(255,117,24,0.25));
+    border-radius: 2rem;
+    color: var(--color-orange);
+    transition: all 0.3s ease;
+  }
+
+  .keycabz-tag:hover {
+    background: var(--color-orange);
+    color: #000;
+    border-color: var(--color-orange);
+  }
+
+  .keycabz-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .keycabz-logo-frame {
+    width: clamp(180px, 22vw, 320px);
+    height: clamp(180px, 22vw, 320px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--color-orange-dim, rgba(255,117,24,0.25));
+    box-shadow: 0 0 80px var(--color-orange-glow, rgba(255,117,24,0.1)),
+                inset 0 0 0 1px rgba(255,255,255,0.04);
+    padding: 2.5rem;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+  }
+
+  .keycabz-logo-frame:hover {
+    box-shadow: 0 0 120px rgba(255,117,24,0.2),
+                inset 0 0 0 1px rgba(255,117,24,0.15);
+    transform: scale(1.03);
+  }
+
+  .keycabz-logo-frame img {
+    width: 100%;
+    height: auto;
+    filter: var(--img-filter);
+    transition: filter 0.5s ease;
+  }
+
+  .keycabz-logo-frame:hover img {
+    filter: var(--img-filter-hover);
   }
 
   .works-cta {
-    font-size: 1.3rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    padding: 4% 0;
+    font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+    line-height: 1.75;
+    color: var(--text-muted);
+    padding-top: clamp(2.5rem, 5vw, 4rem);
   }
 
-  /* Kudos */
+  /* ── Kudos ── */
   .kudos-content {
-    color: var(--text-secondary);
-    line-height: 2;
-    max-width: 80ch;
+    max-width: 72ch;
   }
 
-  .kudos-link {
-    color: var(--color-orange);
-    text-decoration: underline;
-    transition: opacity 0.3s;
-  }
-
-  .kudos-link:hover {
-    opacity: 0.7;
-  }
-
-  /* Shared */
-  .content {
-    width: 100%;
-  }
-
-  /* Work article (inline) */
-  .work_section-employer .work-article {
-    display: flex;
-    padding: 3% 0 5%;
-    gap: 5%;
-    align-items: flex-start;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .work_section-employer .work-image {
-    width: 100px;
-    flex-shrink: 0;
-    filter: var(--img-filter);
-    transition: filter 0.4s ease;
-  }
-
-  .work_section-employer .work-article:hover .work-image {
-    filter: var(--img-filter-hover);
-  }
-
-  .work_section-employer .work-text h3 {
-    font-size: 2.3rem;
-    font-weight: 400;
-    line-height: 1.3;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-  }
-
-  .project_section-hobby .work-article {
-    display: flex;
-    padding: 3% 0 5%;
-    gap: 5%;
-    align-items: flex-start;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .project_section-hobby .work-image {
-    width: 100px;
-    flex-shrink: 0;
-    filter: var(--img-filter);
-    transition: filter 0.4s ease;
-  }
-
-  .project_section-hobby .work-article:hover .work-image {
-    filter: var(--img-filter-hover);
-  }
-
-  .project_section-hobby .work-text h3 {
-    font-size: 2.3rem;
-    font-weight: 400;
-    line-height: 1.3;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-  }
-
-  /* Responsive */
-  @media only screen and (max-width: 768px) {
-    .hero h2 {
-      font-size: 2.5rem;
-      white-space: normal;
+  /* ── Responsive ── */
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: 1fr 1fr;
     }
+  }
 
+  @media (max-width: 768px) {
     .about-grid {
       grid-template-columns: 1fr;
     }
@@ -499,6 +763,11 @@ import ContactForm from '../components/ContactForm.astro';
       display: block;
     }
 
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
     .services-bottom {
       flex-direction: column;
     }
@@ -507,27 +776,33 @@ import ContactForm from '../components/ContactForm.astro';
       max-width: 100%;
     }
 
-    .work_section-employer .work-article,
-    .project_section-hobby .work-article {
+    .employer-card {
       flex-direction: column;
+      gap: 1rem;
     }
 
-    .subsection-title {
-      font-size: 1.8rem;
+    .employer-logo {
+      width: 64px;
     }
 
-    .glass-cards-row {
-      flex-direction: column;
-      align-items: center;
+    .project-slide {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
-  }
 
-  /* ── Glassmorphism card row ── */
-  .glass-cards-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 0 0 4% 0;
+    .keycabz-hero {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .keycabz-visual {
+      order: -1;
+    }
+
+    .keycabz-logo-frame {
+      width: 160px;
+      height: 160px;
+      padding: 1.5rem;
+    }
   }
 </style>

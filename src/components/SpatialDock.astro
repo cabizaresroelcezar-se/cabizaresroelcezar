@@ -10,7 +10,8 @@ import ThemeToggle from './ThemeToggle.astro';
 <nav class="spatial-dock" id="spatial-dock" aria-label="Main navigation">
   <!-- Logo / Home -->
   <a href="/" class="dock-item dock-logo" data-label="Home" aria-label="Home">
-    <img src="/logo.png" alt="" width="22" height="22" class="dock-logo-img" />
+    <img src="/logo.png" alt="" width="22" height="22" class="dock-logo-img logo-dark" />
+    <img src="/logo_light.png" alt="" width="22" height="22" class="dock-logo-img logo-light" />
   </a>
 
   <span class="dock-divider"></span>
@@ -111,10 +112,10 @@ import ThemeToggle from './ThemeToggle.astro';
   }
   .dock-logo-img {
     opacity: 0.7;
-    filter: invert(1);
-    transition: filter 0.3s;
+    transition: opacity 0.3s;
   }
-  :global([data-theme="light"]) .dock-logo-img {
-    filter: invert(0);
-  }
+  .logo-dark { filter: invert(1); }
+  .logo-light { display: none; }
+  :global([data-theme="light"]) .logo-dark { display: none; }
+  :global([data-theme="light"]) .logo-light { display: block; }
 </style>

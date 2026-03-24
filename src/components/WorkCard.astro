@@ -10,130 +10,115 @@ interface Props {
 const { image, title, description, tags = [], link = '#' } = Astro.props;
 ---
 
-<article class="work-article" data-aos="fade-up">
-  <img src={image} alt={title} class="work-image" loading="lazy" width="504" height="400" />
-  <div class="work-text">
+<article class="work-card" data-aos="fade-up">
+  <div class="work-card-image">
+    <img src={image} alt={title} loading="lazy" width="504" height="400" />
+  </div>
+  <div class="work-card-body">
     <h3>{title}</h3>
-    <p class="text-section font-light leading-relaxed">{description}</p>
+    <p class="text-section">{description}</p>
     {tags.length > 0 && (
-      <div class="work-details">
-        <ul>
-          {tags.map((tag) => <li>{tag}</li>)}
-        </ul>
-      </div>
+      <ul class="work-tags">
+        {tags.map((tag) => <li>{tag}</li>)}
+      </ul>
     )}
-    <a href={link} class="explore-btn">Explore</a>
   </div>
 </article>
 
 <script>
-  document.querySelectorAll('.work-article .explore-btn').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const details = btn.previousElementSibling as HTMLElement | null;
-      if (details && details.classList.contains('work-details')) {
-        details.classList.toggle('visible');
-      }
+  document.querySelectorAll<HTMLElement>('.work-card').forEach((card) => {
+    card.addEventListener('mousemove', (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const tiltX = ((y - cy) / cy) * -3;
+      const tiltY = ((x - cx) / cx) * 3;
+      card.style.transform = `perspective(1200px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
     });
   });
 </script>
 
 <style>
-  .work-article {
-    display: flex;
-    padding: 5% 0;
-    gap: 5%;
-    align-items: flex-start;
+  .work-card {
+    display: grid;
+    grid-template-columns: clamp(160px, 25%, 280px) 1fr;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
+    padding: clamp(1.5rem, 3vw, 2.5rem) 0;
     border-bottom: 1px solid var(--border);
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .work-image {
+  .work-card-image img {
     width: 100%;
-    max-width: 180px;
+    border-radius: 0.5rem;
     filter: var(--img-filter);
-    transition: filter 0.4s ease;
-    flex-shrink: 0;
+    transition: filter 0.5s ease;
   }
 
-  .work-article:hover .work-image {
+  .work-card:hover .work-card-image img {
     filter: var(--img-filter-hover);
   }
 
-  .work-text {
-    flex: 1;
+  .work-card-body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    gap: 0.75rem;
   }
 
-  .work-text h3 {
-    font-size: 2.3rem;
-    font-weight: 400;
-    line-height: 1.3;
+  .work-card-body h3 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
     color: var(--text-primary);
-    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
   }
 
-  .work-text p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-  }
-
-  .work-details {
-    display: none;
-    margin-bottom: 1rem;
-  }
-
-  .work-details.visible {
-    display: block;
-  }
-
-  .work-details ul {
+  .work-tags {
     list-style: none;
-    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    gap: 0.4rem;
+    padding: 0;
+    margin-top: 0.25rem;
   }
 
-  .work-details ul li {
-    color: var(--text-muted);
-    font-size: 0.85rem;
+  .work-tags li {
+    font-size: 0.8rem;
     text-transform: lowercase;
-    letter-spacing: 1px;
-    padding: 4px 10px;
-    border: 1px solid var(--services-tag-border, #252525);
+    letter-spacing: 0.5px;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    color: var(--text-muted);
+    transition: border-color 0.3s;
   }
 
-  .explore-btn {
-    color: var(--color-orange);
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.3s;
-    cursor: pointer;
-    display: inline-block;
+  .work-card:hover .work-tags li {
+    border-color: var(--color-orange-dim, rgba(255,117,24,0.3));
   }
 
-  .explore-btn:hover {
-    color: var(--text-primary);
+  @media (max-width: 768px) {
+    .work-card {
+      grid-template-columns: 100px 1fr;
+      gap: 1.25rem;
+    }
   }
 
-  @media only screen and (max-width: 768px) {
-    .work-article {
-      flex-direction: column;
-      gap: 1.5rem;
+  @media (max-width: 480px) {
+    .work-card {
+      grid-template-columns: 1fr;
     }
 
-    .work-image {
-      max-width: 100%;
-      width: 120px;
-    }
-
-    .work-text h3 {
-      font-size: 1.5rem;
+    .work-card-image img {
+      max-width: 120px;
     }
   }
 </style>
