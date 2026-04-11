@@ -7,6 +7,7 @@ import GlassCard from '../components/GlassCard.astro';
 import Footer from '../components/Footer.astro';
 import WorkCard from '../components/WorkCard.astro';
 import ContactForm from '../components/ContactForm.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Roel Cezar Cabizares - Front-end Developer & Designer">
@@ -51,19 +52,19 @@ import ContactForm from '../components/ContactForm.astro';
 
         <div class="services-grid">
           <GlassCard
-            icon="/icons/web-development.svg"
+            icon={`${base}icons/web-development.svg`}
             title="Web Development"
             description="Design and develop user-centric websites and modern interfaces for digital products or services — helping transfer business strengths and visual assets to the web."
             type="web-development"
           />
           <GlassCard
-            icon="/icons/design.svg"
+            icon={`${base}icons/design.svg`}
             title="Branding & Design"
             description="Full strategy design and execution for new and refresh brand projects, including positioning, brand architecture, and identity systems that make a brand feel intentional."
             type="design"
           />
           <GlassCard
-            icon="/icons/digital-marketing.svg"
+            icon={`${base}icons/digital-marketing.svg`}
             title="Digital Marketing"
             description="Design for new and existing solutions, including UI/UX, visual design, and marketing support accessible to benefit business growth and connect with real people."
             type="digital-marketing"
@@ -146,7 +147,7 @@ import ContactForm from '../components/ContactForm.astro';
             Every element of my identity — from the <strong>logo construction</strong> and <strong>typography</strong> to the 
             <strong>color palette</strong> — is designed with intention. Explore the full case study behind my personal branding.
           </p>
-          <a href="/branding" class="branding-cta-btn" data-aos="fade-up" data-aos-delay="200">
+          <a href={`${base}branding`} class="branding-cta-btn" data-aos="fade-up" data-aos-delay="200">
             View Branding &amp; Logo Study
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14" /><path d="M12 5l7 7-7 7" />
@@ -155,8 +156,8 @@ import ContactForm from '../components/ContactForm.astro';
         </div>
         <div class="branding-cta-visual" data-aos="scale-in" data-aos-duration="900">
           <div class="branding-cta-logo-frame">
-            <img src="/logo.png" alt="CABZ logo" loading="lazy" class="logo-dark" />
-            <img src="/logo_light.png" alt="CABZ logo" loading="lazy" class="logo-light" />
+            <img src={`${base}logo.png`} alt="CABZ logo" loading="lazy" class="logo-dark" />
+            <img src={`${base}logo_light.png`} alt="CABZ logo" loading="lazy" class="logo-light" />
           </div>
         </div>
       </div>
@@ -172,7 +173,7 @@ import ContactForm from '../components/ContactForm.astro';
         <div class="ventures-grid">
           <article class="venture-card">
             <a href="https://www.facebook.com/mesaysillaco.ph" target="_blank" rel="noopener noreferrer" class="venture-card__logo">
-              <img src="/mesa-y-silla.png" alt="Mesa y Silla Co." loading="lazy" />
+              <img src={`${base}mesa-y-silla.png`} alt="Mesa y Silla Co." loading="lazy" />
             </a>
             <div class="venture-card__body">
               <h3><a href="https://www.facebook.com/mesaysillaco.ph" target="_blank" rel="noopener noreferrer" class="venture-name-link">Mesa y Silla Co.</a></h3>
@@ -182,7 +183,7 @@ import ContactForm from '../components/ContactForm.astro';
 
           <article class="venture-card">
             <a href="https://www.facebook.com/25hype.sneakers" target="_blank" rel="noopener noreferrer" class="venture-card__logo">
-              <img src="/25-hype.png" alt="25HYPE Sneakers" loading="lazy" />
+              <img src={`${base}25-hype.png`} alt="25HYPE Sneakers" loading="lazy" />
             </a>
             <div class="venture-card__body">
               <h3><a href="https://www.facebook.com/25hype.sneakers" target="_blank" rel="noopener noreferrer" class="venture-name-link">25HYPE Sneakers</a></h3>
@@ -209,7 +210,7 @@ import ContactForm from '../components/ContactForm.astro';
 
           <article class="project-card">
             <a href="https://pilasports.com/" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src="/pila.png" alt="PILA" loading="lazy" width="800" height="400" />
+              <img src={`${base}pila.png`} alt="PILA" loading="lazy" width="800" height="400" />
             </a>
             <div class="project-card__body">
               <h3 class="project-card__title"><a href="https://pilasports.com/" target="_blank" rel="noopener noreferrer" class="project-name-link">Player Invite &amp; League Arranger - PILA Sports</a></h3>
@@ -219,7 +220,7 @@ import ContactForm from '../components/ContactForm.astro';
 
           <article class="project-card">
             <a href="https://www.facebook.com/rescue8tradingphils" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src="/rescue-8.jpg" alt="Rescue 8 Trading Philippines, Inc." loading="lazy" width="800" height="500" />
+              <img src={`${base}rescue-8.jpg`} alt="Rescue 8 Trading Philippines, Inc." loading="lazy" width="800" height="500" />
             </a>
             <div class="project-card__body">
               <h3 class="project-card__title"><a href="https://www.facebook.com/rescue8tradingphils" target="_blank" rel="noopener noreferrer" class="project-name-link">Rescue 8 Trading Philippines, Inc.</a></h3>
@@ -229,7 +230,7 @@ import ContactForm from '../components/ContactForm.astro';
 
           <article class="project-card">
             <a href="https://www.facebook.com/rideslowlifestyle" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src="/ride-slow.jpg" alt="Ride Slow Lifestyle" loading="lazy" width="800" height="500" />
+              <img src={`${base}ride-slow.jpg`} alt="Ride Slow Lifestyle" loading="lazy" width="800" height="500" />
             </a>
             <div class="project-card__body">
               <h3 class="project-card__title"><a href="https://www.facebook.com/rideslowlifestyle" target="_blank" rel="noopener noreferrer" class="project-name-link">Ride Slow Lifestyle</a></h3>
@@ -242,7 +243,7 @@ import ContactForm from '../components/ContactForm.astro';
 
           <article class="project-card">
             <a href="https://www.facebook.com/kademyahanfoodhouse/" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src="/kademyahan.png" alt="Kademyahan Food House" loading="lazy" width="800" height="500" />
+              <img src={`${base}kademyahan.png`} alt="Kademyahan Food House" loading="lazy" width="800" height="500" />
             </a>
             <div class="project-card__body">
               <h3 class="project-card__title"><a href="https://www.facebook.com/kademyahanfoodhouse/" target="_blank" rel="noopener noreferrer" class="project-name-link">Kademyahan Food House</a></h3>
@@ -252,7 +253,7 @@ import ContactForm from '../components/ContactForm.astro';
 
           <article class="project-card">
             <a href="https://www.facebook.com/adyophilippines" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src="/adyo.jpg" alt="Adyó Philippines" loading="lazy" width="800" height="500" />
+              <img src={`${base}adyo.jpg`} alt="Adyó Philippines" loading="lazy" width="800" height="500" />
             </a>
             <div class="project-card__body">
               <h3 class="project-card__title"><a href="https://www.facebook.com/adyophilippines" target="_blank" rel="noopener noreferrer" class="project-name-link">Adyó Philippines</a></h3>
@@ -262,7 +263,7 @@ import ContactForm from '../components/ContactForm.astro';
 
           <article class="project-card">
             <a href="https://www.facebook.com/project1998co" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src="/project-1998.png" alt="Project 1998 Apparel Co." loading="lazy" width="800" height="400" />
+              <img src={`${base}project-1998.png`} alt="Project 1998 Apparel Co." loading="lazy" width="800" height="400" />
             </a>
             <div class="project-card__body">
               <h3 class="project-card__title"><a href="https://www.facebook.com/project1998co" target="_blank" rel="noopener noreferrer" class="project-name-link">Project 1998 Apparel Co.</a></h3>
@@ -297,7 +298,7 @@ import ContactForm from '../components/ContactForm.astro';
           </div>
           <div class="keycabz-visual" data-aos="scale-in" data-aos-duration="900">
             <a href="https://www.facebook.com/keycabz.hobby" target="_blank" rel="noopener noreferrer" class="keycabz-logo-frame">
-              <img src="/keycabz.png" alt="thy keycabz" loading="lazy" />
+              <img src={`${base}keycabz.png`} alt="thy keycabz" loading="lazy" />
             </a>
           </div>
         </div>
@@ -311,7 +312,7 @@ import ContactForm from '../components/ContactForm.astro';
         <div class="cryptobuds-hero">
           <div class="cryptobuds-visual" data-aos="scale-in" data-aos-duration="900">
             <a href="https://www.facebook.com/CryptobudsNFT" target="_blank" rel="noopener noreferrer" class="cryptobuds-logo-frame">
-              <img src="/cryptobuds.png" alt="Cryptobuds" loading="lazy" />
+              <img src={`${base}cryptobuds.png`} alt="Cryptobuds" loading="lazy" />
             </a>
           </div>
           <div class="cryptobuds-text">
@@ -346,7 +347,7 @@ import ContactForm from '../components/ContactForm.astro';
           </div>
           <div class="yobi-visual" data-aos="scale-in" data-aos-duration="900">
             <div class="yobi-logo-frame">
-              <img src="/yo-bi.png" alt="Yo-Bi" loading="lazy" />
+              <img src={`${base}yo-bi.png`} alt="Yo-Bi" loading="lazy" />
             </div>
           </div>
         </div>

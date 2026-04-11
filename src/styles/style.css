@@ -1,25 +1,4 @@
-/* ── Font Face Declarations ── */
-
-@font-face {
-  font-family: "Manrope";
-  font-weight: 300;
-  font-display: swap;
-  src: url(/fonts/manrope-300.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "Manrope";
-  font-weight: 500;
-  font-display: swap;
-  src: url(/fonts/manrope-500.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "Manrope";
-  font-weight: 700;
-  font-display: swap;
-  src: url(/fonts/manrope-700.woff2) format("woff2");
-}
+/* ── Font faces are declared in BaseLayout.astro for base-path compatibility ── */
 
 /* ── Base Reset ── */
 

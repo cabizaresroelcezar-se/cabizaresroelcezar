@@ -4,7 +4,9 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   // Your GitHub Pages site URL
-  site: 'https://cabizaresroelcezar.github.io',
+  site: 'https://cabizaresroelcezar-se.github.io',
+  base: '/cabizaresroelcezar/',
+  base: '/cabizaresroelcezar/',
 
   // Integrations
   integrations: [tailwind()],
