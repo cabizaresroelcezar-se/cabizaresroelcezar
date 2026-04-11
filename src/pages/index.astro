@@ -18,40 +18,27 @@ import ContactForm from '../components/ContactForm.astro';
     <SpatialHero
       heading="Hi there,"
       subheading="I'm Roel Cezar Cabizares"
-      description="I'm a software engineer specializing in front-end development, UI/UX, and digital experience."
+      description="I'm a SWE specializing in front-end development, UI/UX, and digital experience."
     />
 
     <!-- About Me -->
     <section id="about-me" class="section-panel">
       <span class="outline-text outline-text--left" aria-hidden="true">About Me</span>
       <div class="section-inner">
-        <div class="about-grid">
-          <div class="about-text">
-            <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">About Me</h2>
-            <div class="about-me_img-mobile" data-aos="fade-up">
-              <img src="/cabz-img.jpg" alt="Roel Cezar Cabizares" class="mobile-portrait" loading="lazy" />
-            </div>
-            <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700">
-              Hello, I'm a <strong>software engineer &amp; developer</strong> based in the Philippines, and I conserve an
-              expressive passion for <strong>user interface, visual design</strong>, and creating <strong>intuitive, dynamic user experiences</strong>.
-            </p>
-            <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700" data-aos-delay="100">
-              Given enough coffee and inexhaustible enthusiasm, I am <strong>easily inspired</strong> and more willing to
-              follow my ideas wherever they take me. I'm a <strong>dynamic person</strong>, an expressive, talented spirit
-              with an innate ability to entertain and inspire. I'm never satisfied with just coming up
-              with ideas. Instead, I have an <strong>almost impulsive need to act on them</strong>.
-            </p>
-            <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700" data-aos-delay="200">
-              I'm also experienced in and completed various <strong>responsive website designs</strong>,
-              <strong>front-end assets</strong>, and <strong>custom WordPress builds</strong>.
-            </p>
-            <p class="about-cta" data-aos="fade-up" data-aos-delay="300">
-              <a href="#services" class="content-link">Learn more</a>
-            </p>
-          </div>
-          <div class="about-image" data-aos="reveal-right" data-aos-duration="900">
-            <img src="/cabz-img.jpg" alt="Roel Cezar Cabizares" loading="lazy" />
-          </div>
+        <h2 class="section-title section-title--hero" data-aos="morph-up" data-aos-duration="800">About Me</h2>
+        <div class="about-content">
+          <p class="content-paragraph content-paragraph--lead" data-aos="reveal-left" data-aos-duration="700">
+            Hello, I'm a <strong>software engineer &amp; developer</strong> based in the Philippines, and I conserve an expressive passion for <strong>user interface</strong>, <strong>visual design</strong>, and creating intuitive, dynamic user experiences.
+          </p>
+          <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700" data-aos-delay="100">
+            Given enough coffee and inexhaustible enthusiasm, I am easily inspired and more willing to follow my ideas wherever they take me. I'm a dynamic person, an expressive, talented spirit with an innate ability to entertain and inspire. I'm never satisfied with just coming up with ideas. Instead, I have an almost impulsive need to act on them.
+          </p>
+          <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700" data-aos-delay="200">
+            I'm also experienced in and completed various <strong>responsive website designs</strong>, <strong>front-end assets</strong>, and <strong>custom WordPress builds</strong>.
+          </p>
+          <p class="about-cta" data-aos="fade-up" data-aos-delay="300">
+            <a href="#services" class="content-link">See what I do</a>
+          </p>
         </div>
       </div>
     </section>
@@ -62,23 +49,23 @@ import ContactForm from '../components/ContactForm.astro';
       <div class="section-inner">
         <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">Services</h2>
 
-        <div class="services-grid" data-aos="scale-in" data-aos-duration="800">
+        <div class="services-grid">
           <GlassCard
             icon="/icons/web-development.svg"
             title="Web Development"
-            description="Design and develop a user-centric website and modern interfaces for digital products or services that will help transfer the business strengths and visual assets to the interweb."
+            description="Design and develop user-centric websites and modern interfaces for digital products or services — helping transfer business strengths and visual assets to the web."
             type="web-development"
           />
           <GlassCard
             icon="/icons/design.svg"
             title="Branding & Design"
-            description="Full strategy design and execution for new and refresh brand projects, including positioning, brand architecture and identity."
+            description="Full strategy design and execution for new and refresh brand projects, including positioning, brand architecture, and identity systems that make a brand feel intentional."
             type="design"
           />
           <GlassCard
             icon="/icons/digital-marketing.svg"
             title="Digital Marketing"
-            description="Design for new and existing solutions, including UI/UX, visual design, and marketing support accessible to benefit business growth."
+            description="Design for new and existing solutions, including UI/UX, visual design, and marketing support accessible to benefit business growth and connect with real people."
             type="digital-marketing"
           />
         </div>
@@ -97,49 +84,112 @@ import ContactForm from '../components/ContactForm.astro';
             <button type="button" class="service-tag">WordPress Custom Code</button>
           </div>
           <p class="services-cta">
-            Let's talk and save time;<br />
-            Click on a service to find out how.
+            Interested in working together?<br />
+            Click a service to start a conversation.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- Marquee Strip -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-inner">
+        <span>DESIGN</span><span class="marquee-dot">·</span>
+        <span>CODE</span><span class="marquee-dot">·</span>
+        <span>CREATE</span><span class="marquee-dot">·</span>
+        <span>INSPIRE</span><span class="marquee-dot">·</span>
+        <span>DESIGN</span><span class="marquee-dot">·</span>
+        <span>DEVELOP</span><span class="marquee-dot">·</span>
+        <span>CREATE</span><span class="marquee-dot">·</span>
+        <span>INSPIRE</span><span class="marquee-dot">·</span>
+        <span>DESIGN</span><span class="marquee-dot">·</span>
+        <span>DEVELOP</span><span class="marquee-dot">·</span>
+        <span>CREATE</span><span class="marquee-dot">·</span>
+        <span>INSPIRE</span><span class="marquee-dot">·</span>
+      </div>
+    </div>
+
     <!-- Experience -->
     <section id="works" class="section-panel">
-      <span class="outline-text outline-text--left" aria-hidden="true">Experience</span>
+      <span class="outline-text outline-text--left" aria-hidden="true">Office</span>
       <div class="section-inner">
-        <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">I'm currently working as a Software Engineer</h2>
+        <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">Currently at</h2>
 
         <!-- Current employer -->
-        <article class="employer-card" data-aos="reveal-left" data-aos-duration="700">
-          <img src="/yondu_logo.png" alt="Yondu Logo" width="80" height="80" class="employer-logo" loading="lazy" />
-          <div class="employer-text">
-            <h3>Yondu Inc.</h3>
-            <p class="text-section">
-              My bread and butter. Presently functioning and deployed as a <strong>.NET developer</strong> for Yondu's business
-              client, operates with IT professionals that are interdependent in a team, practices <strong>agile
-              methodologies</strong>, and directly supports and enhances the current <strong>system design approach</strong> for the
-              advancement of the company's business objectives.
-            </p>
-            <div class="work-details">
-              <ul>
-                <li>.net</li>
-                <li>c# programming language</li>
-                <li>html</li>
-                <li>css</li>
-                <li>javascript</li>
-                <li>optimizely</li>
-              </ul>
+        <article class="employer-card">
+          <div class="employer-card__header">
+            <div class="employer-card__title">
+              <h3><a href="https://www.agiletechops.com/" target="_blank" rel="noopener noreferrer" class="employer-name-link">Agile Tech Ops Inc.</a></h3>
+              <span class="employer-period">2025 &ndash; Present &middot; Makati, Philippines</span>
             </div>
-            <button type="button" class="explore-btn">Explore</button>
+          </div>
+          <div class="employer-card__body">
+            <p class="employer-pos">Full Stack Developer &middot; <em>.NET &amp; Blazor</em></p>
+            <p class="employer-role">Building and maintaining full-stack <strong>.NET and Blazor applications</strong> for a U.S.-based client &mdash; shipping fixes, enhancements, and performance improvements while leveraging AI-assisted development tools.</p>
           </div>
         </article>
 
         <p data-aos="fade-up" class="works-cta">
-          If you are thinking about <strong>hiring me</strong> or
-          would like to <strong>discuss a project</strong>, get in touch with me
-          <a href="#contact" class="content-link">here.</a>
+          Open to new opportunities or collaborations? Feel free to
+          <a href="#contact" class="content-link">reach out.</a>
         </p>
+      </div>
+    </section>
+
+    <!-- Branding CTA ──────────────────────── -->
+    <section class="section-panel section-panel--alt branding-cta-section">
+      <div class="section-inner branding-cta-inner">
+        <div class="branding-cta-content" data-aos="fade-up">
+          <p class="keycabz-label">Personal Branding</p>
+          <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">The Brand Behind the Work</h2>
+          <p class="content-paragraph" data-aos="fade-up" data-aos-delay="100">
+            Every element of my identity — from the <strong>logo construction</strong> and <strong>typography</strong> to the 
+            <strong>color palette</strong> — is designed with intention. Explore the full case study behind my personal branding.
+          </p>
+          <a href="/branding" class="branding-cta-btn" data-aos="fade-up" data-aos-delay="200">
+            View Branding &amp; Logo Study
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" /><path d="M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+        <div class="branding-cta-visual" data-aos="scale-in" data-aos-duration="900">
+          <div class="branding-cta-logo-frame">
+            <img src="/logo.png" alt="CABZ logo" loading="lazy" class="logo-dark" />
+            <img src="/logo_light.png" alt="CABZ logo" loading="lazy" class="logo-light" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ventures ──────────────────────── -->
+    <section class="section-panel ventures-section">
+      <span class="outline-text outline-text--right" aria-hidden="true">Ventures</span>
+      <div class="section-inner">
+        <h2 class="section-title" data-aos="morph-up" data-aos-duration="700">Ventures</h2>
+        <p data-aos="fade-up">Personal businesses I co-own and operate — side ventures built from scratch with people I trust.</p>
+
+        <div class="ventures-grid">
+          <article class="venture-card">
+            <a href="https://www.facebook.com/mesaysillaco.ph" target="_blank" rel="noopener noreferrer" class="venture-card__logo">
+              <img src="/mesa-y-silla.png" alt="Mesa y Silla Co." loading="lazy" />
+            </a>
+            <div class="venture-card__body">
+              <h3><a href="https://www.facebook.com/mesaysillaco.ph" target="_blank" rel="noopener noreferrer" class="venture-name-link">Mesa y Silla Co.</a></h3>
+              <p>A tables &amp; chairs rental service catering to events, gatherings, and special occasions — providing reliable logistics and setup so hosts can focus on what matters.</p>
+            </div>
+          </article>
+
+          <article class="venture-card">
+            <a href="https://www.facebook.com/25hype.sneakers" target="_blank" rel="noopener noreferrer" class="venture-card__logo">
+              <img src="/25-hype.png" alt="25HYPE Sneakers" loading="lazy" />
+            </a>
+            <div class="venture-card__body">
+              <h3><a href="https://www.facebook.com/25hype.sneakers" target="_blank" rel="noopener noreferrer" class="venture-name-link">25HYPE Sneakers</a></h3>
+              <p>Curated sneaker drops sourcing top-batch UA pairs — built for the culture and the community that lives and breathes footwear.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -149,48 +199,77 @@ import ContactForm from '../components/ContactForm.astro';
       <div class="section-inner">
         <h2 class="section-title" data-aos="morph-up" data-aos-duration="700">Projects</h2>
         <p class="text-section project_section-subtitle" data-aos="fade-up">
-          Mostly a trip down memory lane. To be expanded.
+          A collection of work I've shipped — from development and WordPress builds to brand identities. Mostly a trip down memory lane, with more to come.
         </p>
 
         <div class="project-track">
-          <article class="project-card" data-aos="fade-up">
-            <div class="project-card__image">
+
+          <!-- Row 1: Website & Software Development -->
+          <div class="project-group-label" data-aos="fade-up">Website & Software Development Projects</div>
+
+          <article class="project-card">
+            <a href="https://pilasports.com/" target="_blank" rel="noopener noreferrer" class="project-card__image">
+              <img src="/pila.png" alt="PILA" loading="lazy" width="800" height="400" />
+            </a>
+            <div class="project-card__body">
+              <h3 class="project-card__title"><a href="https://pilasports.com/" target="_blank" rel="noopener noreferrer" class="project-name-link">Player Invite &amp; League Arranger - PILA Sports</a></h3>
+              <p class="text-section">Developed the full brand identity and UI/UX for PILA — a pickleball league management platform. Handled everything from visual direction and logo design to interface layout and the overall site experience.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a href="https://www.facebook.com/rescue8tradingphils" target="_blank" rel="noopener noreferrer" class="project-card__image">
               <img src="/rescue-8.jpg" alt="Rescue 8 Trading Philippines, Inc." loading="lazy" width="800" height="500" />
-            </div>
+            </a>
             <div class="project-card__body">
-              <h3 class="project-card__title">Rescue 8 Trading Philippines, Inc.</h3>
-              <p class="text-section">WooCommerce-powered WordPress build a website with a custom template and content, designed to showcase product and services offered by the company with an online purchase feature for the convenience of the page visitors and potential consumers.</p>
-              <ul class="project-card__tags">
-                <li>wordpress</li><li>custom theme</li><li>wordpress plugin</li>
-              </ul>
+              <h3 class="project-card__title"><a href="https://www.facebook.com/rescue8tradingphils" target="_blank" rel="noopener noreferrer" class="project-name-link">Rescue 8 Trading Philippines, Inc.</a></h3>
+              <p class="text-section">A WooCommerce-powered WordPress site with a custom template — designed and built to present products and services with an integrated online store, clean layout, and straightforward navigation.</p>
             </div>
           </article>
 
-          <article class="project-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-card__image">
+          <article class="project-card">
+            <a href="https://www.facebook.com/rideslowlifestyle" target="_blank" rel="noopener noreferrer" class="project-card__image">
               <img src="/ride-slow.jpg" alt="Ride Slow Lifestyle" loading="lazy" width="800" height="500" />
-            </div>
+            </a>
             <div class="project-card__body">
-              <h3 class="project-card__title">Ride Slow Lifestyle</h3>
-              <p class="text-section">Custom image-centered page layout with WooCommerce store, plugin-based photo gallery, and integration of real-time Facebook messaging functionality to help with the promotion and engagement of the site.</p>
-              <ul class="project-card__tags">
-                <li>wordpress</li><li>woocommerce</li><li>custom css</li><li>facebook api</li>
-              </ul>
+              <h3 class="project-card__title"><a href="https://www.facebook.com/rideslowlifestyle" target="_blank" rel="noopener noreferrer" class="project-name-link">Ride Slow Lifestyle</a></h3>
+              <p class="text-section">An image-forward WordPress layout featuring WooCommerce integration, a photo gallery, and real-time Facebook Messenger — built to support promotion, sales, and active community engagement.</p>
             </div>
           </article>
 
-          <article class="project-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="project-card__image">
-              <img src="/adyo.jpg" alt="Adyó Philippines" loading="lazy" width="800" height="500" />
-            </div>
+          <!-- Row 2: Digital & Branding -->
+          <div class="project-group-label" data-aos="fade-up">Digital & Branding Projects</div>
+
+          <article class="project-card">
+            <a href="https://www.facebook.com/kademyahanfoodhouse/" target="_blank" rel="noopener noreferrer" class="project-card__image">
+              <img src="/kademyahan.png" alt="Kademyahan Food House" loading="lazy" width="800" height="500" />
+            </a>
             <div class="project-card__body">
-              <h3 class="project-card__title">Adyó Philippines</h3>
-              <p class="text-section">Brand identity project for an outdoor brand startup Adyó. It's a full-scale trademark identity that delivers optimism and displays visual element that focuses on a vividly inviting and stylishly outdoor look and feel.</p>
-              <ul class="project-card__tags">
-                <li>brand identity</li><li>visual design</li><li>typography</li><li>logo design</li>
-              </ul>
+              <h3 class="project-card__title"><a href="https://www.facebook.com/kademyahanfoodhouse/" target="_blank" rel="noopener noreferrer" class="project-name-link">Kademyahan Food House</a></h3>
+              <p class="text-section">Brand identity for a local food house in Sta. Maria, Bulacan — designed the logo and visual direction used across public-facing materials including menus, labels, and promotional collateral.</p>
             </div>
           </article>
+
+          <article class="project-card">
+            <a href="https://www.facebook.com/adyophilippines" target="_blank" rel="noopener noreferrer" class="project-card__image">
+              <img src="/adyo.jpg" alt="Adyó Philippines" loading="lazy" width="800" height="500" />
+            </a>
+            <div class="project-card__body">
+              <h3 class="project-card__title"><a href="https://www.facebook.com/adyophilippines" target="_blank" rel="noopener noreferrer" class="project-name-link">Adyó Philippines</a></h3>
+              <p class="text-section">A complete brand identity crafted for outdoor startup Adyó — built around optimism, vivid visuals, and a distinctly inviting aesthetic that captures the spirit of adventure.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a href="https://www.facebook.com/project1998co" target="_blank" rel="noopener noreferrer" class="project-card__image">
+              <img src="/project-1998.png" alt="Project 1998 Apparel Co." loading="lazy" width="800" height="400" />
+            </a>
+            <div class="project-card__body">
+              <h3 class="project-card__title"><a href="https://www.facebook.com/project1998co" target="_blank" rel="noopener noreferrer" class="project-name-link">Project 1998 Apparel Co.</a></h3>
+              <p class="text-section">Brand identity for a local PH clothing and bag brand — covering logo, visual language, and design direction rooted in street-ready style and everyday wearability.</p>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -203,44 +282,97 @@ import ContactForm from '../components/ContactForm.astro';
           <div class="keycabz-text">
             <p class="keycabz-label" data-aos="fade-up">Hobby-turned-Business</p>
             <h2 class="section-title keycabz-title" data-aos="morph-up" data-aos-duration="800">
-              thy keycabz
+              <a href="https://www.facebook.com/keycabz.hobby" target="_blank" rel="noopener noreferrer" class="section-name-link">thy keycabz</a>
             </h2>
             <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700">
               What started as a weekend obsession with <strong>mechanical keyboards</strong> quickly evolved into something
               bigger — a full passion project exploring <strong>switch modding, sound tuning, keycap artistry</strong>,
-              and the craft of the perfect custom build.
+              and the craft of the perfect custom build. It's one part engineering, one part creative expression.
             </p>
             <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700" data-aos-delay="100">
               Every board is a statement piece. From <strong>thocky linears</strong> to <strong>crisp tactiles</strong>,
               each build merges <strong>engineering precision with creative expression</strong> — the intersection
-              where tech meets artisanal craftsmanship.
+              where tech meets artisanal craftsmanship. If it types well and sounds right, I'm in.
             </p>
-            <div class="keycabz-tags" data-aos="fade-up" data-aos-delay="200">
-              <span class="keycabz-tag">Custom Builds</span>
-              <span class="keycabz-tag">Sound Design</span>
-              <span class="keycabz-tag">Switch Modding</span>
-              <span class="keycabz-tag">Keycap Art</span>
-              <span class="keycabz-tag">Lubing &amp; Tuning</span>
-              <span class="keycabz-tag">Thock Culture</span>
-            </div>
           </div>
           <div class="keycabz-visual" data-aos="scale-in" data-aos-duration="900">
-            <div class="keycabz-logo-frame">
-              <img src="/keycabz_logo.png" alt="thy keycabz" loading="lazy" />
+            <a href="https://www.facebook.com/keycabz.hobby" target="_blank" rel="noopener noreferrer" class="keycabz-logo-frame">
+              <img src="/keycabz.png" alt="thy keycabz" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cryptobuds — Co-Founded Venture ──────────────────── -->
+    <section class="section-panel section-panel--alt cryptobuds-section">
+      <span class="outline-text outline-text--right" aria-hidden="true">Cryptobuds</span>
+      <div class="section-inner">
+        <div class="cryptobuds-hero">
+          <div class="cryptobuds-visual" data-aos="scale-in" data-aos-duration="900">
+            <a href="https://www.facebook.com/CryptobudsNFT" target="_blank" rel="noopener noreferrer" class="cryptobuds-logo-frame">
+              <img src="/cryptobuds.png" alt="Cryptobuds" loading="lazy" />
+            </a>
+          </div>
+          <div class="cryptobuds-text">
+            <p class="keycabz-label" data-aos="fade-up">Co-Founded Venture</p>
+            <h2 class="section-title" data-aos="morph-up" data-aos-duration="800"><a href="https://www.facebook.com/CryptobudsNFT" target="_blank" rel="noopener noreferrer" class="section-name-link">Cryptobuds</a></h2>
+            <p class="content-paragraph" data-aos="fade-up" data-aos-duration="700">
+              Cryptobuds is a crypto community group I co-founded — built around education, honest discussion, and navigating the web3 space together. What started as a small circle of enthusiasts grew into a network of members sharing insights on DeFi, NFTs, and emerging blockchain projects. The goal was never hype — it was building literacy and trust in a noisy space.
+            </p>
+            <div class="cryptobuds-links" data-aos="fade-up" data-aos-delay="200">
+              <a href="https://www.facebook.com/CryptobudsNFT" target="_blank" rel="noopener noreferrer" class="content-link">Facebook</a>
+              <a href="https://linktr.ee/Cryptobuds" target="_blank" rel="noopener noreferrer" class="content-link">Linktree</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Yo-Bi — Supporting & Managing ──────────────────── -->
+    <section class="section-panel yobi-section">
+      <span class="outline-text outline-text--left" aria-hidden="true">Yo-Bi</span>
+      <div class="section-inner">
+        <div class="yobi-hero">
+          <div class="yobi-text">
+            <p class="keycabz-label" data-aos="fade-up">Supporting &amp; Managing</p>
+            <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">Yo-Bi</h2>
+            <p class="content-paragraph" data-aos="fade-up" data-aos-duration="700">
+              Yo-Bi is my brother's music project — and I'm the one behind the scenes making sure it all runs smooth. From <strong>managing releases</strong> and <strong>distribution</strong> to handling the <strong>visual identity</strong> and online presence, I support the creative vision while keeping the operational side locked in.
+            </p>
+            <p class="content-paragraph" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+              Music runs in the family. While he writes and performs, I make sure the world gets to hear it — properly packaged, properly presented.
+            </p>
+          </div>
+          <div class="yobi-visual" data-aos="scale-in" data-aos-duration="900">
+            <div class="yobi-logo-frame">
+              <img src="/yo-bi.png" alt="Yo-Bi" loading="lazy" />
+            </div>
+          </div>
+        </div>
+        <div class="yobi-spotify" data-aos="fade-up" data-aos-delay="300">
+          <iframe
+            title="Yo-Bi on Spotify"
+            src="https://open.spotify.com/embed/artist/2tALEnnr070K9GFXxRMd23?utm_source=generator&theme=0"
+            width="100%"
+            height="152"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            style="border-radius: 12px;"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
     <!-- Statement -->
-    <section class="section-panel section-panel--alt statement-panel" aria-label="Statement">
+    <section class="section-panel statement-panel" aria-label="Statement">
       <div class="section-inner statement-inner">
-        <div data-aos="morph-up" data-aos-duration="1000">
+        <div>
           <p class="statement-outline">THE DEVELOPER<br />BEHIND THE WORK.</p>
         </div>
         <p class="statement-solid" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-          Systems that <strong>scale</strong>. Interfaces that <strong>respect the user</strong>. Code that feels <strong>inevitable</strong>.
+          Thoughtful systems. Interfaces that <strong>respect the user</strong>. Code that feels <strong>intentional</strong>. Always building, always learning.
         </p>
       </div>
     </section>
@@ -252,19 +384,20 @@ import ContactForm from '../components/ContactForm.astro';
         <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">Kudos</h2>
         <div class="kudos-content">
           <p class="kudos_section-content" data-aos="reveal-left" data-aos-duration="800">
-            It's very rare these days to make anything great all on your own. I have only included work that
-            I had a large contribution to, but whether it's design, ideas, UX, process, software
-            engineering, mentorship, advice, or creative direction, the following people have influenced my
-            growth and career path in a massive way:
-            <a href="https://www.linkedin.com/in/leoabasjr/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Leopoldo Abas Jr.</a>,
-            <a href="https://www.linkedin.com/in/jamesolano/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">James Nelson Olaño</a>,
+            Good work doesn't happen in isolation — and I'll be the first to admit that. I've only included
+            work I had a large hand in, but whether it's <strong>design</strong>, <strong>ideas</strong>,
+            <strong>UX</strong>, <strong>process</strong>, <strong>software engineering</strong>,
+            <strong>mentorship</strong>, <strong>advice</strong>, or <strong>creative direction</strong>,
+            the following people have shaped how I think, how I build, and who I've become along the way.
+            They challenged me, backed me, and left a mark I carry into everything I create.
+            A massive, heartfelt thank you to
             <a href="https://www.linkedin.com/in/kevin-juanillo-1835b9b9/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Kevin Juanillo</a>,
+            <a href="https://www.linkedin.com/in/jamesolano/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">James Nelson Olaño</a>,
             <a href="https://www.linkedin.com/in/marian-rae-alvarado-3057b8190/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Marian Rae Alvarado</a>,
-            <a href="https://www.linkedin.com/in/jeremiah-diaz-097556a4/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Jeremiah Diaz</a>,
-            <a href="https://www.linkedin.com/in/eric-francis-casaljay-461418150/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Eric Francis Casaljay</a>
-            and last but not least
-            <a href="https://www.linkedin.com/in/ma-clarizza-folloso-ab418b1aa/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Ma. Clarizza Folloso</a>.
-            THANK YOU.
+            <a href="https://www.linkedin.com/in/eric-francis-casaljay-461418150/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Eric Francis Casaljay</a>,
+            and
+            <a href="https://www.linkedin.com/in/ma-clarizza-folloso-ab418b1aa/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Ma. Clarizza Folloso</a>,
+            the loml. You know what you did. Thank you, fam!
           </p>
         </div>
       </div>
@@ -356,54 +489,204 @@ import ContactForm from '../components/ContactForm.astro';
     });
   });
 
-  /* ── Explore toggle ── */
-  document.querySelectorAll('.explore-btn').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const details = (btn as HTMLElement).previousElementSibling as HTMLElement | null;
-      if (details?.classList.contains('work-details')) {
-        details.classList.toggle('visible');
-        (btn as HTMLElement).textContent = details.classList.contains('visible') ? 'Close' : 'Explore';
+  /* ═══════════════════════════════════════════════════════
+     Flying Scroll Transitions & Polymorphic Effects
+     ═══════════════════════════════════════════════════════ */
+
+  /* ── Service cards: 3D stagger fly-in from below ── */
+  const serviceCards = gsap.utils.toArray<HTMLElement>('.services-grid > *');
+  if (serviceCards.length) {
+    gsap.set(serviceCards, { opacity: 0, y: 120, rotateX: 25, transformPerspective: 800 });
+    ScrollTrigger.create({
+      trigger: '.services-grid',
+      start: 'top 82%',
+      onEnter: () => {
+        gsap.to(serviceCards, {
+          opacity: 1, y: 0, rotateX: 0,
+          duration: 0.9,
+          stagger: 0.18,
+          ease: 'power3.out',
+        });
+      },
+      once: true,
+    });
+  }
+
+  /* ── Project cards: clean stagger fade + rise ── */
+  const projectCards = gsap.utils.toArray<HTMLElement>('.project-card');
+  if (projectCards.length) {
+    gsap.set(projectCards, { opacity: 0, y: 50, scale: 0.97 });
+    ScrollTrigger.create({
+      trigger: '.project-track',
+      start: 'top 80%',
+      onEnter: () => {
+        gsap.to(projectCards, {
+          opacity: 1, y: 0, scale: 1,
+          duration: 0.7,
+          stagger: 0.12,
+          ease: 'power2.out',
+        });
+      },
+      once: true,
+    });
+  }
+
+  /* ── Venture cards: elastic slide-in from sides ── */
+  const ventureCards = gsap.utils.toArray<HTMLElement>('.venture-card');
+  ventureCards.forEach((card, i) => {
+    gsap.set(card, { opacity: 0, x: i % 2 === 0 ? -80 : 80, scale: 0.94 });
+    ScrollTrigger.create({
+      trigger: card,
+      start: 'top 86%',
+      onEnter: () => {
+        gsap.to(card, {
+          opacity: 1, x: 0, scale: 1,
+          duration: 0.9,
+          ease: 'back.out(1.4)',
+        });
+      },
+      once: true,
+    });
+  });
+
+  /* ── Employer card: horizontal clip-path reveal ── */
+  const empCard = document.querySelector('.employer-card') as HTMLElement | null;
+  if (empCard) {
+    gsap.set(empCard, { clipPath: 'inset(0 100% 0 0)' });
+    ScrollTrigger.create({
+      trigger: empCard,
+      start: 'top 82%',
+      onEnter: () => {
+        gsap.to(empCard, {
+          clipPath: 'inset(0 0% 0 0)',
+          duration: 1.2,
+          ease: 'power3.inOut',
+        });
+      },
+      once: true,
+    });
+  }
+
+  /* ── Statement: dramatic zoom + blur reveal ── */
+  const stmtOutline = document.querySelector('.statement-outline') as HTMLElement | null;
+  if (stmtOutline) {
+    gsap.fromTo(stmtOutline,
+      { scale: 1.4, filter: 'blur(8px)', opacity: 0 },
+      {
+        scale: 1, filter: 'blur(0px)', opacity: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.statement-panel',
+          start: 'top 78%',
+          end: 'center center',
+          scrub: 0.8,
+        },
       }
+    );
+  }
+
+  /* ── Logo frames: scroll-driven float & rotation ── */
+  gsap.utils.toArray<HTMLElement>('.keycabz-logo-frame, .cryptobuds-logo-frame, .yobi-logo-frame').forEach((frame, i) => {
+    gsap.to(frame, {
+      y: -20,
+      rotation: (i % 2 === 0 ? 4 : -4),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: frame,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+      },
+    });
+  });
+
+  /* ── Project cards: subtle scale on scroll ── */
+  projectCards.forEach((card) => {
+    gsap.to(card, {
+      scale: 1.02,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: card,
+        start: 'top bottom',
+        end: 'center center',
+        scrub: 1.5,
+      },
+    });
+  });
+
+  /* ── Marquee strip: scroll-speed modulation ── */
+  const marqueeInner = document.querySelector('.marquee-inner') as HTMLElement | null;
+  if (marqueeInner) {
+    gsap.to(marqueeInner, {
+      xPercent: -5,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.marquee-strip',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 0.5,
+      },
+    });
+  }
+
+  /* ── Floating ambient orbs: per-section parallax ── */
+  const orbConfigs = [
+    { sel: '#about-me', size: 160, pos: 'right: 10%; top: 15%', dx: 20, dy: -45 },
+    { sel: '#about-me', size: 120, pos: 'left: 5%; bottom: 25%', dx: -15, dy: -30 },
+    { sel: '#services', size: 180, pos: 'right: 5%; top: 20%', dx: 30, dy: -60 },
+    { sel: '#services', size: 130, pos: 'left: 15%; bottom: 15%', dx: -20, dy: -35 },
+    { sel: '.keycabz-section', size: 200, pos: 'left: 8%; top: 30%', dx: -25, dy: -50 },
+    { sel: '.keycabz-section', size: 140, pos: 'right: 12%; bottom: 20%', dx: 18, dy: -40 },
+    { sel: '.cryptobuds-section', size: 160, pos: 'right: 10%; bottom: 25%', dx: 20, dy: -45 },
+    { sel: '.cryptobuds-section', size: 120, pos: 'left: 18%; top: 20%', dx: -15, dy: -30 },
+    { sel: '.yobi-section', size: 170, pos: 'left: 5%; top: 40%', dx: -30, dy: -55 },
+    { sel: '.yobi-section', size: 130, pos: 'right: 8%; bottom: 30%', dx: 22, dy: -35 },
+    { sel: '#works', size: 140, pos: 'left: 8%; top: 25%', dx: -18, dy: -40 },
+    { sel: '.ventures-section', size: 160, pos: 'left: 12%; bottom: 20%', dx: -20, dy: -50 },
+    { sel: '.ventures-section', size: 110, pos: 'right: 6%; top: 18%', dx: 15, dy: -30 },
+    { sel: '.statement-panel', size: 220, pos: 'left: 50%; top: 30%', dx: -10, dy: -35 },
+    { sel: '#contact', size: 150, pos: 'right: 8%; top: 25%', dx: 25, dy: -45 },
+    { sel: '#contact', size: 110, pos: 'left: 10%; bottom: 20%', dx: -12, dy: -28 },
+  ];
+
+  orbConfigs.forEach(({ sel, size, pos, dx, dy }) => {
+    const parent = document.querySelector(sel) as HTMLElement | null;
+    if (!parent) return;
+    const orb = document.createElement('div');
+    orb.className = 'floating-orb-decor';
+    orb.style.cssText = `
+      position: absolute; width: ${size}px; height: ${size}px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--color-orange-glow), transparent 70%);
+      pointer-events: none; z-index: 0;
+      filter: blur(50px); opacity: 0.3;
+      ${pos}
+    `;
+    parent.appendChild(orb);
+
+    gsap.to(orb, {
+      y: dy, x: dx,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: parent,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1.5,
+      },
     });
   });
 </script>
 
 <style>
   /* ── About ── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: clamp(2rem, 6vw, 5rem);
-    align-items: start;
+  .about-content {
+    max-width: 100%;
   }
 
-  .about-image {
-    perspective: 1000px;
-  }
-
-  .about-image img {
-    width: 100%;
-    border-radius: 1rem;
-    filter: var(--img-filter);
-    transition: filter 0.5s ease, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform-style: preserve-3d;
-  }
-
-  .about-image img:hover {
-    filter: var(--img-filter-hover);
-    transform: rotateY(-4deg) rotateX(2deg) scale(1.02);
-  }
-
-  .about-me_img-mobile {
-    display: none;
-    margin-bottom: 1.5rem;
-  }
-
-  .mobile-portrait {
-    width: 100%;
-    max-width: 320px;
-    border-radius: 0.75rem;
+  .content-paragraph--lead {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    line-height: 1.7;
+    color: var(--text-secondary);
   }
 
   .about-cta {
@@ -414,6 +697,7 @@ import ContactForm from '../components/ContactForm.astro';
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
     gap: 1.5rem;
     margin-bottom: clamp(2rem, 4vw, 3.5rem);
   }
@@ -433,10 +717,10 @@ import ContactForm from '../components/ContactForm.astro';
 
   .service-tag {
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: var(--fs-xs);
     font-weight: 400;
-    letter-spacing: 0.5px;
-    padding: 0.7rem 1.25rem;
+    letter-spacing: 0.3px;
+    padding: 0.5rem 1rem;
     border: 1px solid var(--services-tag-border);
     border-radius: 2rem;
     background: transparent;
@@ -453,7 +737,8 @@ import ContactForm from '../components/ContactForm.astro';
   }
 
   .services-cta {
-    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    font-size: var(--fs-sm);
+    font-weight: 600;
     line-height: 1.7;
     color: var(--text-muted);
     max-width: 24ch;
@@ -463,143 +748,177 @@ import ContactForm from '../components/ContactForm.astro';
   /* ── Works — Employer Card ── */
   .employer-card {
     display: flex;
-    gap: clamp(1.5rem, 3vw, 2.5rem);
-    align-items: flex-start;
-    padding: clamp(1.5rem, 3vw, 2.5rem) 0;
-    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 2.5rem;
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    background: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .employer-card::after {
+    display: none;
+  }
+
+  .employer-card > * { position: relative; z-index: 1; }
+
+  .employer-card__header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
   }
 
   .employer-logo {
-    width: 88px;
-    height: auto;
+    width: 80px;
+    height: 80px;
     flex-shrink: 0;
-    filter: var(--img-filter);
-    transition: filter 0.4s ease;
+    object-fit: contain;
+    filter: brightness(0) invert(0.9);
   }
 
-  .employer-card:hover .employer-logo {
-    filter: var(--img-filter-hover);
+  :global([data-theme="light"] .employer-logo) {
+    filter: brightness(0) invert(0.33);
   }
 
-  .employer-text h3 {
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  .employer-card__title h3 {
+    font-size: var(--fs-xl);
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 1rem;
     letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
-  .employer-text .text-section {
-    margin-bottom: 0.75rem;
-  }
-
-  /* Work details toggle */
-  .work-details {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
-    margin-bottom: 0;
-  }
-
-  .work-details.visible {
-    max-height: 200px;
-    opacity: 1;
-    margin-bottom: 0.75rem;
-  }
-
-  .work-details ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
-  }
-
-  .work-details ul li {
-    font-size: 0.85rem;
-    text-transform: lowercase;
-    letter-spacing: 0.5px;
-    padding: 0.35rem 0.85rem;
-    border: 1px solid var(--border);
-    border-radius: 1.5rem;
+  .employer-period {
+    font-size: var(--fs-xs);
     color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-top: 0.2rem;
+    display: block;
   }
 
-  .explore-btn {
-    font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+  .employer-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .employer-pos {
+    font-size: var(--fs-lg);
+    font-weight: 600;
     color: var(--color-orange);
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: color 0.3s;
+    letter-spacing: -0.01em;
   }
 
-  .explore-btn:hover {
+  .employer-pos em {
+    font-style: normal;
+    color: var(--text-primary);
+    opacity: 0.85;
+  }
+
+  .employer-role {
+    font-size: var(--fs-base);
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .employer-role strong {
+    font-weight: 600;
     color: var(--text-primary);
   }
 
-  /* Projects — horizontal scroll track */
-  .project-track {
+  .employer-duties {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
     display: flex;
-    gap: clamp(1.5rem, 3vw, 2rem);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 1.5rem;
-    margin-inline: calc(-1 * clamp(1.25rem, 5vw, 7.2%));
-    padding-inline: clamp(1.25rem, 5vw, 7.2%);
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  /* Hide scrollbar but keep functionality */
-  .project-track::-webkit-scrollbar {
-    height: 4px;
+  .employer-duties li {
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    padding-left: 1.25rem;
+    position: relative;
   }
-  .project-track::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .project-track::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 2px;
-  }
-  .project-track::-webkit-scrollbar-thumb:hover {
+
+  .employer-duties li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
     background: var(--color-orange);
   }
+
+  /* ── Name Links (employer, venture, project, section) ── */
+  .employer-name-link,
+  .venture-name-link,
+  .project-name-link,
+  .section-name-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .employer-name-link:hover,
+  .venture-name-link:hover,
+  .project-name-link:hover,
+  .section-name-link:hover {
+    color: var(--color-orange);
+  }
+
+  /* ── Cryptobuds Links ── */
+  .cryptobuds-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Projects — responsive grid, mobile-first */
   .project-track {
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-bottom: 0;
   }
 
   .project-card {
-    flex: 0 0 clamp(320px, 75vw, 520px);
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    padding: clamp(1rem, 2vw, 1.5rem);
+    gap: 0.75rem;
+    padding: 0.75rem;
     border: 1px solid var(--border);
-    border-radius: 1.25rem;
+    border-radius: 0.75rem;
     background: var(--glass-bg);
-    transition: border-color 0.4s ease, transform 0.4s ease;
+    transition: border-color 0.35s ease, transform 0.35s ease;
   }
 
   .project-card:hover {
     border-color: var(--color-orange-dim, rgba(255,117,24,0.3));
-    transform: translateY(-4px);
+    transform: translateY(-2px);
+  }
+
+  .project-card__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .project-card__image img {
     width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    border-radius: 0.75rem;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    background: rgba(255,255,255,0.03);
     filter: var(--img-filter);
-    transition: filter 0.5s ease;
+    transition: filter 0.4s ease;
   }
 
   .project-card:hover .project-card__image img {
@@ -609,39 +928,42 @@ import ContactForm from '../components/ContactForm.astro';
   .project-card__body {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.35rem;
+    padding: 0.25rem 0.25rem 0.25rem;
   }
 
   .project-card__title {
-    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
-    font-weight: 700;
+    font-size: var(--fs-base);
+    font-weight: 600;
     color: var(--text-primary);
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
   }
 
-  .project-card__tags {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    padding: 0;
-    margin-top: 0.25rem;
+  .project-card__body .text-section {
+    font-size: var(--fs-sm);
+    line-height: 1.55;
+    color: var(--text-secondary);
   }
 
-  .project-card__tags li {
-    font-size: 0.78rem;
-    text-transform: lowercase;
-    letter-spacing: 0.5px;
-    padding: 0.25rem 0.7rem;
-    border: 1px solid var(--border);
-    border-radius: 1.25rem;
-    color: var(--text-muted);
-    transition: border-color 0.3s;
+  /* Tablet: 2 columns */
+  @media (min-width: 540px) {
+    .project-track {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem;
+    }
   }
 
-  .project-card:hover .project-card__tags li {
-    border-color: var(--color-orange-dim, rgba(255,117,24,0.3));
+  /* Desktop: 3 columns, compact cards */
+  @media (min-width: 960px) {
+    .project-track {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      padding: 0.85rem;
+    }
   }
 
   /* ── thy keycabz — Featured ── */
@@ -657,7 +979,7 @@ import ContactForm from '../components/ContactForm.astro';
   }
 
   .keycabz-label {
-    font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+    font-size: var(--fs-2xs);
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -669,30 +991,6 @@ import ContactForm from '../components/ContactForm.astro';
     margin-bottom: clamp(1.5rem, 3vw, 2.5rem) !important;
   }
 
-  .keycabz-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 2rem;
-  }
-
-  .keycabz-tag {
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    padding: 0.6rem 1.15rem;
-    border: 1px solid var(--color-orange-dim, rgba(255,117,24,0.25));
-    border-radius: 2rem;
-    color: var(--color-orange);
-    transition: all 0.3s ease;
-  }
-
-  .keycabz-tag:hover {
-    background: var(--color-orange);
-    color: #000;
-    border-color: var(--color-orange);
-  }
-
   .keycabz-visual {
     display: flex;
     align-items: center;
@@ -700,8 +998,8 @@ import ContactForm from '../components/ContactForm.astro';
   }
 
   .keycabz-logo-frame {
-    width: clamp(180px, 22vw, 320px);
-    height: clamp(180px, 22vw, 320px);
+    width: clamp(160px, 18vw, 280px);
+    height: clamp(160px, 18vw, 280px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -732,16 +1030,341 @@ import ContactForm from '../components/ContactForm.astro';
   }
 
   .works-cta {
-    font-size: clamp(1.15rem, 1.8vw, 1.5rem);
-    line-height: 1.75;
+    font-size: var(--fs-base);
+    line-height: 1.7;
     color: var(--text-muted);
-    padding-top: clamp(2.5rem, 5vw, 4rem);
+    padding-top: clamp(2rem, 4vw, 3rem);
+  }
+
+  /* ── Ventures ── */
+  .ventures-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .venture-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 2.5rem;
+    padding: 2.5rem 3rem;
+    border: 1px solid var(--card-border);
+    border-left: 3px solid var(--color-orange);
+    border-radius: 1rem;
+    background: var(--card-bg);
+    transition: border-color 0.35s ease, transform 0.35s ease;
+  }
+
+  .venture-card:hover {
+    border-color: var(--color-orange-dim, rgba(255,117,24,0.3));
+    transform: translateY(-3px);
+  }
+
+  .venture-card__logo {
+    width: clamp(120px, 14vw, 180px);
+    height: clamp(120px, 14vw, 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .venture-card__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: var(--img-filter);
+    transition: filter 0.4s ease;
+  }
+
+  .venture-card:hover .venture-card__logo img {
+    filter: var(--img-filter-hover);
+  }
+
+  .venture-card__body h3 {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .venture-card__body p {
+    font-size: var(--fs-base);
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+  }
+
+  /* ── Project group labels ── */
+  .project-group-label {
+    grid-column: 1 / -1;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--color-orange-dim, rgba(255,117,24,0.25));
+    margin-top: 0.75rem;
+  }
+
+  .project-group-label:first-child {
+    margin-top: 0;
+  }
+
+  /* ── Cryptobuds ── */
+  .cryptobuds-hero {
+    display: grid;
+    grid-template-columns: 0.6fr 1.4fr;
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: center;
+  }
+
+  .cryptobuds-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cryptobuds-logo-frame {
+    width: clamp(160px, 18vw, 280px);
+    height: clamp(160px, 18vw, 280px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--color-orange-dim, rgba(255,117,24,0.25));
+    box-shadow: 0 0 80px var(--color-orange-glow, rgba(255,117,24,0.1)),
+                inset 0 0 0 1px rgba(255,255,255,0.04);
+    padding: 2rem;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+  }
+
+  .cryptobuds-logo-frame:hover {
+    box-shadow: 0 0 120px rgba(255,117,24,0.2),
+                inset 0 0 0 1px rgba(255,117,24,0.15);
+    transform: scale(1.03);
+  }
+
+  .cryptobuds-logo-frame img {
+    width: 100%;
+    height: auto;
+    filter: var(--img-filter);
+    transition: filter 0.5s ease;
+  }
+
+  .cryptobuds-logo-frame:hover img {
+    filter: var(--img-filter-hover);
   }
 
   /* ── Kudos ── */
   .kudos-content {
-    max-width: 72ch;
+    max-width: 100%;
   }
+
+  /* ── Section Title Hero Variant ── */
+  .section-title--hero {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    letter-spacing: -0.03em;
+  }
+
+  /* ── Yo-Bi ── */
+  .yobi-hero {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: center;
+  }
+
+  .yobi-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .yobi-logo-frame {
+    width: clamp(160px, 18vw, 280px);
+    height: clamp(160px, 18vw, 280px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--color-orange-dim, rgba(255,117,24,0.25));
+    box-shadow: 0 0 80px var(--color-orange-glow, rgba(255,117,24,0.1)),
+                inset 0 0 0 1px rgba(255,255,255,0.04);
+    padding: 2.5rem;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+  }
+
+  .yobi-logo-frame:hover {
+    box-shadow: 0 0 120px rgba(255,117,24,0.2),
+                inset 0 0 0 1px rgba(255,117,24,0.15);
+    transform: scale(1.03);
+  }
+
+  .yobi-logo-frame img {
+    width: 100%;
+    height: auto;
+    filter: var(--img-filter);
+    transition: filter 0.5s ease;
+  }
+
+  .yobi-logo-frame:hover img {
+    filter: var(--img-filter-hover);
+  }
+
+  .yobi-spotify {
+    margin-top: clamp(2rem, 4vw, 3.5rem);
+    max-width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--color-orange-dim, rgba(255,117,24,0.25));
+    background: var(--glass-bg);
+    box-shadow: 0 0 40px var(--color-orange-glow, rgba(255,117,24,0.06));
+  }
+
+  /* ── Spotify: light mode adaptation ── */
+  :global([data-theme="light"]) .yobi-spotify {
+    border-color: rgba(0,0,0,0.10);
+    background: rgba(255,255,255,0.6);
+  }
+
+  :global([data-theme="light"]) .yobi-spotify iframe {
+    filter: invert(1) hue-rotate(180deg);
+    border-radius: 12px;
+  }
+
+  /* ── Marquee Strip ── */
+  .marquee-strip {
+    overflow: hidden;
+    padding: 1.5rem 0;
+    background: var(--section-bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .marquee-inner {
+    display: inline-flex;
+    gap: 2rem;
+    animation: marquee-scroll 20s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee-inner span {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--outline-stroke);
+    text-stroke: 1px var(--outline-stroke);
+    user-select: none;
+    flex-shrink: 0;
+    transition: color 0.3s ease, -webkit-text-stroke-color 0.3s ease;
+  }
+
+  .marquee-inner span:not(.marquee-dot):hover {
+    color: var(--color-orange);
+    -webkit-text-stroke-color: var(--color-orange);
+  }
+
+  .marquee-dot {
+    color: var(--color-orange) !important;
+    -webkit-text-stroke: none !important;
+    opacity: 0.5;
+  }
+
+  @keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ── Floating Orb Decoration ── */
+  .floating-orb-decor {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Branding CTA ── */
+  .branding-cta-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: center;
+  }
+
+  .branding-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: inherit;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: var(--color-orange);
+    border: 2px solid var(--color-orange);
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin-top: 1.5rem;
+  }
+
+  .branding-cta-btn:hover {
+    background: var(--color-orange);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -8px var(--color-orange-glow);
+  }
+
+  .branding-cta-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .branding-cta-logo-frame {
+    width: clamp(140px, 16vw, 220px);
+    height: clamp(140px, 16vw, 220px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--color-orange-dim, rgba(255,117,24,0.25));
+    box-shadow: 0 0 80px var(--color-orange-glow, rgba(255,117,24,0.1)),
+                inset 0 0 0 1px rgba(255,255,255,0.04);
+    padding: 2rem;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+  }
+
+  .branding-cta-logo-frame:hover {
+    box-shadow: 0 0 120px rgba(255,117,24,0.2),
+                inset 0 0 0 1px rgba(255,117,24,0.15);
+    transform: scale(1.03);
+  }
+
+  .branding-cta-logo-frame img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .branding-cta-logo-frame .logo-light { display: none; }
+  .branding-cta-logo-frame .logo-dark { display: block; }
+  :global([data-theme="light"]) .branding-cta-logo-frame .logo-dark { display: none; }
+  :global([data-theme="light"]) .branding-cta-logo-frame .logo-light { display: block; }
 
   /* ── Responsive ── */
   @media (max-width: 1024px) {
@@ -751,18 +1374,6 @@ import ContactForm from '../components/ContactForm.astro';
   }
 
   @media (max-width: 768px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .about-image {
-      display: none;
-    }
-
-    .about-me_img-mobile {
-      display: block;
-    }
-
     .services-grid {
       grid-template-columns: 1fr;
       gap: 1rem;
@@ -778,6 +1389,7 @@ import ContactForm from '../components/ContactForm.astro';
 
     .employer-card {
       flex-direction: column;
+      padding: 1.25rem 1.25rem;
       gap: 1rem;
     }
 
@@ -804,5 +1416,103 @@ import ContactForm from '../components/ContactForm.astro';
       height: 160px;
       padding: 1.5rem;
     }
+
+    .cryptobuds-hero {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .cryptobuds-visual {
+      order: -1;
+    }
+
+    .cryptobuds-logo-frame {
+      width: 140px;
+      height: 140px;
+      padding: 1.5rem;
+    }
+
+    .yobi-hero {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .yobi-visual {
+      order: -1;
+    }
+
+    .yobi-logo-frame {
+      width: 160px;
+      height: 160px;
+      padding: 1.5rem;
+    }
+
+    .venture-card__logo {
+      width: 100px;
+      height: 100px;
+    }
+
+    .venture-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem 1.25rem;
+      gap: 1.25rem;
+    }
+
+    .branding-cta-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .branding-cta-visual {
+      order: -1;
+    }
+
+    .branding-cta-logo-frame {
+      width: 140px;
+      height: 140px;
+      padding: 1.5rem;
+    }
+
+    .branding-cta-btn {
+      margin-inline: auto;
+    }
   }
-</style>
+
+  /* ── iPad / Tablet (769px–1024px) ── */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .employer-card {
+      padding: 1.75rem 2rem;
+    }
+
+    .keycabz-hero {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+    }
+
+    .cryptobuds-hero {
+      grid-template-columns: 0.5fr 1.5fr;
+      gap: 3rem;
+    }
+
+    .yobi-hero {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+    }
+
+    .ventures-grid {
+      gap: 1.25rem;
+    }
+
+    .venture-card {
+      padding: 2rem 2.25rem;
+      gap: 2rem;
+    }
+  }

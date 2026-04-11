@@ -9,7 +9,7 @@
 @layer base {
   body {
     font-family: "Manrope", system-ui, sans-serif;
-    font-size: 1rem;
+    font-size: 1.125rem; /* 18px */
     font-weight: 300;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -57,34 +57,47 @@
 
   /* ── Sections ── */
   .section-wrapper {
-    padding: clamp(6rem, 12vw, 12rem) 0;
+    padding: clamp(4rem, 8vw, 7rem) 0;
   }
 
   .section-title {
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: -0.03em;
-    line-height: 1.08;
-    margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: clamp(1.75rem, 3.5vw, 3rem);
+    padding-top: 0.85rem;
+    position: relative;
+  }
+
+  .section-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.75rem;
+    height: 2px;
+    background: var(--color-orange);
+    border-radius: 1px;
   }
 
   .subsection-title {
-    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    font-size: var(--fs-lg);
     font-weight: 500;
     color: var(--text-primary);
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-    padding: clamp(2rem, 4vw, 3.5rem) 0 clamp(1.25rem, 2.5vw, 2rem);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    padding: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(1rem, 2vw, 1.5rem);
   }
 
   /* ── Content Text ── */
   .content-paragraph {
-    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
     font-weight: 300;
-    line-height: 1.75;
+    line-height: 1.8;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .content-paragraph:last-of-type {
@@ -92,16 +105,16 @@
   }
 
   .text-section {
-    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
-    line-height: 1.75;
+    font-size: var(--fs-base);
+    line-height: 1.7;
     color: var(--text-secondary);
   }
 
   /* ── Content Link (animated underline) ── */
   .content-link {
     position: relative;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: inherit;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--color-orange);

@@ -47,7 +47,7 @@
 
   --section-bg:       #0a0a0a;
   --section-bg-alt:   #111111;
-  --outline-stroke:   rgba(255,255,255,0.06);
+  --outline-stroke:   rgba(255,255,255,0.12);
 
   --link-underline:   #666;
   --link-underline-hover: var(--color-orange);
@@ -58,48 +58,58 @@
   --perspective:      1200px;
   --transition-glass: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
   --transition-spring:all 0.5s cubic-bezier(0.34,1.56,0.64,1);
+
+  /* ── Type Scale (18px base) ── */
+  --fs-2xs: 0.72rem;              /* ~11.5px — pill labels, tags          */
+  --fs-xs:  0.8rem;               /* ~13px   — nav, explore btn           */
+  --fs-sm:  0.9rem;               /* ~14.4px — captions, helper text      */
+  --fs-base: 1.125rem;            /* 18px    — body / descriptions        */
+  --fs-md:  1.125rem;             /* 18px    — content paragraphs         */
+  --fs-lg:  clamp(1.25rem, 1.8vw, 1.5rem);   /* 20–24px — component titles  */
+  --fs-xl:  clamp(1.5rem, 2.5vw, 2.25rem);   /* 24–36px — section headings   */
+  --fs-hero: clamp(3.25rem, 8vw, 7rem);    /* 52–112px — hero headline       */
 }
 
 /* ── LIGHT ── */
 [data-theme="light"] {
-  --bg:               #F5F5F7;
-  --bg-surface:       #fff;
-  --text-primary:     #0a0a0a;
-  --text-secondary:   #555;
-  --text-muted:       #888;
-  --border:           rgba(0,0,0,0.08);
+  --bg:               #F5F4F0;
+  --bg-surface:       #FAFAF8;
+  --text-primary:     #1a1a1a;
+  --text-secondary:   #3a3a3a;
+  --text-muted:       #5a5a5a;
+  --border:           rgba(0,0,0,0.14);
 
-  --color-accent:     #0a0a0a;
+  --color-accent:     #1a1a1a;
 
-  --glass-bg:         rgba(255,255,255,0.65);
-  --glass-bg-hover:   rgba(255,255,255,0.80);
+  --glass-bg:         rgba(255,255,255,0.70);
+  --glass-bg-hover:   rgba(255,255,255,0.85);
   --glass-border:     rgba(0,0,0,0.08);
   --glass-shadow:     0 8px 32px rgba(0,0,0,0.08);
   --glass-inset:      inset 0 0 0 1px rgba(0,0,0,0.04);
 
-  --dock-bg:          rgba(255,255,255,0.75);
-  --dock-text:        rgba(0,0,0,0.5);
+  --dock-bg:          rgba(255,255,255,0.85);
+  --dock-text:        rgba(0,0,0,0.50);
   --dock-hover-bg:    rgba(0,0,0,0.06);
   --dock-tooltip-bg:  rgba(255,255,255,0.95);
 
-  --card-bg:          rgba(255,255,255,0.75);
+  --card-bg:          rgba(255,255,255,0.80);
   --card-border:      rgba(255,117,24,0.18);
 
   --hero-shape-bg:    linear-gradient(135deg, rgba(255,117,24,0.12) 0%, rgba(0,0,0,0.02) 50%, rgba(255,117,24,0.06) 100%);
   --grid-line:        rgba(0,0,0,0.03);
 
-  --img-filter:       grayscale(0.5) brightness(1);
-  --img-filter-hover: grayscale(0) brightness(1);
+  --img-filter:       grayscale(1) brightness(0.6) contrast(0.8);
+  --img-filter-hover: grayscale(0) brightness(0.4) contrast(1.1);
 
-  --services-tag-border: #ccc;
+  --services-tag-border: #bbb;
   --services-tag-hover-bg: var(--color-orange);
   --services-tag-hover-text: #fff;
 
-  --section-bg:       #F5F5F7;
-  --section-bg-alt:   #EBEBED;
-  --outline-stroke:   rgba(0,0,0,0.06);
+  --section-bg:       #F5F4F0;
+  --section-bg-alt:   #ECEAE5;
+  --outline-stroke:   rgba(0,0,0,0.10);
 
-  --link-underline:   #ccc;
+  --link-underline:   #bbb;
   --link-underline-hover: var(--color-orange);
 }
 
@@ -449,7 +459,7 @@ body {
 
 .section-panel {
   position: relative;
-  padding: clamp(6rem, 12vw, 12rem) clamp(1.25rem, 5vw, 7.2%);
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 7.2%);
   background: var(--section-bg);
   overflow: hidden;
 }
@@ -500,7 +510,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  font-size: clamp(4rem, 12vw, 12rem);
+  font-size: clamp(3rem, 9vw, 8rem);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -532,21 +542,21 @@ body {
 
 /* ── Statement ── */
 .statement-outline {
-  font-size: clamp(3rem, 10vw, 10rem);
+  font-size: clamp(2.5rem, 7vw, 6rem);
   font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
   color: transparent;
   -webkit-text-stroke: 1.5px var(--outline-stroke);
   text-stroke: 1.5px var(--outline-stroke);
   user-select: none;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .statement-solid {
-  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-secondary);
   max-width: 56ch;
 }
@@ -614,20 +624,12 @@ body {
 
 /* ── Page Entrance ── */
 @keyframes pageEntrance {
-  from {
-    opacity: 0;
-    filter: blur(4px);
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .wrapper {
-  animation: pageEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: pageEntrance 0.4s ease both;
 }
 
 /* ── Cursor Ambient Glow ── */
@@ -675,7 +677,7 @@ body {
 
   /* Vertical sections — mobile padding */
   .section-panel {
-    padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 5vw, 7.2%);
+    padding: 2.5rem 1.25rem;
   }
 
   .scroll-progress {
@@ -688,7 +690,7 @@ body {
   }
 
   .statement-outline {
-    font-size: clamp(2rem, 12vw, 4rem);
+    font-size: clamp(1.5rem, 10vw, 3rem);
     -webkit-text-stroke-width: 1px;
   }
 }
@@ -700,5 +702,13 @@ body {
     height: 350px;
     right: 2%;
     opacity: 0.5;
+  }
+
+  .section-panel {
+    padding: 3.5rem 3rem;
+  }
+
+  .section-inner {
+    max-width: 100%;
   }
 }

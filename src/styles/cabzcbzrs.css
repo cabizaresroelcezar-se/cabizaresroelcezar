@@ -1,8 +1,8 @@
 /* ── Kudos Section ── */
 .kudos_section-content {
   color: var(--text-secondary);
-  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-  line-height: 1.85;
+  font-size: var(--fs-base);
+  line-height: 1.8;
 }
 
 .kudos_section-link {
@@ -20,7 +20,7 @@
 /* ── Project subtitle ── */
 p.project_section-subtitle {
   color: var(--text-muted);
-  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  font-size: var(--fs-base);
   line-height: 1.75;
   margin-top: 0.25rem;
 }

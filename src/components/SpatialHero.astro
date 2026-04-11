@@ -15,7 +15,7 @@ interface Props {
 const {
   heading = 'Hi there,',
   subheading = "I'm Roel Cezar Cabizares",
-  description = "I'm a software engineer specializing in front-end development, UI/UX, and digital experience.",
+  description = "I'm a SWE specializing in front-end development, UI/UX, and digital experience.",
 } = Astro.props;
 ---
 
@@ -79,7 +79,7 @@ const {
 <style>
   /* Hero text */
   .hero-line-1 {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1.125rem, 1.8vw, 1.35rem);
     font-weight: 300;
     color: var(--text-muted);
     margin: 0;
@@ -90,14 +90,14 @@ const {
   }
 
   .hero-line-2 {
-    font-size: clamp(3rem, 8vw, 7rem);
+    font-size: clamp(3.25rem, 8vw, 7rem);
     font-weight: 700;
     color: var(--text-primary);
     margin: 0;
     padding: 0;
     letter-spacing: -0.03em;
     text-transform: unset;
-    line-height: 1.04;
+    line-height: 1.0;
     cursor: default;
   }
 
@@ -115,12 +115,12 @@ const {
   }
 
   .hero-description {
-    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
     font-weight: 300;
     color: var(--text-secondary);
     line-height: 1.7;
-    max-width: 52ch;
-    margin-top: 2rem;
+    max-width: 56ch;
+    margin-top: 1.75rem;
   }
 
   /* Scroll hint */
@@ -141,7 +141,7 @@ const {
   }
 
   .scroll-text {
-    font-size: 0.65rem;
+    font-size: var(--fs-2xs);
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--text-muted);

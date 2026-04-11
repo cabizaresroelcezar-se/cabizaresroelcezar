@@ -1,207 +1,109 @@
-# Roel Cezar Cabizares - Portfolio
+# cabizaresroelcezar
 
-A modern Jamstack portfolio built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+Personal portfolio of **Roel Cezar Cabizares** — Software Engineer & Designer specializing in full-stack development, UI/UX, and intentional digital experiences.
 
-## 🚀 Project Structure
+**Live:** [cabizaresroelcezar.github.io](https://cabizaresroelcezar.github.io)
+
+## Tech Stack
+
+- **Framework** — Astro 5
+- **Styling** — Tailwind CSS + CSS custom properties (spatial/glassmorphism design system)
+- **Typography** — Manrope (self-hosted woff2, weights 300/500/700)
+- **Animations** — AOS (scroll reveal) + GSAP ScrollTrigger
+- **Theme** — Dark default / light mode with `[data-theme]` toggle, persisted in localStorage
+- **Contact Form** — formsubmit.co with honeypot & timing validation
+- **Analytics** — Google Tag Manager
+- **Deployment** — GitHub Pages
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Landing page — About, Services, Experience, Projects, Ventures, Kudos, Contact |
+| `/branding` | CABZ branding page — logo system, typography, color palette |
+
+## Project Structure
 
 ```
 src/
-├── components/        # Reusable Astro components
-├── layouts/          # Layout templates
-├── pages/            # Page routes (file-based routing)
-└── styles/           # Global CSS and Tailwind configuration
-
-public/              # Static assets (images, fonts, etc.)
-```
-
-## 🛠️ Tech Stack
-
-- **Framework**: Astro 4
-- **Styling**: Tailwind CSS
-- **Typography**: Manrope font family
-- **Forms**: Formspree integration (configurable)
-- **Analytics**: Google Tag Manager
-- **Deployment**: GitHub Pages
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 18+ and npm
-
-### Installation
-
-1. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-2. **Start development server**
-   ```bash
-   npm run dev
-   ```
-   Open http://localhost:3000 in your browser
-
-3. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-## 📝 Configuration
-
-### Update Site URL
-Edit `astro.config.mjs`:
-```javascript
-export default defineConfig({
-  site: 'https://your-username.github.io',
-  // ...
-});
-```
-
-### Contact Form Setup
-
-The contact form in `src/components/ContactForm.astro` uses [Formspree](https://formspree.io/) for handling submissions.
-
-1. Sign up at [Formspree.io](https://formspree.io/)
-2. Create a new form and get your form ID
-3. Replace `YOUR_FORM_ID` in `ContactForm.astro`:
-   ```javascript
-   const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-   ```
-
-**Alternative services** (pick one):
-- **Netlify Forms**: Add `netlify` attribute to form
-- **EmailJS**: Use EmailJS SDK
-- **Backend API**: Connect to your own backend
-
-### Google Tag Manager
-Update GTM ID in `src/layouts/BaseLayout.astro`:
-```astro
-'GTM-M3KQ45N'  // Replace with your GTM ID
-```
-
-## 📂 Asset Migration
-
-Replace these with your own:
-
-```
+├── components/
+│   ├── ContactForm.astro      # formsubmit.co contact form with validation
+│   ├── Footer.astro           # 3-column footer with nav, social links, address
+│   ├── GlassCard.astro        # Reusable glassmorphism service card
+│   ├── Header.astro           # Top navigation bar with inline SVG icons
+│   ├── ServiceCard.astro      # Services section card
+│   ├── SpatialDock.astro      # Bottom floating dock navigation
+│   ├── SpatialHero.astro      # Hero section with animated shapes
+│   ├── ThemeToggle.astro      # Dark/light mode switch
+│   └── WorkCard.astro         # Project/work showcase card
+├── layouts/
+│   └── BaseLayout.astro       # Base HTML layout (meta, fonts, GTM, dev tools guard)
+├── pages/
+│   ├── index.astro            # Landing page (all sections)
+│   └── branding.astro         # CABZ branding showcase page
+└── styles/
+    ├── spatial.css            # Design tokens, theme variables, glass primitives
+    ├── globals.css            # Typography scale, section defaults
+    ├── cabzcbzrs.css          # Section-specific styles
+    └── style.css              # Legacy/utility styles
 public/
-├── logo.png              # Your logo
-├── favicon.png          # Favicon
-├── scroll-down.svg      # Scroll indicator
-├── cabz-img.jpg         # About section image
-└── icons/
-    ├── web-development.svg
-    ├── design.svg
-    └── digital-marketing.svg
-
-projects/         # Project case study images
+├── fonts/                     # Self-hosted Manrope woff2 files
+├── icons/                     # Service and UI icons (SVG)
+├── logo.png                   # Logo for dark mode
+├── logo_light.png             # Logo for light mode
+└── ...                        # Project images, favicon, social SVGs
 ```
 
-## 🎨 Customization
+## Sections (index.astro)
 
-### Colors & Theme
-Edit `tailwind.config.mjs` to customize colors, fonts, and spacing.
+- **Hero** — Animated spatial hero with floating ambient orbs
+- **About Me** — Personal background and skill tags
+- **Services** — GlassCard grid (Web Dev, Brand Strategy, UI/UX, WordPress)
+- **Experience** — Current role at Agile Tech Ops Inc. (.NET & Blazor)
+- **Branding CTA** — CABZ branding page callout
+- **Ventures** — Side projects: KeyCabz, Cryptobuds, Yo-Bi
+- **Projects** — Website & Software: PILA, Rescue 8, Ride Slow / Digital & Branding: Kademyahan, Adyó, Project 1998
+- **Kudos** — Acknowledgements
+- **Contact** — Form with honeypot & timing security
 
-### Fonts
-Currently using Google Fonts "Manrope". To change:
-1. Update `src/styles/globals.css` font import
-2. Update `tailwind.config.mjs` fontFamily
+## Quick Start
 
-## 🚀 Deployment
+**Prerequisites:** Node.js 18+
 
-### GitHub Pages (Recommended)
-
-1. **Repository setup**
-   - Create a public repository named `{username}.github.io` (if new)
-   - Or push to your existing portfolio repo
-
-2. **GitHub Actions**
-   - The workflow in `.github/workflows/deploy.yml` automatically deploys on push to `main`
-   - Builds and deploys to GitHub Pages
-
-3. **Manual deployment**
-   ```bash
-   npm run build
-   # Push the 'dist' folder to gh-pages branch
-   ```
-
-### Alternative Deployment Options
-
-**Netlify**
 ```bash
-npm install -D @astrojs/netlify
-```
-Then configure `astro.config.mjs`:
-```javascript
-import netlify from '@astrojs/netlify/functions';
-export default defineConfig({
-  output: 'server',
-  adapter: netlify(),
-});
-```
+# Install dependencies
+npm install
 
-**Vercel**
-```bash
-npm install -D @astrojs/vercel
-```
-
-**Manual/Self-hosted**
-Run `npm run build` and deploy the `dist/` folder to your server.
-
-## 📋 Content Organization
-
-### Add New Pages
-Create `.astro` files in `src/pages/`:
-```astro
----
-import BaseLayout from '../layouts/BaseLayout.astro';
----
-
-<BaseLayout title="Page Title">
-  <h1>Your content here</h1>
-</BaseLayout>
-```
-
-### Add New Components
-Create `.astro` files in `src/components/` and import them in pages.
-
-### Blog/Projects (Future)
-To add a blog or projects section:
-```bash
-npm install @astrojs/markdown-remark
-```
-Create `src/pages/blog/[slug].astro` for dynamic routes.
-
-## 🔧 Development
-
-### Watch mode
-```bash
+# Start dev server (http://localhost:4322)
 npm run dev
-```
 
-### Build & preview
-```bash
+# Production build
 npm run build
+
+# Preview build locally
 npm run preview
 ```
 
-### Linting (optional)
+## Design System
+
+The site uses CSS custom properties defined in `src/styles/spatial.css`:
+
+- **Type scale** — `--fs-2xs` through `--fs-hero` using `clamp()` for fluid sizing
+- **Glass primitives** — `--glass-bg`, `--glass-border`, `--glass-shadow` for frosted-glass effects
+- **Theme tokens** — `--bg`, `--text-primary`, `--text-secondary`, `--color-orange`, swapped per `[data-theme]`
+- **Decorative text** — Outlined stroke headings via `-webkit-text-stroke`
+- **Default theme** — Dark mode, user preference persisted in `localStorage`
+
+## Deployment
+
+Configured for **GitHub Pages** via GitHub Actions. Pushing to `main` triggers an automatic build and deploy.
+
 ```bash
-npm install -D eslint eslint-plugin-astro
+# Manual build
+npm run build
+# The dist/ folder is deployed to GitHub Pages
 ```
 
-## 📚 Learn More
+## License
 
-- [Astro Documentation](https://docs.astro.build)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Astro Integrations](https://astro.build/integrations/)
-
-## 📄 License
-
-This portfolio is open source and available under the MIT License.
-
-## 🤝 Support
-
-For issues or questions about Astro, visit the [Astro Discord Community](https://astro.build/chat).
-# cabizaresroelcezar
-# cabizaresroelcezar
+MIT

@@ -2,6 +2,7 @@
 import '../styles/style.css';
 import '../styles/globals.css';
 import '../styles/spatial.css';
+import '../styles/cabzcbzrs.css';
 import 'aos/dist/aos.css';
 
 interface Props {
@@ -11,14 +12,14 @@ interface Props {
 }
 
 const { 
-  title = 'Roel Cezar Cabizares - Software Engineer & Designer', 
+  title = 'Roel Cezar Cabizares - Software Engineer, Front-end Developer, UI/UX Enthusiast', 
   description = 'Software engineer specializing in front-end development, UI/UX, and creating intuitive, dynamic user experiences. Based in the Philippines.',
   image = '/og-image.jpg' 
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -73,6 +74,28 @@ const {
         var t;
         try { t = localStorage.getItem('theme'); } catch(e) {}
         document.documentElement.setAttribute('data-theme', t || 'dark');
+      })();
+    </script>
+
+    <!-- Block developer tools -->
+    <script is:inline>
+      (function(){
+        /* Disable right-click context menu */
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+
+        /* Block common devtools keyboard shortcuts */
+        document.addEventListener('keydown', function(e) {
+          /* F12 */
+          if (e.key === 'F12') { e.preventDefault(); return; }
+          /* Ctrl/Cmd + Shift + I (Inspector) */
+          if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) { e.preventDefault(); return; }
+          /* Ctrl/Cmd + Shift + J (Console) */
+          if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) { e.preventDefault(); return; }
+          /* Ctrl/Cmd + Shift + C (Element picker) */
+          if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c')) { e.preventDefault(); return; }
+          /* Ctrl/Cmd + U (View source) */
+          if ((e.ctrlKey || e.metaKey) && !e.shiftKey && (e.key === 'U' || e.key === 'u')) { e.preventDefault(); return; }
+        });
       })();
     </script>
   </head>

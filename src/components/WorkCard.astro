@@ -74,11 +74,11 @@ const { image, title, description, tags = [], link = '#' } = Astro.props;
   }
 
   .work-card-body h3 {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: var(--fs-lg);
     font-weight: 700;
     line-height: 1.2;
     color: var(--text-primary);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
 
   .work-tags {
@@ -91,10 +91,10 @@ const { image, title, description, tags = [], link = '#' } = Astro.props;
   }
 
   .work-tags li {
-    font-size: 0.8rem;
+    font-size: var(--fs-2xs);
     text-transform: lowercase;
-    letter-spacing: 0.5px;
-    padding: 0.3rem 0.75rem;
+    letter-spacing: 0.3px;
+    padding: 0.2rem 0.6rem;
     border: 1px solid var(--border);
     border-radius: 1.25rem;
     color: var(--text-muted);

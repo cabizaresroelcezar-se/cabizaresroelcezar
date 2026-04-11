@@ -41,8 +41,8 @@ const accent = accentColor || accents[type] || '#FF7518';
 
     <!-- Content (above glow, z-index 2) -->
     <div class="card-content">
-      <div class="card-icon" style={`background: ${accent}30;`}>
-        <img src={icon} alt={title} width="28" height="28" loading="lazy" />
+      <div class="card-icon" style={`background: ${accent}40;`}>
+        <img src={icon} alt={title} width="36" height="36" loading="lazy" />
       </div>
       <h3 class="card-title">{title}</h3>
       <p class="card-desc">{description}</p>
@@ -96,16 +96,18 @@ const accent = accentColor || accents[type] || '#FF7518';
 <style>
   .perspective-container {
     perspective: 1200px;
+    height: 100%;
   }
 
   .glass-card {
     position: relative;
     width: 100%;
-    min-height: 320px;
-    padding: 2.5rem 2.5rem 3rem;
+    min-height: 280px;
+    height: 100%;
+    padding: 2.25rem 2rem 2.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-radius: var(--radius-card, 1.25rem);
     transform-style: preserve-3d;
@@ -124,6 +126,8 @@ const accent = accentColor || accents[type] || '#FF7518';
     align-items: center;
     text-align: center;
     gap: 1rem;
+    flex: 1;
+    justify-content: center;
   }
 
   .card-icon {
@@ -137,21 +141,30 @@ const accent = accentColor || accents[type] || '#FF7518';
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
+  .card-icon img {
+    filter: brightness(0) invert(0.45) sepia(1) saturate(5) hue-rotate(350deg) brightness(1.05);
+    transition: filter 0.3s;
+  }
+
+  :global([data-theme="dark"]) .card-icon img {
+    filter: brightness(0) invert(0.45) sepia(1) saturate(5) hue-rotate(350deg) brightness(1.4);
+  }
+
   .glass-card:hover .card-icon {
     transform: translateZ(20px) scale(1.08);
   }
 
   .card-title {
-    font-size: 1.35rem;
+    font-size: var(--fs-lg);
     font-weight: 700;
     color: var(--text-primary);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
 
   .card-desc {
-    font-size: 1rem;
+    font-size: var(--fs-base);
     font-weight: 300;
-    line-height: 1.7;
+    line-height: 1.65;
     color: var(--text-secondary);
   }
 
@@ -161,15 +174,15 @@ const accent = accentColor || accents[type] || '#FF7518';
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 3px;
     border-radius: 0 0 var(--radius-card, 1.6rem) var(--radius-card, 1.6rem);
-    opacity: 0.6;
+    opacity: 0.8;
     transition: opacity 0.4s, height 0.4s;
   }
 
   .glass-card:hover .card-accent-bar {
     opacity: 1;
-    height: 6px;
+    height: 5px;
   }
 
   /* Override glow orb color per card accent */
@@ -179,8 +192,8 @@ const accent = accentColor || accents[type] || '#FF7518';
 
   @media (max-width: 768px) {
     .glass-card {
-      min-height: 260px;
-      padding: 2rem;
+      min-height: 240px;
+      padding: 2rem 1.75rem;
     }
   }
 </style>

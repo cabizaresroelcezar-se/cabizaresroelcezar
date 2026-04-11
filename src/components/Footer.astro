@@ -4,34 +4,57 @@ const year = new Date().getFullYear();
 
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand" data-aos="fade-up">
-      <a href="#hero" aria-label="Back to top">
-        <img src="/logo.png" alt="cabizaresroelcezar logo" width="48" height="46" loading="lazy" class="logo-dark" />
-        <img src="/logo_light.png" alt="cabizaresroelcezar logo" width="48" height="46" loading="lazy" class="logo-light" />
-      </a>
+    <div class="footer-col footer-col--brand">
+      <div class="footer-brand" data-aos="fade-up">
+        <a href="/" aria-label="Back to top">
+          <img src="/logo.png" alt="cabizaresroelcezar logo" width="48" height="46" loading="lazy" class="logo-dark" />
+          <img src="/logo_light.png" alt="cabizaresroelcezar logo" width="48" height="46" loading="lazy" class="logo-light" />
+        </a>
+      </div>
+      <p class="footer-tagline">Software Engineer &amp; Front-end Developer, UI/UX Enthusiast<br />Building intentional digital experiences.</p>
     </div>
 
-    <address class="footer-address" data-aos="fade-up">
-      Quezon City, 1115 / Manila, 1016<br />
-      National Capital Region, Philippines
-    </address>
+    <div class="footer-col footer-col--nav" data-aos="fade-up">
+      <h4 class="footer-heading">Navigation</h4>
+      <ul class="footer-nav">
+        <li><a href="/#about-me">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#works">Experience</a></li>
+        <li><a href="/branding">Branding</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
 
-    <div class="footer-social" data-aos="fade-up">
-      <a href="https://www.facebook.com/cabzcbzrs" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <img src="/facebook.svg" alt="" width="20" height="20" loading="lazy" />
-      </a>
-      <a href="https://www.instagram.com/cabzcbzrs" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <img src="/instagram.svg" alt="" width="20" height="20" loading="lazy" />
-      </a>
-      <a href="https://www.linkedin.com/in/cabizaresroelcezar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <img src="/linkedin.svg" alt="" width="20" height="20" loading="lazy" />
-      </a>
+    <div class="footer-col footer-col--connect" data-aos="fade-up">
+      <h4 class="footer-heading">Connect</h4>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/cabizaresroelcezar" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="28" height="28" fill="currentColor" aria-hidden="true">
+            <path d="M21.3,21H23l0.7-2.7h-2.3V17c0-0.7,0-1.3,1.3-1.3h1v-2.2c-0.2,0-1-0.1-1.9-0.1c-1.8,0-3.1,1.1-3.1,3.1v1.9h-2V21h2v5.7h2.7V21z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/cabizaresroelcezar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="28" height="28" fill="currentColor" aria-hidden="true">
+            <path d="M16.6,15.3c0,0.4-0.1,0.7-0.4,0.9c-0.3,0.2-0.6,0.4-0.9,0.4c-0.4,0-0.7-0.1-0.9-0.4C14.1,16,14,15.7,14,15.3c0-0.4,0.1-0.7,0.4-0.9c0.3-0.2,0.6-0.4,0.9-0.4c0.4,0,0.7,0.1,0.9,0.4C16.5,14.6,16.6,15,16.6,15.3z M16.7,17.7H14V26h2.7V17.7z M20.9,17.7h-2.7V26h2.6v-4.4c0-2.4,3.2-2.7,3.2,0V26h2.6v-5.3c0-4.1-4.7-4-5.8-1.9L20.9,17.7z"/>
+          </svg>
+        </a>
+      </div>
+      <address class="footer-address">
+        Quezon City, 1115 / Manila, 1016<br />
+        National Capital Region, Philippines
+      </address>
     </div>
   </div>
 
-  <p class="footer-copy">
-    &copy; {year} Roel Cezar Cabizares
-  </p>
+  <div class="footer-bottom">
+    <p class="footer-copy">
+      &copy; {year} Roel Cezar Cabizares. All rights reserved.
+    </p>
+    <a href="#" class="back-to-top" aria-label="Back to top">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      Top
+    </a>
+  </div>
 </footer>
 
 <style>
@@ -44,11 +67,51 @@ const year = new Date().getFullYear();
   }
 
   .footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: start;
+  }
+
+  .footer-col--brand {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-tagline {
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .footer-heading {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-nav a {
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-nav a:hover {
+    color: var(--color-orange);
   }
 
   .footer-brand img {
@@ -61,16 +124,16 @@ const year = new Date().getFullYear();
   }
 
   .footer-brand .logo-light { display: none; }
-  :global([data-theme="dark"]) .footer-brand .logo-dark { filter: invert(1); }
+  .footer-brand .logo-dark { display: block; }
   :global([data-theme="light"]) .footer-brand .logo-dark { display: none; }
-  :global([data-theme="light"]) .footer-brand .logo-light { display: block; }
+  :global([data-theme="light"]) .footer-brand .logo-light { display: block; filter: invert(0.33); }
 
   address {
     font-style: normal;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: var(--fs-sm);
     line-height: 1.8;
-    text-align: center;
+    margin-top: 1rem;
   }
 
   .footer-social {
@@ -79,41 +142,71 @@ const year = new Date().getFullYear();
     align-items: center;
   }
 
-  .footer-social img {
-    opacity: 0.4;
-    transition: opacity 0.3s;
+  .footer-social a {
+    display: inline-flex;
+    color: var(--text-muted);
+    opacity: 0.7;
+    transition: color 0.3s, opacity 0.3s;
   }
 
-  :global([data-theme="dark"]) .footer-social img {
-    filter: invert(1);
-  }
-
-  .footer-social a:hover img {
+  .footer-social a:hover {
+    color: var(--color-orange);
     opacity: 1;
   }
 
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: clamp(2rem, 4vw, 3rem);
+    padding-top: clamp(1rem, 2vw, 1.5rem);
+    border-top: 1px solid var(--border);
+  }
+
   .footer-copy {
-    font-size: 0.8rem;
+    font-size: var(--fs-xs);
     color: var(--text-muted);
-    text-align: center;
-    margin-top: clamp(1.5rem, 3vw, 2.5rem);
     letter-spacing: 0.5px;
     opacity: 0.6;
   }
 
+  .back-to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .back-to-top:hover {
+    color: var(--color-orange);
+  }
+
   @media (max-width: 768px) {
     .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-bottom {
       flex-direction: column;
+      gap: 1rem;
       align-items: flex-start;
-      gap: 1.25rem;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
     }
 
-    address {
-      text-align: left;
-    }
-
-    .footer-copy {
-      text-align: left;
+    .footer-col--brand {
+      grid-column: 1 / -1;
     }
   }
 </style>
