@@ -6,7 +6,6 @@ export default defineConfig({
   // Your GitHub Pages site URL
   site: 'https://cabizaresroelcezar-se.github.io',
   base: '/cabizaresroelcezar/',
-  base: '/cabizaresroelcezar/',
 
   // Integrations
   integrations: [tailwind()],
