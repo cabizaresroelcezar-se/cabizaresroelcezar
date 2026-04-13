@@ -94,9 +94,18 @@ The site uses CSS custom properties defined in `src/styles/spatial.css`:
 - **Decorative text** — Outlined stroke headings via `-webkit-text-stroke`
 - **Default theme** — Dark mode, user preference persisted in `localStorage`
 
+## Branch Strategy
+
+| Branch | Purpose |
+|---|---|
+| `master` | Production — source of truth, deploys to GitHub Pages |
+| `develop` | Development — feature work branches off from here |
+
+Feature branches should be created from `develop` and merged back via pull request.
+
 ## Deployment
 
-Configured for **GitHub Pages** via GitHub Actions. Pushing to `main` triggers an automatic build and deploy.
+Configured for **GitHub Pages** via GitHub Actions. Pushing to `master` triggers an automatic build and deploy.
 
 ```bash
 # Manual build
