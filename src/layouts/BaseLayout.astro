@@ -100,26 +100,9 @@ const base = import.meta.env.BASE_URL;
       })();
     </script>
 
-    <!-- Block developer tools -->
+    <!-- Block right-click context menu -->
     <script is:inline>
-      (function(){
-        /* Disable right-click context menu */
-        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
-
-        /* Block common devtools keyboard shortcuts */
-        document.addEventListener('keydown', function(e) {
-          /* F12 */
-          if (e.key === 'F12') { e.preventDefault(); return; }
-          /* Ctrl/Cmd + Shift + I (Inspector) */
-          if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) { e.preventDefault(); return; }
-          /* Ctrl/Cmd + Shift + J (Console) */
-          if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) { e.preventDefault(); return; }
-          /* Ctrl/Cmd + Shift + C (Element picker) */
-          if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c')) { e.preventDefault(); return; }
-          /* Ctrl/Cmd + U (View source) */
-          if ((e.ctrlKey || e.metaKey) && !e.shiftKey && (e.key === 'U' || e.key === 'u')) { e.preventDefault(); return; }
-        });
-      })();
+      document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
     </script>
   </head>
   <body>

@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ══════════════════════════════════════════════════
-   Globals — Typography, Layout & Utility Layer
-   ══════════════════════════════════════════════════ */
-
 @layer base {
   body {
     font-family: "Manrope", system-ui, sans-serif;

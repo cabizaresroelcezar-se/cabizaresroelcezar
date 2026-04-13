@@ -1,9 +1,6 @@
-/* ═══════════════════════════════════════════════════════
-   Refractive Glassmorphism & Spatial UI — 2026
-   Black + Orange primary · White accent · Persistent light mode
-   ═══════════════════════════════════════════════════════ */
+/* Spatial UI — Theme Variables */
 
-/* ── DARK (default) ── */
+/* Dark (default) */
 :root,
 [data-theme="dark"] {
   --bg:               #0a0a0a;
@@ -238,7 +235,7 @@ body {
     var(--glass-inset),
     0 0 60px var(--color-orange-glow);
   border-color: var(--glass-border);
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-3px) scale(1.005);
 }
 
 /* ── Floating Glow Cursor Tracker ── */
@@ -309,7 +306,7 @@ body {
 .spatial-dock .dock-item:hover {
   color: var(--text-primary);
   background: var(--dock-hover-bg);
-  transform: translateY(-6px) scale(1.15);
+  transform: translateY(-4px) scale(1.08);
 }
 
 .spatial-dock .dock-item.active {
@@ -654,6 +651,12 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
 /* ── Responsive Dock ── */
 @media (max-width: 768px) {
   .spatial-dock {
@@ -663,9 +666,13 @@ body {
   }
 
   .spatial-dock .dock-item {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.2rem;
+    height: 2.2rem;
     font-size: 0.6rem;
+  }
+
+  .spatial-dock .dock-item:hover {
+    transform: translateY(-2px) scale(1.04);
   }
 
   .hero-spatial .hero-shape {

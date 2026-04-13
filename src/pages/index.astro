@@ -28,16 +28,16 @@ const base = import.meta.env.BASE_URL;
       <div class="section-inner">
         <h2 class="section-title section-title--hero" data-aos="morph-up" data-aos-duration="800">About Me</h2>
         <div class="about-content">
-          <p class="content-paragraph content-paragraph--lead" data-aos="reveal-left" data-aos-duration="700">
+          <p class="content-paragraph" data-aos="fade-up" data-aos-duration="600">
             Hello, I'm a <strong>software engineer &amp; developer</strong> based in the Philippines, and I conserve an expressive passion for <strong>user interface</strong>, <strong>visual design</strong>, and creating intuitive, dynamic user experiences.
           </p>
-          <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700" data-aos-delay="100">
+          <p class="content-paragraph" data-aos="fade-up" data-aos-duration="600" data-aos-delay="80">
             Given enough coffee and inexhaustible enthusiasm, I am easily inspired and more willing to follow my ideas wherever they take me. I'm a dynamic person, an expressive, talented spirit with an innate ability to entertain and inspire. I'm never satisfied with just coming up with ideas. Instead, I have an almost impulsive need to act on them.
           </p>
-          <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700" data-aos-delay="200">
+          <p class="content-paragraph" data-aos="fade-up" data-aos-duration="600" data-aos-delay="160">
             I'm also experienced in and completed various <strong>responsive website designs</strong>, <strong>front-end assets</strong>, and <strong>custom WordPress builds</strong>.
           </p>
-          <p class="about-cta" data-aos="fade-up" data-aos-delay="300">
+          <p class="about-cta" data-aos="fade-up" data-aos-delay="240">
             <a href="#services" class="content-link">See what I do</a>
           </p>
         </div>
@@ -45,33 +45,43 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <!-- Services -->
-    <section id="services" class="section-panel section-panel--alt">
+    <section id="services" class="section-panel section-panel--alt services-pinned">
       <span class="outline-text outline-text--right" aria-hidden="true">Services</span>
       <div class="section-inner">
         <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">Services</h2>
 
         <div class="services-grid">
-          <GlassCard
-            icon={`${base}icons/web-development.svg`}
-            title="Web Development"
-            description="Design and develop user-centric websites and modern interfaces for digital products or services — helping transfer business strengths and visual assets to the web."
-            type="web-development"
-          />
-          <GlassCard
-            icon={`${base}icons/design.svg`}
-            title="Branding & Design"
-            description="Full strategy design and execution for new and refresh brand projects, including positioning, brand architecture, and identity systems that make a brand feel intentional."
-            type="design"
-          />
-          <GlassCard
-            icon={`${base}icons/digital-marketing.svg`}
-            title="Digital Marketing"
-            description="Design for new and existing solutions, including UI/UX, visual design, and marketing support accessible to benefit business growth and connect with real people."
-            type="digital-marketing"
-          />
+          <div class="service-slide" data-service="0">
+            <GlassCard
+              icon={`${base}icons/web-development.svg`}
+              title="Web Development"
+              description="Design and develop user-centric websites and modern interfaces for digital products or services — helping transfer business strengths and visual assets to the web."
+              type="web-development"
+            />
+          </div>
+          <div class="service-slide" data-service="1">
+            <GlassCard
+              icon={`${base}icons/design.svg`}
+              title="Branding & Design"
+              description="Full strategy design and execution for new and refresh brand projects, including positioning, brand architecture, and identity systems that make a brand feel intentional."
+              type="design"
+            />
+          </div>
+          <div class="service-slide" data-service="2">
+            <GlassCard
+              icon={`${base}icons/digital-marketing.svg`}
+              title="Digital Marketing"
+              description="Design for new and existing solutions, including UI/UX, visual design, and marketing support accessible to benefit business growth and connect with real people."
+              type="digital-marketing"
+            />
+          </div>
         </div>
 
-        <div class="services-bottom" data-aos="fade-up" data-aos-delay="200">
+        <div class="services-progress">
+          <div class="services-progress__bar"></div>
+        </div>
+
+        <div class="services-bottom">
           <div class="services-tags">
             <button type="button" class="service-tag">Website Design</button>
             <button type="button" class="service-tag">Website Development</button>
@@ -109,6 +119,88 @@ const base = import.meta.env.BASE_URL;
         <span>INSPIRE</span><span class="marquee-dot">·</span>
       </div>
     </div>
+
+    <!-- Tech Stack -->
+    <section id="tech-stack" class="section-panel">
+      <span class="outline-text outline-text--left" aria-hidden="true">Stack</span>
+      <div class="section-inner">
+        <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">Tech Stack</h2>
+        <p class="content-paragraph" data-aos="fade-up">Tools and technologies I work with across development, design, and deployment.</p>
+
+        <div class="stack-cards-grid">
+        <div class="stack-card" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="stack-card__label">Development &amp; Engineering</h3>
+          <p class="stack-card__desc">Full-stack web development from backend APIs to frontend interfaces, specializing in .NET ecosystem and modern JavaScript.</p>
+          <div class="stack-grid">
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" loading="lazy" /><span>C#</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt="ASP.NET" loading="lazy" /><span>ASP.NET</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blazor/blazor-original.svg" alt="Blazor" loading="lazy" /><span>Blazor</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy" /><span>JavaScript</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" loading="lazy" /><span>HTML5</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" loading="lazy" /><span>CSS3</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" loading="lazy" /><span>PHP</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg" alt="jQuery" loading="lazy" /><span>jQuery</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="WordPress" loading="lazy" /><span>WordPress</span></div>
+          </div>
+        </div>
+
+        <div class="stack-card" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="stack-card__label">Front-End Frameworks</h3>
+          <p class="stack-card__desc">Building responsive, component-driven UIs with modern frameworks and utility-first styling.</p>
+          <div class="stack-grid">
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" loading="lazy" /><span>React</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue.js" loading="lazy" /><span>Vue.js</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" loading="lazy" /><span>Tailwind</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" alt="Astro" loading="lazy" class="icon-adaptive" /><span>Astro</span></div>
+          </div>
+        </div>
+
+        <div class="stack-card" data-aos="fade-up" data-aos-delay="250">
+          <h3 class="stack-card__label">CMS &amp; DXP</h3>
+          <p class="stack-card__desc">Enterprise content management and digital experience platforms for scalable publishing workflows.</p>
+          <div class="stack-grid">
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" alt="Oracle CMS" loading="lazy" /><span>Oracle CMS</span></div>
+            <div class="stack-chip"><svg viewBox="0 0 149.81 148.48" xmlns="http://www.w3.org/2000/svg" class="stack-chip__svg"><path d="m50.29 81.41v17.69a49.41 49.41 0 0 0 49.35-49.35h-17.64a31.71 31.71 0 0 1 -31.71 31.66z" fill="#3be081"/><path d="m50.29 130.16a31.43 31.43 0 0 1 0-62.85v-17.55a49 49 0 0 0 -.14 98h.14z" fill="#0037ff"/><path d="m50.29 130.16v17.55a49 49 0 0 0 49-49h-17.57a31.46 31.46 0 0 1 -31.43 31.45z" fill="#0cf"/><path d="m50.29 32.19v17.56a49 49 0 0 0 49-49h-17.57a31.46 31.46 0 0 1 -31.43 31.44z" fill="#861dff"/><path d="m99.59 32.19v17.56a49 49 0 0 0 49-49h-17.59a31.46 31.46 0 0 1 -31.41 31.44z" fill="#fc7f10"/></svg><span>Optimizely</span></div>
+          </div>
+        </div>
+
+        <div class="stack-card" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="stack-card__label">Design Tools</h3>
+          <p class="stack-card__desc">UI/UX design, wireframing, prototyping, and visual identity systems from concept to handoff.</p>
+          <div class="stack-grid">
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" loading="lazy" /><span>Figma</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xd/xd-original.svg" alt="Adobe XD" loading="lazy" /><span>Adobe XD</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" alt="Illustrator" loading="lazy" /><span>Illustrator</span></div>
+          </div>
+        </div>
+
+        <div class="stack-card" data-aos="fade-up" data-aos-delay="350">
+          <h3 class="stack-card__label">Cloud, DevOps &amp; Tooling</h3>
+          <p class="stack-card__desc">CI/CD pipelines, cloud infrastructure, project management, and API documentation for team workflows.</p>
+          <div class="stack-grid">
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure" loading="lazy" /><span>Azure</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" loading="lazy" class="icon-adaptive" /><span>GitHub</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" alt="Jira" loading="lazy" /><span>Jira</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bitbucket/bitbucket-original.svg" alt="Bitbucket" loading="lazy" /><span>Bitbucket</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab" loading="lazy" /><span>GitLab</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" alt="Swagger" loading="lazy" /><span>Swagger</span></div>
+            <div class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" alt="Selenium" loading="lazy" /><span>Selenium</span></div>
+          </div>
+        </div>
+
+        <div class="stack-card" data-aos="fade-up" data-aos-delay="400">
+          <h3 class="stack-card__label">Agentic AI</h3>
+          <p class="stack-card__desc">AI-assisted development, code generation, prompt engineering, and intelligent automation workflows.</p>
+          <div class="stack-grid">
+            <div class="stack-chip"><img src="https://api.iconify.design/simple-icons/openai.svg" alt="ChatGPT" loading="lazy" class="icon-adaptive" /><span>ChatGPT</span></div>
+            <div class="stack-chip"><img src="https://cdn.simpleicons.org/claude/D97757" alt="Claude" loading="lazy" /><span>Claude</span></div>
+            <div class="stack-chip"><img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot" loading="lazy" class="icon-adaptive" /><span>GitHub Copilot</span></div>
+            <div class="stack-chip"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2" alt="Gemini" loading="lazy" /><span>Gemini</span></div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Experience -->
     <section id="works" class="section-panel">
@@ -195,7 +287,7 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <!-- Projects -->
-    <section class="section-panel section-panel--alt">
+    <section class="section-panel section-panel--alt projects-section">
       <span class="outline-text outline-text--right" aria-hidden="true">Projects</span>
       <div class="section-inner">
         <h2 class="section-title" data-aos="morph-up" data-aos-duration="700">Projects</h2>
@@ -203,79 +295,100 @@ const base = import.meta.env.BASE_URL;
           A collection of work I've shipped — from development and WordPress builds to brand identities. Mostly a trip down memory lane, with more to come.
         </p>
 
-        <div class="project-track">
-
-          <!-- Row 1: Website & Software Development -->
-          <div class="project-group-label" data-aos="fade-up">Website & Software Development Projects</div>
-
-          <article class="project-card">
+        <h3 class="project-group-label" data-aos="fade-up">Development</h3>
+        <div class="project-grid">
+          <article class="project-card project-slide" data-project="0">
             <a href="https://pilasports.com/" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src={`${base}pila.png`} alt="PILA" loading="lazy" width="800" height="400" />
+              <img src={`${base}pila.png`} alt="PILA" loading="lazy" />
             </a>
             <div class="project-card__body">
-              <h3 class="project-card__title"><a href="https://pilasports.com/" target="_blank" rel="noopener noreferrer" class="project-name-link">Player Invite &amp; League Arranger - PILA Sports</a></h3>
-              <p class="text-section">Developed the full brand identity and UI/UX for PILA — a pickleball league management platform. Handled everything from visual direction and logo design to interface layout and the overall site experience.</p>
+              <h3><a href="https://pilasports.com/" target="_blank" rel="noopener noreferrer" class="project-name-link">Player Invite & Leauge Arranger - PILA Sports</a></h3>
+              <ul class="project-breakdown">
+                <li><strong>Challenge</strong> Build a league management platform for pickleball from scratch — no existing brand, no UI framework.</li>
+                <li><strong>Design</strong> Created wireframes and prototypes in Figma, mapping out player registration flows, league brackets, and a scheduling interface.</li>
+                <li><strong>Engineering</strong> Developed the full front-end with a focus on responsive layouts and real-time data presentation for match results and standings.</li>
+              </ul>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card project-slide" data-project="1">
             <a href="https://www.facebook.com/rescue8tradingphils" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src={`${base}rescue-8.jpg`} alt="Rescue 8 Trading Philippines, Inc." loading="lazy" width="800" height="500" />
+              <img src={`${base}rescue-8.jpg`} alt="Rescue 8 Trading Philippines, Inc." loading="lazy" />
             </a>
             <div class="project-card__body">
-              <h3 class="project-card__title"><a href="https://www.facebook.com/rescue8tradingphils" target="_blank" rel="noopener noreferrer" class="project-name-link">Rescue 8 Trading Philippines, Inc.</a></h3>
-              <p class="text-section">A WooCommerce-powered WordPress site with a custom template — designed and built to present products and services with an integrated online store, clean layout, and straightforward navigation.</p>
+              <h3><a href="https://www.facebook.com/rescue8tradingphils" target="_blank" rel="noopener noreferrer" class="project-name-link">Rescue 8 Trading</a></h3>
+              <ul class="project-breakdown">
+                <li><strong>Challenge</strong> Deliver a product catalog and e-commerce site for a fire safety and industrial equipment supplier with limited digital presence.</li>
+                <li><strong>Design</strong> Structured the information architecture around product categories and trust signals — mockups built in Figma.</li>
+                <li><strong>Engineering</strong> Custom WordPress template with WooCommerce integration, optimized for product browsing and mobile checkout flow.</li>
+              </ul>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card project-slide" data-project="2">
             <a href="https://www.facebook.com/rideslowlifestyle" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src={`${base}ride-slow.jpg`} alt="Ride Slow Lifestyle" loading="lazy" width="800" height="500" />
+              <img src={`${base}ride-slow.jpg`} alt="Ride Slow Lifestyle" loading="lazy" />
             </a>
             <div class="project-card__body">
-              <h3 class="project-card__title"><a href="https://www.facebook.com/rideslowlifestyle" target="_blank" rel="noopener noreferrer" class="project-name-link">Ride Slow Lifestyle</a></h3>
-              <p class="text-section">An image-forward WordPress layout featuring WooCommerce integration, a photo gallery, and real-time Facebook Messenger — built to support promotion, sales, and active community engagement.</p>
+              <h3><a href="https://www.facebook.com/rideslowlifestyle" target="_blank" rel="noopener noreferrer" class="project-name-link">Ride Slow Lifestyle</a></h3>
+              <ul class="project-breakdown">
+                <li><strong>Challenge</strong> A lifestyle cycling brand needed an online storefront that matched its visual-heavy social media presence.</li>
+                <li><strong>Design</strong> Designed gallery-first layouts and a visual product grid rooted in the brand's street and cycling aesthetic.</li>
+                <li><strong>Engineering</strong> WordPress with WooCommerce, integrated Messenger chat widget, and a lightweight gallery plugin for showcasing rides and events.</li>
+              </ul>
             </div>
           </article>
+        </div>
 
-          <!-- Row 2: Digital & Branding -->
-          <div class="project-group-label" data-aos="fade-up">Digital & Branding Projects</div>
-
-          <article class="project-card">
+        <h3 class="project-group-label" data-aos="fade-up">Branding</h3>
+        <div class="project-grid">
+          <article class="project-card project-slide" data-project="3">
             <a href="https://www.facebook.com/kademyahanfoodhouse/" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src={`${base}kademyahan.png`} alt="Kademyahan Food House" loading="lazy" width="800" height="500" />
+              <img src={`${base}kademyahan.png`} alt="Kademyahan Food House" loading="lazy" />
             </a>
             <div class="project-card__body">
-              <h3 class="project-card__title"><a href="https://www.facebook.com/kademyahanfoodhouse/" target="_blank" rel="noopener noreferrer" class="project-name-link">Kademyahan Food House</a></h3>
-              <p class="text-section">Brand identity for a local food house in Sta. Maria, Bulacan — designed the logo and visual direction used across public-facing materials including menus, labels, and promotional collateral.</p>
+              <h3><a href="https://www.facebook.com/kademyahanfoodhouse/" target="_blank" rel="noopener noreferrer" class="project-name-link">Kademyahan Food House</a></h3>
+              <ul class="project-breakdown">
+                <li><strong>Challenge</strong> A new food house in Sta. Maria, Bulacan needed a cohesive identity before its launch — no existing branding.</li>
+                <li><strong>Design</strong> Developed the logo, color palette, and typography system in Figma, then applied it across menus, signage, and social media templates.</li>
+                <li><strong>Engineering</strong> Exported production-ready assets and built a reusable template system for ongoing promotional materials.</li>
+              </ul>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card project-slide" data-project="4">
             <a href="https://www.facebook.com/adyophilippines" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src={`${base}adyo.jpg`} alt="Adyó Philippines" loading="lazy" width="800" height="500" />
+              <img src={`${base}adyo.jpg`} alt="Adyó Philippines" loading="lazy" />
             </a>
             <div class="project-card__body">
-              <h3 class="project-card__title"><a href="https://www.facebook.com/adyophilippines" target="_blank" rel="noopener noreferrer" class="project-name-link">Adyó Philippines</a></h3>
-              <p class="text-section">A complete brand identity crafted for outdoor startup Adyó — built around optimism, vivid visuals, and a distinctly inviting aesthetic that captures the spirit of adventure.</p>
+              <h3><a href="https://www.facebook.com/adyophilippines" target="_blank" rel="noopener noreferrer" class="project-name-link">Adyó Philippines</a></h3>
+              <ul class="project-breakdown">
+                <li><strong>Challenge</strong> An outdoor adventure startup needed a full brand identity that felt energetic yet approachable.</li>
+                <li><strong>Design</strong> Explored mood boards and user personas to define the visual tone, then built the logo system, color palette, and brand guidelines in Figma and Illustrator.</li>
+                <li><strong>Engineering</strong> Delivered scalable vector assets and a brand toolkit ready for print, digital, and merchandise applications.</li>
+              </ul>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card project-slide" data-project="5">
             <a href="https://www.facebook.com/project1998co" target="_blank" rel="noopener noreferrer" class="project-card__image">
-              <img src={`${base}project-1998.png`} alt="Project 1998 Apparel Co." loading="lazy" width="800" height="400" />
+              <img src={`${base}project-1998.png`} alt="Project 1998 Apparel Co." loading="lazy" />
             </a>
             <div class="project-card__body">
-              <h3 class="project-card__title"><a href="https://www.facebook.com/project1998co" target="_blank" rel="noopener noreferrer" class="project-name-link">Project 1998 Apparel Co.</a></h3>
-              <p class="text-section">Brand identity for a local PH clothing and bag brand — covering logo, visual language, and design direction rooted in street-ready style and everyday wearability.</p>
+              <h3><a href="https://www.facebook.com/project1998co" target="_blank" rel="noopener noreferrer" class="project-name-link">Project 1998 Apparel Co.</a></h3>
+              <ul class="project-breakdown">
+                <li><strong>Challenge</strong> A street-culture apparel brand needed visual identity that stood on its own across clothing tags, packaging, and social media.</li>
+                <li><strong>Design</strong> Developed the full brand system — logo, typography, and layout patterns — grounded in streetwear aesthetics and everyday wearability.</li>
+                <li><strong>Engineering</strong> Produced print-ready and digital assets, ensuring consistent application from product labels to online storefront visuals.</li>
+              </ul>
             </div>
           </article>
-
+        </div>
+        <div class="projects-progress">
+          <div class="projects-progress__bar"></div>
         </div>
       </div>
     </section>
-
-    <!-- thy keycabz — Featured ──────────────────────── -->
     <section class="section-panel keycabz-section">
       <span class="outline-text outline-text--left" aria-hidden="true">keycabz</span>
       <div class="section-inner">
@@ -286,14 +399,15 @@ const base = import.meta.env.BASE_URL;
               <a href="https://www.facebook.com/keycabz.hobby" target="_blank" rel="noopener noreferrer" class="section-name-link">thy keycabz</a>
             </h2>
             <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700">
-              What started as a weekend obsession with <strong>mechanical keyboards</strong> quickly evolved into something
-              bigger — a full passion project exploring <strong>switch modding, sound tuning, keycap artistry</strong>,
-              and the craft of the perfect custom build. It's one part engineering, one part creative expression.
+              What started as a weekend hobby quickly turned into a <strong>business</strong>. I build, modify, and
+              fine-tune <strong>mechanical keyboards</strong> — from switch modding and lube work to full acoustic
+              optimization. Every board I put together is all about getting the <strong>sound and feel</strong> just right.
             </p>
             <p class="content-paragraph" data-aos="reveal-left" data-aos-duration="700" data-aos-delay="100">
-              Every board is a statement piece. From <strong>thocky linears</strong> to <strong>crisp tactiles</strong>,
-              each build merges <strong>engineering precision with creative expression</strong> — the intersection
-              where tech meets artisanal craftsmanship. If it types well and sounds right, I'm in.
+              Beyond the builds, I've organized <strong>keyboard meetups</strong> with my previous organizations and
+              alma mater, bringing the community together to share the craft. thy keycabz has helped me a lot
+              with my <strong>extra income</strong>, and I'm still in touch and active in the
+              <strong>Keyboard Addicts PH</strong> community as a passionate enthusiast.
             </p>
           </div>
           <div class="keycabz-visual" data-aos="scale-in" data-aos-duration="900">
@@ -319,7 +433,7 @@ const base = import.meta.env.BASE_URL;
             <p class="keycabz-label" data-aos="fade-up">Co-Founded Venture</p>
             <h2 class="section-title" data-aos="morph-up" data-aos-duration="800"><a href="https://www.facebook.com/CryptobudsNFT" target="_blank" rel="noopener noreferrer" class="section-name-link">Cryptobuds</a></h2>
             <p class="content-paragraph" data-aos="fade-up" data-aos-duration="700">
-              Cryptobuds is a crypto community group I co-founded — built around education, honest discussion, and navigating the web3 space together. What started as a small circle of enthusiasts grew into a network of members sharing insights on DeFi, NFTs, and emerging blockchain projects. The goal was never hype — it was building literacy and trust in a noisy space.
+              Cryptobuds is a crypto community I co-founded — focused on teaching how <strong>NFTs</strong> and <strong>blockchain projects</strong> actually work. We're active on different networks, running <strong>Discord talks</strong> for members who want to understand the space beyond the noise. The goal was never hype — it was building real literacy and helping people navigate web3 with confidence.
             </p>
             <div class="cryptobuds-links" data-aos="fade-up" data-aos-delay="200">
               <a href="https://www.facebook.com/CryptobudsNFT" target="_blank" rel="noopener noreferrer" class="content-link">Facebook</a>
@@ -339,10 +453,10 @@ const base = import.meta.env.BASE_URL;
             <p class="keycabz-label" data-aos="fade-up">Supporting &amp; Managing</p>
             <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">Yo-Bi</h2>
             <p class="content-paragraph" data-aos="fade-up" data-aos-duration="700">
-              Yo-Bi is my brother's music project — and I'm the one behind the scenes making sure it all runs smooth. From <strong>managing releases</strong> and <strong>distribution</strong> to handling the <strong>visual identity</strong> and online presence, I support the creative vision while keeping the operational side locked in.
+              Yo-Bi is my brother's music project — and I'm the one behind the scenes keeping the digital side running. From managing the <strong>online presence</strong> and <strong>visual identity</strong> to supporting <strong>content strategy</strong> and <strong>branding</strong>, I handle what needs to happen so the creative output reaches the right audience.
             </p>
             <p class="content-paragraph" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
-              Music runs in the family. While he writes and performs, I make sure the world gets to hear it — properly packaged, properly presented.
+              Music runs in the family. While he writes and performs, I make sure the brand stays consistent and the content stays sharp across every platform.
             </p>
           </div>
           <div class="yobi-visual" data-aos="scale-in" data-aos-duration="900">
@@ -379,30 +493,51 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <!-- Kudos -->
-    <section class="section-panel">
+    <section class="section-panel kudos-pinned">
       <span class="outline-text outline-text--right" aria-hidden="true">Kudos</span>
       <div class="section-inner">
         <h2 class="section-title" data-aos="morph-up" data-aos-duration="800">Kudos</h2>
-        <div class="kudos-content">
-          <p class="kudos_section-content" data-aos="reveal-left" data-aos-duration="800">
-            Good work doesn't happen in isolation — and I'll be the first to admit that. I've only included
-            work I had a large hand in, but whether it's <strong>design</strong>, <strong>ideas</strong>,
-            <strong>UX</strong>, <strong>process</strong>, <strong>software engineering</strong>,
-            <strong>mentorship</strong>, <strong>advice</strong>, or <strong>creative direction</strong>,
-            the following people have shaped how I think, how I build, and who I've become along the way.
-            They challenged me, backed me, and left a mark I carry into everything I create.
-            A massive, heartfelt thank you to
-            <a href="https://www.linkedin.com/in/kevin-juanillo-1835b9b9/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Kevin Juanillo</a>,
-            <a href="https://www.linkedin.com/in/jamesolano/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">James Nelson Olaño</a>,
-            <a href="https://www.linkedin.com/in/marian-rae-alvarado-3057b8190/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Marian Rae Alvarado</a>,
-            <a href="https://www.linkedin.com/in/eric-francis-casaljay-461418150/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Eric Francis Casaljay</a>,
-            and
-            <a href="https://www.linkedin.com/in/ma-clarizza-folloso-ab418b1aa/" class="kudos_section-link" target="_blank" rel="noopener noreferrer">Ma. Clarizza Folloso</a>,
-            the loml. You know what you did. Thank you, fam!
-          </p>
+        <p class="kudos_section-intro" data-aos="fade-up">
+          Good work doesn't happen in isolation — and I'll be the first to admit that. Whether it's
+          <strong>design</strong>, <strong>ideas</strong>, <strong>UX</strong>, <strong>process</strong>,
+          <strong>software engineering</strong>, <strong>mentorship</strong>, <strong>advice</strong>, or
+          <strong>creative direction</strong>, these people have shaped how I think, how I build, and who
+          I've become along the way.
+        </p>
+        <div class="kudos-grid">
+          <div class="kudos-card kudos-slide" data-kudos="0">
+            <a href="https://www.linkedin.com/in/kevin-juanillo-1835b9b9/" target="_blank" rel="noopener noreferrer" class="kudos-card__name">Kevin Juanillo</a>
+            <p class="kudos-card__note">My big brother inside and outside our company. His mentorship sharpened my engineering instincts and pushed me to think bigger.</p>
+          </div>
+          <div class="kudos-card kudos-slide" data-kudos="1">
+            <a href="https://www.linkedin.com/in/jamesolano/" target="_blank" rel="noopener noreferrer" class="kudos-card__name">James Nelson Olaño</a>
+            <p class="kudos-card__note">Shaped my software development work ethics. His discipline and standards left a lasting mark on how I approach every project.</p>
+          </div>
+          <div class="kudos-card kudos-slide" data-kudos="2">
+            <a href="https://www.linkedin.com/in/marian-rae-alvarado-3057b8190/" target="_blank" rel="noopener noreferrer" class="kudos-card__name">Marian Rae Alvarado</a>
+            <p class="kudos-card__note">Strengthened my development work ethics and showed me that life outside work matters — outdoor adventures that keep the balance right.</p>
+          </div>
+          <div class="kudos-card kudos-slide" data-kudos="3">
+            <a href="https://www.linkedin.com/in/eric-francis-casaljay-461418150/" target="_blank" rel="noopener noreferrer" class="kudos-card__name">Eric Francis Casaljay</a>
+            <p class="kudos-card__note">My mentor in design, visual representation, digital art, and branding. His creative eye reshaped how I see and build visual work.</p>
+          </div>
+          <div class="kudos-card kudos-card--heart kudos-slide" data-kudos="4">
+            <a href="https://www.linkedin.com/in/ma-clarizza-folloso-ab418b1aa/" target="_blank" rel="noopener noreferrer" class="kudos-card__name">Ma. Clarizza Folloso</a>
+            <p class="kudos-card__note">The love of my life. She keeps me grounded, sane, and loved — my inspiration behind everything I create.</p>
+          </div>
+        </div>
+        <div class="kudos-progress">
+          <div class="kudos-progress__bar"></div>
         </div>
       </div>
     </section>
+
+    <!-- Kudos → Contact bridge -->
+    <div class="section-bridge" aria-hidden="true">
+      <span class="section-bridge__line"></span>
+      <span class="section-bridge__label">Let's build something.</span>
+      <span class="section-bridge__line"></span>
+    </div>
 
     <!-- Contact -->
     <section id="contact" class="section-panel section-panel--alt">
@@ -443,7 +578,6 @@ const base = import.meta.env.BASE_URL;
   const sections = gsap.utils.toArray<HTMLElement>('.section-panel');
 
   sections.forEach((section) => {
-    /* Outline text reveal */
     const outline = section.querySelector('.outline-text') as HTMLElement | null;
     if (outline) {
       const isRight = outline.classList.contains('outline-text--right');
@@ -460,21 +594,23 @@ const base = import.meta.env.BASE_URL;
       );
     }
 
-    /* Subtle section parallax — shift inner content slightly */
-    const inner = section.querySelector('.section-inner') as HTMLElement | null;
-    if (inner) {
-      gsap.fromTo(inner,
-        { y: 40, opacity: 0.8 },
-        {
-          y: 0, opacity: 1, duration: 1, ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 90%',
-            end: 'top 40%',
-            scrub: 0.5,
-          },
-        }
-      );
+    /* Section parallax — desktop only */
+    if (window.innerWidth > 768) {
+      const inner = section.querySelector('.section-inner') as HTMLElement | null;
+      if (inner) {
+        gsap.fromTo(inner,
+          { y: 40, opacity: 0.8 },
+          {
+            y: 0, opacity: 1, duration: 1, ease: 'power2.out',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 90%',
+              end: 'top 40%',
+              scrub: 0.5,
+            },
+          }
+        );
+      }
     }
   });
 
@@ -490,22 +626,46 @@ const base = import.meta.env.BASE_URL;
     });
   });
 
-  /* ═══════════════════════════════════════════════════════
-     Flying Scroll Transitions & Polymorphic Effects
-     ═══════════════════════════════════════════════════════ */
+  const isMobile = window.innerWidth <= 768;
 
-  /* ── Service cards: 3D stagger fly-in from below ── */
-  const serviceCards = gsap.utils.toArray<HTMLElement>('.services-grid > *');
-  if (serviceCards.length) {
-    gsap.set(serviceCards, { opacity: 0, y: 120, rotateX: 25, transformPerspective: 800 });
+  /* Services: scroll-pinned card spotlight (desktop) */
+  const serviceSlides = gsap.utils.toArray<HTMLElement>('.service-slide');
+  const svcProgressBar = document.querySelector('.services-progress__bar') as HTMLElement | null;
+  if (serviceSlides.length && !isMobile) {
+    gsap.set(serviceSlides, { opacity: 0.25, scale: 0.95, filter: 'blur(1px)' });
+    gsap.set(serviceSlides[0], { opacity: 1, scale: 1, filter: 'blur(0px)' });
+
+    const servicesTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#services',
+        start: 'top top',
+        end: () => `+=${serviceSlides.length * 60}%`,
+        pin: true,
+        scrub: 1.2,
+        anticipatePin: 0.5,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          if (svcProgressBar) svcProgressBar.style.width = `${self.progress * 100}%`;
+        },
+      },
+    });
+
+    serviceSlides.forEach((slide, i) => {
+      if (i > 0) {
+        servicesTl.to(serviceSlides[i - 1], { opacity: 0.25, scale: 0.95, filter: 'blur(1px)', duration: 0.5 }, i);
+        servicesTl.to(slide, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.5 }, i);
+      }
+    });
+  } else if (serviceSlides.length) {
+    gsap.set(serviceSlides, { opacity: 0, y: 40 });
     ScrollTrigger.create({
       trigger: '.services-grid',
-      start: 'top 82%',
+      start: 'top 85%',
       onEnter: () => {
-        gsap.to(serviceCards, {
-          opacity: 1, y: 0, rotateX: 0,
-          duration: 0.9,
-          stagger: 0.18,
+        gsap.to(serviceSlides, {
+          opacity: 1, y: 0,
+          duration: 0.5,
+          stagger: 0.08,
           ease: 'power3.out',
         });
       },
@@ -513,54 +673,143 @@ const base = import.meta.env.BASE_URL;
     });
   }
 
-  /* ── Project cards: clean stagger fade + rise ── */
-  const projectCards = gsap.utils.toArray<HTMLElement>('.project-card');
-  if (projectCards.length) {
-    gsap.set(projectCards, { opacity: 0, y: 50, scale: 0.97 });
+  /* Tech stack cards: stagger reveal */
+  const stackCards = gsap.utils.toArray<HTMLElement>('.stack-card');
+  if (stackCards.length) {
+    stackCards.forEach((card) => {
+      const chips = gsap.utils.toArray<HTMLElement>('.stack-chip', card);
+      gsap.set(chips, { opacity: 0, y: 14, scale: 0.95 });
+      ScrollTrigger.create({
+        trigger: card,
+        start: 'top 85%',
+        onEnter: () => {
+          gsap.to(chips, {
+            opacity: 1, y: 0, scale: 1,
+            duration: 0.35,
+            stagger: 0.04,
+            ease: 'power2.out',
+          });
+        },
+        once: true,
+      });
+    });
+  }
+
+  /* Project cards: stagger reveal per grid */
+  const projectSlides = gsap.utils.toArray<HTMLElement>('.project-slide');
+  if (projectSlides.length) {
+    document.querySelectorAll('.project-grid').forEach((grid) => {
+      const cards = gsap.utils.toArray<HTMLElement>('.project-card', grid as HTMLElement);
+      if (!cards.length) return;
+      gsap.set(cards, { opacity: 0, y: 40, scale: 0.96 });
+      ScrollTrigger.create({
+        trigger: grid,
+        start: 'top 82%',
+        onEnter: () => {
+          gsap.to(cards, {
+            opacity: 1, y: 0, scale: 1,
+            duration: 0.6,
+            stagger: 0.12,
+            ease: 'power3.out',
+          });
+        },
+        once: true,
+      });
+    });
+  }
+
+  /* Kudos: scroll-pinned person spotlight (desktop) */
+  const kudosSlides = gsap.utils.toArray<HTMLElement>('.kudos-slide');
+  const kudosProgressBar = document.querySelector('.kudos-progress__bar') as HTMLElement | null;
+  if (kudosSlides.length && !isMobile) {
+    gsap.set(kudosSlides, { opacity: 0.2, scale: 0.95, filter: 'blur(1px)' });
+    gsap.set(kudosSlides[0], { opacity: 1, scale: 1, filter: 'blur(0px)' });
+
+    const kudosTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.kudos-pinned',
+        start: 'top top',
+        end: () => `+=${kudosSlides.length * 50}%`,
+        pin: true,
+        scrub: 1.2,
+        anticipatePin: 0.5,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          if (kudosProgressBar) kudosProgressBar.style.width = `${self.progress * 100}%`;
+        },
+      },
+    });
+
+    kudosSlides.forEach((slide, i) => {
+      if (i > 0) {
+        kudosTl.to(kudosSlides[i - 1], { opacity: 0.2, scale: 0.95, filter: 'blur(1px)', duration: 0.5 }, i);
+        kudosTl.to(slide, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.5 }, i);
+      }
+    });
+  } else if (kudosSlides.length) {
+    gsap.set(kudosSlides, { opacity: 0, y: 30 });
     ScrollTrigger.create({
-      trigger: '.project-track',
-      start: 'top 80%',
+      trigger: '.kudos-grid',
+      start: 'top 85%',
       onEnter: () => {
-        gsap.to(projectCards, {
-          opacity: 1, y: 0, scale: 1,
-          duration: 0.7,
-          stagger: 0.12,
-          ease: 'power2.out',
+        gsap.to(kudosSlides, {
+          opacity: 1, y: 0,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: 'power3.out',
         });
       },
       once: true,
     });
   }
 
-  /* ── Venture cards: elastic slide-in from sides ── */
-  const ventureCards = gsap.utils.toArray<HTMLElement>('.venture-card');
-  ventureCards.forEach((card, i) => {
-    gsap.set(card, { opacity: 0, x: i % 2 === 0 ? -80 : 80, scale: 0.94 });
+  /* Gentle section entrance — no scrub, just a quick one-time fade */
+  const sectionPanels = gsap.utils.toArray<HTMLElement>('.section-panel');
+  sectionPanels.forEach((panel) => {
+    gsap.set(panel, { opacity: 0, y: 30 });
     ScrollTrigger.create({
-      trigger: card,
-      start: 'top 86%',
+      trigger: panel,
+      start: 'top 88%',
       onEnter: () => {
-        gsap.to(card, {
-          opacity: 1, x: 0, scale: 1,
-          duration: 0.9,
-          ease: 'back.out(1.4)',
+        gsap.to(panel, {
+          opacity: 1, y: 0,
+          duration: 0.6,
+          ease: 'power2.out',
         });
       },
       once: true,
     });
   });
 
-  /* ── Employer card: horizontal clip-path reveal ── */
+  /* Venture cards: slide-in */
+  const ventureCards = gsap.utils.toArray<HTMLElement>('.venture-card');
+  ventureCards.forEach((card, i) => {
+    gsap.set(card, { opacity: 0, x: isMobile ? 0 : (i % 2 === 0 ? -80 : 80), y: isMobile ? 30 : 0 });
+    ScrollTrigger.create({
+      trigger: card,
+      start: 'top 88%',
+      onEnter: () => {
+        gsap.to(card, {
+          opacity: 1, x: 0, y: 0,
+          duration: isMobile ? 0.5 : 0.9,
+          ease: isMobile ? 'power2.out' : 'back.out(1.4)',
+        });
+      },
+      once: true,
+    });
+  });
+
+  /* Employer card: clip-path reveal */
   const empCard = document.querySelector('.employer-card') as HTMLElement | null;
   if (empCard) {
     gsap.set(empCard, { clipPath: 'inset(0 100% 0 0)' });
     ScrollTrigger.create({
       trigger: empCard,
-      start: 'top 82%',
+      start: 'top 85%',
       onEnter: () => {
         gsap.to(empCard, {
           clipPath: 'inset(0 0% 0 0)',
-          duration: 1.2,
+          duration: isMobile ? 0.7 : 1.2,
           ease: 'power3.inOut',
         });
       },
@@ -568,17 +817,17 @@ const base = import.meta.env.BASE_URL;
     });
   }
 
-  /* ── Statement: dramatic zoom + blur reveal ── */
+  /* Statement: zoom reveal */
   const stmtOutline = document.querySelector('.statement-outline') as HTMLElement | null;
   if (stmtOutline) {
     gsap.fromTo(stmtOutline,
-      { scale: 1.4, filter: 'blur(8px)', opacity: 0 },
+      { scale: isMobile ? 1.1 : 1.4, filter: isMobile ? 'blur(4px)' : 'blur(8px)', opacity: 0 },
       {
         scale: 1, filter: 'blur(0px)', opacity: 1,
         ease: 'none',
         scrollTrigger: {
           trigger: '.statement-panel',
-          start: 'top 78%',
+          start: 'top 80%',
           end: 'center center',
           scrub: 0.8,
         },
@@ -586,96 +835,85 @@ const base = import.meta.env.BASE_URL;
     );
   }
 
-  /* ── Logo frames: scroll-driven float & rotation ── */
-  gsap.utils.toArray<HTMLElement>('.keycabz-logo-frame, .cryptobuds-logo-frame, .yobi-logo-frame').forEach((frame, i) => {
-    gsap.to(frame, {
-      y: -20,
-      rotation: (i % 2 === 0 ? 4 : -4),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: frame,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1,
-      },
+  /* Desktop-only: heavy scroll effects */
+  if (!isMobile) {
+    /* Logo frames: scroll-driven float & rotation */
+    gsap.utils.toArray<HTMLElement>('.keycabz-logo-frame, .cryptobuds-logo-frame, .yobi-logo-frame').forEach((frame, i) => {
+      gsap.to(frame, {
+        y: -20,
+        rotation: (i % 2 === 0 ? 4 : -4),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: frame,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1,
+        },
+      });
     });
-  });
 
-  /* ── Project cards: subtle scale on scroll ── */
-  projectCards.forEach((card) => {
-    gsap.to(card, {
-      scale: 1.02,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: card,
-        start: 'top bottom',
-        end: 'center center',
-        scrub: 1.5,
-      },
-    });
-  });
+    /* Marquee strip: scroll-speed modulation */
+    const marqueeInner = document.querySelector('.marquee-inner') as HTMLElement | null;
+    if (marqueeInner) {
+      gsap.to(marqueeInner, {
+        xPercent: -5,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.marquee-strip',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 0.5,
+        },
+      });
+    }
 
-  /* ── Marquee strip: scroll-speed modulation ── */
-  const marqueeInner = document.querySelector('.marquee-inner') as HTMLElement | null;
-  if (marqueeInner) {
-    gsap.to(marqueeInner, {
-      xPercent: -5,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.marquee-strip',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 0.5,
-      },
+    /* Floating ambient orbs: per-section parallax */
+    const orbConfigs = [
+      { sel: '#about-me', size: 160, pos: 'right: 10%; top: 15%', dx: 20, dy: -45 },
+      { sel: '#about-me', size: 120, pos: 'left: 5%; bottom: 25%', dx: -15, dy: -30 },
+      { sel: '#services', size: 180, pos: 'right: 5%; top: 20%', dx: 30, dy: -60 },
+      { sel: '#services', size: 130, pos: 'left: 15%; bottom: 15%', dx: -20, dy: -35 },
+      { sel: '.keycabz-section', size: 200, pos: 'left: 8%; top: 30%', dx: -25, dy: -50 },
+      { sel: '.keycabz-section', size: 140, pos: 'right: 12%; bottom: 20%', dx: 18, dy: -40 },
+      { sel: '.cryptobuds-section', size: 160, pos: 'right: 10%; bottom: 25%', dx: 20, dy: -45 },
+      { sel: '.cryptobuds-section', size: 120, pos: 'left: 18%; top: 20%', dx: -15, dy: -30 },
+      { sel: '.yobi-section', size: 170, pos: 'left: 5%; top: 40%', dx: -30, dy: -55 },
+      { sel: '.yobi-section', size: 130, pos: 'right: 8%; bottom: 30%', dx: 22, dy: -35 },
+      { sel: '#works', size: 140, pos: 'left: 8%; top: 25%', dx: -18, dy: -40 },
+      { sel: '.ventures-section', size: 160, pos: 'left: 12%; bottom: 20%', dx: -20, dy: -50 },
+      { sel: '.ventures-section', size: 110, pos: 'right: 6%; top: 18%', dx: 15, dy: -30 },
+      { sel: '.statement-panel', size: 220, pos: 'left: 50%; top: 30%', dx: -10, dy: -35 },
+      { sel: '#contact', size: 150, pos: 'right: 8%; top: 25%', dx: 25, dy: -45 },
+      { sel: '#contact', size: 110, pos: 'left: 10%; bottom: 20%', dx: -12, dy: -28 },
+    ];
+
+    orbConfigs.forEach(({ sel, size, pos, dx, dy }) => {
+      const parent = document.querySelector(sel) as HTMLElement | null;
+      if (!parent) return;
+      const orb = document.createElement('div');
+      orb.className = 'floating-orb-decor';
+      orb.style.cssText = `
+        position: absolute; width: ${size}px; height: ${size}px;
+        border-radius: 50%;
+        background: radial-gradient(circle, var(--color-orange-glow), transparent 70%);
+        pointer-events: none; z-index: 0;
+        filter: blur(50px); opacity: 0.3;
+        ${pos}
+      `;
+      parent.appendChild(orb);
+
+      gsap.to(orb, {
+        y: dy, x: dx,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: parent,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.5,
+        },
+      });
     });
   }
-
-  /* ── Floating ambient orbs: per-section parallax ── */
-  const orbConfigs = [
-    { sel: '#about-me', size: 160, pos: 'right: 10%; top: 15%', dx: 20, dy: -45 },
-    { sel: '#about-me', size: 120, pos: 'left: 5%; bottom: 25%', dx: -15, dy: -30 },
-    { sel: '#services', size: 180, pos: 'right: 5%; top: 20%', dx: 30, dy: -60 },
-    { sel: '#services', size: 130, pos: 'left: 15%; bottom: 15%', dx: -20, dy: -35 },
-    { sel: '.keycabz-section', size: 200, pos: 'left: 8%; top: 30%', dx: -25, dy: -50 },
-    { sel: '.keycabz-section', size: 140, pos: 'right: 12%; bottom: 20%', dx: 18, dy: -40 },
-    { sel: '.cryptobuds-section', size: 160, pos: 'right: 10%; bottom: 25%', dx: 20, dy: -45 },
-    { sel: '.cryptobuds-section', size: 120, pos: 'left: 18%; top: 20%', dx: -15, dy: -30 },
-    { sel: '.yobi-section', size: 170, pos: 'left: 5%; top: 40%', dx: -30, dy: -55 },
-    { sel: '.yobi-section', size: 130, pos: 'right: 8%; bottom: 30%', dx: 22, dy: -35 },
-    { sel: '#works', size: 140, pos: 'left: 8%; top: 25%', dx: -18, dy: -40 },
-    { sel: '.ventures-section', size: 160, pos: 'left: 12%; bottom: 20%', dx: -20, dy: -50 },
-    { sel: '.ventures-section', size: 110, pos: 'right: 6%; top: 18%', dx: 15, dy: -30 },
-    { sel: '.statement-panel', size: 220, pos: 'left: 50%; top: 30%', dx: -10, dy: -35 },
-    { sel: '#contact', size: 150, pos: 'right: 8%; top: 25%', dx: 25, dy: -45 },
-    { sel: '#contact', size: 110, pos: 'left: 10%; bottom: 20%', dx: -12, dy: -28 },
-  ];
-
-  orbConfigs.forEach(({ sel, size, pos, dx, dy }) => {
-    const parent = document.querySelector(sel) as HTMLElement | null;
-    if (!parent) return;
-    const orb = document.createElement('div');
-    orb.className = 'floating-orb-decor';
-    orb.style.cssText = `
-      position: absolute; width: ${size}px; height: ${size}px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--color-orange-glow), transparent 70%);
-      pointer-events: none; z-index: 0;
-      filter: blur(50px); opacity: 0.3;
-      ${pos}
-    `;
-    parent.appendChild(orb);
-
-    gsap.to(orb, {
-      y: dy, x: dx,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: parent,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1.5,
-      },
-    });
-  });
 </script>
 
 <style>
@@ -684,23 +922,43 @@ const base = import.meta.env.BASE_URL;
     max-width: 100%;
   }
 
-  .content-paragraph--lead {
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
-    line-height: 1.7;
-    color: var(--text-secondary);
-  }
-
   .about-cta {
     margin-top: 2rem;
   }
 
   /* ── Services ── */
+  .services-pinned {
+    overflow: visible;
+  }
+
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: stretch;
     gap: 1.5rem;
     margin-bottom: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .service-slide {
+    height: 100%;
+    transition: opacity 0.3s, filter 0.3s;
+  }
+
+  .services-progress {
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .services-progress__bar {
+    height: 100%;
+    width: 0%;
+    background: var(--color-orange);
+    border-radius: 2px;
+    transition: width 0.1s linear;
   }
 
   .services-bottom {
@@ -744,6 +1002,135 @@ const base = import.meta.env.BASE_URL;
     color: var(--text-muted);
     max-width: 24ch;
     flex-shrink: 0;
+  }
+
+  /* ── Tech Stack ── */
+  .stack-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .stack-card {
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.35s, box-shadow 0.35s;
+  }
+
+  .stack-card:hover {
+    border-color: var(--color-orange-dim, rgba(255,117,24,0.3));
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+
+  .stack-card__label {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    margin-bottom: 0.625rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-orange-dim, rgba(255,117,24,0.15));
+  }
+
+  .stack-card__desc {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    align-items: flex-start;
+  }
+
+  .stack-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem 0.375rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    white-space: nowrap;
+  }
+
+  .stack-chip:hover {
+    transform: translateY(-2px);
+    background: var(--glass-bg);
+    border-color: var(--color-orange-dim, rgba(255,117,24,0.35));
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+
+  .stack-chip img,
+  .stack-chip__svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  /* Dark-mode adaptive icons (GitHub, Astro, Copilot) */
+  :global([data-theme="dark"]) .icon-adaptive {
+    filter: invert(1) brightness(2);
+  }
+  :global([data-theme="dark"]) .icon-adaptive-svg {
+    filter: invert(1) brightness(2);
+  }
+
+  .stack-chip:hover img,
+  .stack-chip:hover .stack-chip__svg {
+    filter: drop-shadow(0 0 4px var(--color-orange-glow));
+  }
+  :global([data-theme="dark"]) .stack-chip:hover .icon-adaptive {
+    filter: invert(1) brightness(2) drop-shadow(0 0 4px var(--color-orange-glow));
+  }
+  :global([data-theme="dark"]) .stack-chip:hover .icon-adaptive-svg {
+    filter: invert(1) brightness(2) drop-shadow(0 0 4px var(--color-orange-glow));
+  }
+
+  .stack-chip span {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  @media (min-width: 540px) {
+    .stack-chip img,
+    .stack-chip__svg {
+      width: 32px;
+      height: 32px;
+    }
+    .stack-chip {
+      padding: 0.5rem 1.125rem 0.5rem 0.75rem;
+      gap: 0.625rem;
+    }
+    .stack-card {
+      padding: 1.75rem 2rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .stack-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .stack-cards-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* ── Works — Employer Card ── */
@@ -881,89 +1268,238 @@ const base = import.meta.env.BASE_URL;
     margin-top: 1.5rem;
   }
 
-  /* Projects — responsive grid, mobile-first */
-  .project-track {
+  /* ── Projects — 2-row grid ── */
+  .projects-pinned {
+    overflow: visible;
+  }
+
+  .project-slide {
+    transition: opacity 0.3s, filter 0.3s;
+  }
+
+  .projects-progress {
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-top: 2rem;
+    overflow: hidden;
+  }
+
+  .projects-progress__bar {
+    height: 100%;
+    width: 0%;
+    background: var(--color-orange);
+    border-radius: 2px;
+    transition: width 0.1s linear;
+  }
+
+  .project-group-label {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    margin: 2.5rem 0 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-orange-dim, rgba(255,117,24,0.25));
+  }
+
+  .project-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding-bottom: 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
 
   .project-card {
+    --_card-index: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    padding: 0.75rem;
     border: 1px solid var(--border);
-    border-radius: 0.75rem;
-    background: var(--glass-bg);
-    transition: border-color 0.35s ease, transform 0.35s ease;
+    border-radius: 1rem;
+    background: var(--card-bg);
+    overflow: hidden;
+    transition: border-color 0.35s, transform 0.35s, box-shadow 0.35s;
+    position: relative;
+    counter-increment: project-counter;
+  }
+
+  .project-card::before {
+    content: counter(project-counter, decimal-leading-zero);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--color-orange);
+    opacity: 0.5;
+    z-index: 2;
+    font-variant-numeric: tabular-nums;
+    transition: opacity 0.3s;
+  }
+
+  .project-card:hover::before {
+    opacity: 1;
+  }
+
+  .project-grid {
+    counter-reset: project-counter;
   }
 
   .project-card:hover {
-    border-color: var(--color-orange-dim, rgba(255,117,24,0.3));
-    transform: translateY(-2px);
+    border-color: var(--color-orange-dim);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px -16px rgba(0,0,0,0.25), 0 0 0 1px var(--color-orange-dim, rgba(255,117,24,0.1));
   }
 
   .project-card__image {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1.25rem;
+    background: rgba(255,255,255,0.03);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, var(--card-bg));
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .project-card:hover .project-card__image::after {
+    opacity: 1;
   }
 
   .project-card__image img {
     width: 100%;
-    height: 120px;
+    height: 140px;
     object-fit: contain;
     border-radius: 0.5rem;
-    padding: 0.75rem;
-    background: rgba(255,255,255,0.03);
     filter: var(--img-filter);
-    transition: filter 0.4s ease;
+    transition: filter 0.4s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .project-card:hover .project-card__image img {
     filter: var(--img-filter-hover);
+    transform: scale(1.04);
   }
 
   .project-card__body {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
-    padding: 0.25rem 0.25rem 0.25rem;
+    gap: 0.5rem;
+    padding: 1.25rem 1.5rem 1.5rem;
+    flex: 1;
   }
 
-  .project-card__title {
-    font-size: var(--fs-base);
-    font-weight: 600;
+  .project-card__body h3 {
+    font-size: var(--fs-lg);
+    font-weight: 700;
     color: var(--text-primary);
-    letter-spacing: -0.01em;
-    line-height: 1.3;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
   }
 
-  .project-card__body .text-section {
+  .project-breakdown {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .project-breakdown li {
+    position: relative;
+    padding-left: 1rem;
     font-size: var(--fs-sm);
-    line-height: 1.55;
+    line-height: 1.6;
     color: var(--text-secondary);
   }
 
-  /* Tablet: 2 columns */
-  @media (min-width: 540px) {
-    .project-track {
+  .project-breakdown li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-orange);
+  }
+
+  .project-breakdown li strong {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .project-breakdown li strong::after {
+    content: ' — ';
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 1024px) {
+    .project-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.15rem;
+    }
+    .stack-card {
+      padding: 1.25rem 1.5rem;
     }
   }
 
-  /* Desktop: 3 columns, compact cards */
-  @media (min-width: 960px) {
-    .project-track {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+  @media (max-width: 768px) {
+    .project-grid {
+      grid-template-columns: 1fr;
     }
-
-    .project-card {
-      padding: 0.85rem;
+    .stack-card {
+      padding: 1rem 1.125rem;
+      margin-bottom: 0.75rem;
+      border-radius: 0.75rem;
+    }
+    .stack-card__label {
+      font-size: 0.625rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.375rem;
+    }
+    .stack-chip {
+      padding: 0.3125rem 0.625rem 0.3125rem 0.375rem;
+      gap: 0.375rem;
+    }
+    .stack-chip img,
+    .stack-chip__svg {
+      width: 22px;
+      height: 22px;
+    }
+    .stack-chip span {
+      font-size: 0.6875rem;
+    }
+    .stack-grid {
+      gap: 0.4375rem;
+    }
+    .project-card__image img {
+      height: 120px;
+    }
+    .project-card__body {
+      padding: 1rem 1.125rem 1.25rem;
+    }
+    .project-card__body h3 {
+      font-size: var(--fs-base);
+    }
+    .project-breakdown li {
+      font-size: 0.8125rem;
+      line-height: 1.55;
+    }
+    .project-group-label {
+      margin: 1.75rem 0 1rem;
     }
   }
 
@@ -1164,8 +1700,144 @@ const base = import.meta.env.BASE_URL;
   }
 
   /* ── Kudos ── */
-  .kudos-content {
-    max-width: 100%;
+  .kudos-pinned {
+    overflow: visible;
+  }
+
+  .kudos_section-intro {
+    color: var(--text-secondary);
+    font-size: var(--fs-base);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .kudos-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+  }
+
+  .kudos-card {
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: var(--card-bg);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: opacity 0.3s, filter 0.3s, border-color 0.35s;
+    position: relative;
+  }
+
+  .kudos-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 0.75rem;
+    right: 1.25rem;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--color-orange);
+    opacity: 0.15;
+    font-family: Georgia, serif;
+    pointer-events: none;
+  }
+
+  .kudos-card--heart::before {
+    content: '\2661';
+    font-size: 2.25rem;
+    opacity: 0.25;
+  }
+
+  .kudos-card:hover {
+    border-color: var(--color-orange-dim, rgba(255,117,24,0.3));
+  }
+
+  .kudos-card__name {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--color-orange);
+    text-decoration: none;
+    transition: opacity 0.3s;
+    line-height: 1.3;
+  }
+
+  .kudos-card__name:hover {
+    opacity: 0.7;
+  }
+
+  .kudos-card__note {
+    font-size: var(--fs-sm);
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .kudos-progress {
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-top: 2rem;
+    overflow: hidden;
+  }
+
+  .kudos-progress__bar {
+    height: 100%;
+    width: 0%;
+    background: var(--color-orange);
+    border-radius: 2px;
+    transition: width 0.1s linear;
+  }
+
+  @media (max-width: 1024px) {
+    .kudos-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      scrollbar-width: none;
+    }
+    .kudos-grid::-webkit-scrollbar {
+      display: none;
+    }
+    .kudos-card {
+      flex: 0 0 80vw;
+      max-width: 320px;
+      scroll-snap-align: start;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .kudos-card {
+      flex: 0 0 85vw;
+      max-width: none;
+    }
+  }
+
+  /* ── Kudos → Contact Bridge ── */
+  .section-bridge {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 3rem var(--section-px, 2rem);
+    max-width: var(--section-max, 1280px);
+    margin: 0 auto;
+  }
+  .section-bridge__line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-orange, #ff7518) 50%, transparent);
+    opacity: 0.35;
+  }
+  .section-bridge__label {
+    font-size: var(--fs-sm, 0.875rem);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-orange, #ff7518);
+    opacity: 0.7;
+    white-space: nowrap;
   }
 
   /* ── Section Title Hero Variant ── */
@@ -1491,6 +2163,14 @@ const base = import.meta.env.BASE_URL;
 
     .employer-card {
       padding: 1.75rem 2rem;
+    }
+
+    .stack-card {
+      padding: 1.375rem 1.75rem;
+    }
+
+    .project-card__image img {
+      height: 120px;
     }
 
     .keycabz-hero {

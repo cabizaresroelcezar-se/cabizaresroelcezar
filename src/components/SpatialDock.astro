@@ -1,9 +1,4 @@
 ---
-/**
- * SpatialDock — Replaces the traditional top‑bar with a floating
- * bottom dock anchored in 3D space. Each item has a haptic‑style
- * hover micro‑animation, a tooltip, and active‑section highlighting.
- */
 import ThemeToggle from './ThemeToggle.astro';
 const base = import.meta.env.BASE_URL;
 ---
@@ -37,7 +32,7 @@ const base = import.meta.env.BASE_URL;
 
   <ThemeToggle />
 
-  <a href={`${base}cv.pdf`} target="_blank" rel="noopener noreferrer" class="dock-item dock-cta" data-label="Download CV">
+  <a href={`${base}Cabizares, Roel Cezar A - Full Stack Developer.pdf`} target="_blank" rel="noopener noreferrer" class="dock-item dock-cta" data-label="Download CV">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
   </a>
 </nav>
