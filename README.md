@@ -2,7 +2,7 @@
 
 Personal portfolio of **Roel Cezar Cabizares** — Software Engineer & Designer specializing in full-stack development, UI/UX, and intentional digital experiences.
 
-**Live:** [cabizaresroelcezar.github.io](https://cabizaresroelcezar.github.io)
+**Live:** [cabizaresroelcezar-se.github.io/cabizaresroelcezar](https://cabizaresroelcezar-se.github.io/cabizaresroelcezar/)
 
 ## Tech Stack
 
@@ -98,10 +98,10 @@ The site uses CSS custom properties defined in `src/styles/spatial.css`:
 
 | Branch | Purpose |
 |---|---|
-| `master` | Production — source of truth, deploys to GitHub Pages |
-| `develop` | Development — feature work branches off from here |
+| `master` | Production — default branch, deploys to GitHub Pages on push |
+| `develop` | Development — all feature work branches off from here |
 
-Feature branches should be created from `develop` and merged back via pull request.
+Create feature branches from `develop` and merge back via pull request before merging to `master`.
 
 ## Deployment
 
