@@ -647,7 +647,7 @@ body {
 
 @media (pointer: fine) {
   body:hover .cursor-glow {
-    opacity: 0.5;
+    opacity: 0.25;
   }
 }
 
